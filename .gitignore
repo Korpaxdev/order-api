@@ -1,0 +1,7 @@
+venv
+.idea
+**/__pycache__
+database/*
+.env
+backup_fixtures/*
+media/*
