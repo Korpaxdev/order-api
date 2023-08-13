@@ -1,10 +1,14 @@
-from rest_framework import generics
+from django.http import HttpRequest
+from rest_framework import exceptions, generics
+from rest_framework.response import Response
 
 from backend.filters.shop_filters import ShopListFilterSet, ShopPriceListFilterSet
 from backend.models import ProductShopModel, ShopModel
+from backend.permissions.shop_permissions import IsManagerOrAdminPermission
 from backend.serializers.shop_serializers import (
     ShopDetailSerializer,
     ShopListSerializer,
+    ShopPriceFileUpdateSerializer,
     ShopPriceListSerializer,
     ShopUpdateStatusSerializer,
 )
@@ -40,3 +44,18 @@ class ShopUpdateStatusView(generics.UpdateAPIView):
     queryset = ShopModel.objects.all()
     serializer_class = ShopUpdateStatusSerializer
     lookup_field = "slug"
+
+
+class ShopPriceFileUpdate(generics.GenericAPIView):
+    permission_classes = (IsManagerOrAdminPermission,)
+    queryset = ShopModel.objects.all()
+    serializer_class = ShopPriceFileUpdateSerializer
+    lookup_field = "slug"
+
+    def post(self, request: HttpRequest, slug: str):
+        instance = self.get_object()
+        serializer = self.serializer_class(instance=instance, data=self.request.data)
+        if not serializer.is_valid():
+            raise exceptions.ValidationError(serializer.errors)
+        serializer.save()
+        return Response(serializer.data)

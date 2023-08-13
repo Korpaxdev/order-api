@@ -1,8 +1,14 @@
 from django.urls import path
-
-from backend.views.shop_views import ShopDetailView, ShopListView, ShopPriceListView, ShopUpdateStatusView
-from backend.views.user_views import UserProfileView, UserRegisterView
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+
+from backend.views.shop_views import (
+    ShopDetailView,
+    ShopListView,
+    ShopPriceFileUpdate,
+    ShopPriceListView,
+    ShopUpdateStatusView,
+)
+from backend.views.user_views import UserProfileView, UserRegisterView
 
 urlpatterns = [
     # user
@@ -15,4 +21,5 @@ urlpatterns = [
     path("shops/<slug>/", ShopDetailView.as_view(), name="shop_detail"),
     path("shops/<slug>/products/", ShopPriceListView.as_view(), name="shop_price_list"),
     path("shops/<slug>/status/", ShopUpdateStatusView.as_view(), name="shop_update_status"),
+    path("shops/<slug>/price_file/", ShopPriceFileUpdate.as_view(), name="shop_update_price_file"),
 ]

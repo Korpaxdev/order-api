@@ -1,3 +1,5 @@
+from django.conf import settings
+from django.core.files.uploadedfile import InMemoryUploadedFile
 from django.http import HttpRequest
 from rest_framework import serializers
 
@@ -59,4 +61,18 @@ class ShopUpdateStatusSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError(
                 f"Невозможно установить статус {status_name}, когда у магазина отсутствует прайс файл"
             )
+        return value
+
+
+class ShopPriceFileUpdateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ShopModel
+        fields = ("price_file",)
+        extra_kwargs = {"price_file": {"required": True, "allow_null": False}}
+
+    def validate_price_file(self, value: InMemoryUploadedFile):
+        instance: ShopModel = self.instance
+        if not instance.is_valid_price_file(value):
+            formats_string = ",".join(settings.PRICE_FILE_FORMATS)
+            raise serializers.ValidationError(f"Недопустимый формат файла. Допустимые форматы: {formats_string}")
         return value
