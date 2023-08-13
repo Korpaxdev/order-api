@@ -12,7 +12,7 @@ class UserProfileView(generics.GenericAPIView):
 
     def get(self, request: HttpRequest):
         user = request.user
-        serializer = self.serializer_class(user, context={'request': request})
+        serializer = self.serializer_class(user, context={"request": request})
         return Response(serializer.data)
 
 

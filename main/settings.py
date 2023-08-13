@@ -112,7 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-AUTH_USER_MODEL = 'backend.UserModel'
+AUTH_USER_MODEL = "backend.UserModel"
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
