@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from backend.models import UserModel
+from backend.models import UserManagerModel, UserModel
 
 
 @admin.register(UserModel)
@@ -17,3 +17,18 @@ class UserModelAdmin(admin.ModelAdmin):
         "date_joined",
         "last_login",
     )
+
+
+@admin.register(UserManagerModel)
+class UserManagerModelAdmin(admin.ModelAdmin):
+    list_filter = ("shops",)
+    list_display = ("get_user_name", "get_shops")
+    search_fields = ("user__username",)
+
+    @admin.display(description="Пользователь")
+    def get_user_name(self, instance: UserManagerModel):
+        return instance.user.username
+
+    @admin.display(description="Магазины")
+    def get_shops(self, instance: UserManagerModel):
+        return [shop.name for shop in instance.shops.all()]
