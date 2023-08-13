@@ -12,6 +12,7 @@ from backend.serializers.shop_serializers import (
     ShopPriceListSerializer,
     ShopUpdateStatusSerializer,
 )
+from backend.tasks import remove_file, update_price_file
 
 
 class ShopListView(generics.ListAPIView):
@@ -53,9 +54,13 @@ class ShopPriceFileUpdate(generics.GenericAPIView):
     lookup_field = "slug"
 
     def post(self, request: HttpRequest, slug: str):
-        instance = self.get_object()
+        instance: ShopModel = self.get_object()
         serializer = self.serializer_class(instance=instance, data=self.request.data)
         if not serializer.is_valid():
             raise exceptions.ValidationError(serializer.errors)
+        old_price_file = instance.price_file
+        if old_price_file and old_price_file.name:
+            remove_file.delay(old_price_file.path)
         serializer.save()
+        update_price_file.delay(instance.pk, instance.price_file.path)
         return Response(serializer.data)
