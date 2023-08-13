@@ -1,7 +1,7 @@
 from django.http import HttpRequest
 from rest_framework import serializers
 
-from backend.models import ProductShopModel, ShopModel
+from backend.models import SHOP_STATUS_CHOICES, ProductShopModel, ShopModel
 from backend.serializers.product_serializers import ProductParameterSerializer
 
 
@@ -34,14 +34,29 @@ class ShopDetailSerializer(serializers.ModelSerializer):
 
 
 class ShopPriceListSerializer(serializers.ModelSerializer):
+    id = serializers.IntegerField(read_only=True, source="product.pk")
     name = serializers.CharField(read_only=True, source="product.name")
     categories = serializers.SerializerMethodField(read_only=True, method_name="get_categories_name")
     params = ProductParameterSerializer(many=True, source="product_parameters")
 
     class Meta:
         model = ProductShopModel
-        fields = ("name", "categories", "description", "quantity", "price", "price_rrc", "params")
+        fields = ("id", "name", "categories", "description", "quantity", "price", "price_rrc", "params")
 
     @staticmethod
     def get_categories_name(instance: ProductShopModel):
         return [cat.name for cat in instance.product.categories.all()]
+
+
+class ShopUpdateStatusSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ShopModel
+        fields = ("status",)
+
+    def validate_status(self, value):
+        if value and not self.instance.price_file:
+            status_name = dict(SHOP_STATUS_CHOICES).get(value)
+            raise serializers.ValidationError(
+                f"Невозможно установить статус {status_name}, когда у магазина отсутствует прайс файл"
+            )
+        return value
