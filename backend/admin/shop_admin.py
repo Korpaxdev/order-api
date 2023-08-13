@@ -23,4 +23,5 @@ class ShopForm(forms.ModelForm):
 class ShopAdmin(admin.ModelAdmin):
     list_display = ("name", "status")
     readonly_fields = ("slug",)
+    search_fields = ("name",)
     form = ShopForm

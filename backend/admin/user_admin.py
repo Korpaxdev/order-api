@@ -17,6 +17,8 @@ class UserModelAdmin(admin.ModelAdmin):
         "date_joined",
         "last_login",
     )
+    search_fields = ("username", "email")
+    list_display = ("username", "email", "is_superuser", "is_staff", "is_active")
 
 
 @admin.register(UserManagerModel)
