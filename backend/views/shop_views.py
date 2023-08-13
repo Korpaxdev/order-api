@@ -1,8 +1,8 @@
 from rest_framework import generics
 
-from backend.filters.shop_filters import ShopListFilterSet
-from backend.models import ShopModel
-from backend.serializers.shop_serializers import ShopDetailSerializer, ShopListSerializer
+from backend.filters.shop_filters import ShopListFilterSet, ShopPriceListFilterSet
+from backend.models import ProductShopModel, ShopModel
+from backend.serializers.shop_serializers import ShopDetailSerializer, ShopListSerializer, ShopPriceListSerializer
 
 
 class ShopListView(generics.ListAPIView):
@@ -15,3 +15,16 @@ class ShopDetailView(generics.RetrieveAPIView):
     serializer_class = ShopDetailSerializer
     queryset = ShopModel.objects.all()
     lookup_field = "slug"
+
+
+class ShopPriceListView(generics.ListAPIView):
+    serializer_class = ShopPriceListSerializer
+    filterset_class = ShopPriceListFilterSet
+
+    def get_queryset(self):
+        slug = self.kwargs.get("slug")
+        return (
+            ProductShopModel.objects.filter(shop__slug=slug, shop__status=True, quantity__gt=0)
+            .select_related("product", "shop")
+            .prefetch_related("product_parameters__param", "product__categories")
+        )

@@ -1,7 +1,8 @@
 from django.http import HttpRequest
 from rest_framework import serializers
 
-from backend.models import ShopModel
+from backend.models import ProductShopModel, ShopModel
+from backend.serializers.product_serializers import ProductParameterSerializer
 
 
 class ShopListSerializer(serializers.ModelSerializer):
@@ -30,3 +31,17 @@ class ShopDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = ShopModel
         fields = ("id", "name", "email", "phone", "status", "price_list", "price_file")
+
+
+class ShopPriceListSerializer(serializers.ModelSerializer):
+    name = serializers.CharField(read_only=True, source="product.name")
+    categories = serializers.SerializerMethodField(read_only=True, method_name="get_categories_name")
+    params = ProductParameterSerializer(many=True, source="product_parameters")
+
+    class Meta:
+        model = ProductShopModel
+        fields = ("name", "categories", "description", "quantity", "price", "price_rrc", "params")
+
+    @staticmethod
+    def get_categories_name(instance: ProductShopModel):
+        return [cat.name for cat in instance.product.categories.all()]
