@@ -2,14 +2,15 @@ from django.http import HttpRequest
 from rest_framework import exceptions, generics
 from rest_framework.response import Response
 
-from backend.filters.shop_filters import ShopListFilterSet, ShopPriceListFilterSet
+from backend.filters.product_filters import ProductShopFilterSet
+from backend.filters.shop_filters import ShopListFilterSet
 from backend.models import ProductShopModel, ShopModel
 from backend.permissions.shop_permissions import IsManagerOrAdminPermission
+from backend.serializers.product_serializers import ProductShopDetailListSerializer
 from backend.serializers.shop_serializers import (
     ShopDetailSerializer,
     ShopListSerializer,
     ShopPriceFileUpdateSerializer,
-    ShopPriceListSerializer,
     ShopUpdateStatusSerializer,
 )
 from backend.tasks import remove_file, update_price_file
@@ -28,8 +29,8 @@ class ShopDetailView(generics.RetrieveAPIView):
 
 
 class ShopPriceListView(generics.ListAPIView):
-    serializer_class = ShopPriceListSerializer
-    filterset_class = ShopPriceListFilterSet
+    serializer_class = ProductShopDetailListSerializer
+    filterset_class = ProductShopFilterSet
     lookup_field = "slug"
 
     def get_queryset(self):

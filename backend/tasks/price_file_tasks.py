@@ -5,7 +5,7 @@ from celery import shared_task
 
 from backend.models import CategoryModel, ParameterModel, ProductModel, ProductParameterModel, ShopModel
 from backend.utils.managment_utils import dump_data, load_data
-from backend.utils.price_file_utils import set_all_position_to_0, get_fixtures_paths, validate_price_data
+from backend.utils.price_file_utils import get_fixtures_paths, set_all_position_to_0, validate_price_data
 
 
 @shared_task
@@ -20,7 +20,6 @@ def update_price_file(shop_id: int, price_file: str):
     shop = ShopModel.objects.get(pk=shop_id)
     fixtures = get_fixtures_paths(shop.pk)
     try:
-
         pos_ids = []
         pos_ids_params = []
 
@@ -29,9 +28,9 @@ def update_price_file(shop_id: int, price_file: str):
             for parameter in position.product_parameters.all():
                 pos_ids_params.append(parameter.pk)
 
-        dump_data("backend.ProductShopModel", output=fixtures['product'], primary_keys=pos_ids)
+        dump_data("backend.ProductShopModel", output=fixtures["product"], primary_keys=pos_ids)
 
-        dump_data("backend.ProductParameterModel", output=fixtures['product_param'], primary_keys=pos_ids_params)
+        dump_data("backend.ProductParameterModel", output=fixtures["product_param"], primary_keys=pos_ids_params)
 
         set_all_position_to_0(shop)
 
@@ -53,12 +52,11 @@ def update_price_file(shop_id: int, price_file: str):
                     product=product,
                     shop=shop,
                     defaults={
-                        'description': price_product.get("description", ""),
-                        'quantity': price_product["quantity"],
-                        'price': price_product["price"],
-                        'price_rrc': price_product['price_rrc']
-                    }
-
+                        "description": price_product.get("description", ""),
+                        "quantity": price_product["quantity"],
+                        "price": price_product["price"],
+                        "price_rrc": price_product["price_rrc"],
+                    },
                 )
 
                 for price_param in price_product.get("params", []):

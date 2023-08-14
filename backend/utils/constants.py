@@ -12,29 +12,17 @@ class PriceFileMessages:
 
 @dataclass(frozen=True)
 class Validation:
-    REQUIRED = 'REQUIRED'
-    IS_NUMBER = 'IS_NUMBER'
+    REQUIRED = "REQUIRED"
+    IS_NUMBER = "IS_NUMBER"
 
 
 PRODUCT_FIELDS: list[ProductFieldType] = [
+    {"name": "name", "validation": [Validation.REQUIRED]},
+    {"name": "categories", "validation": [Validation.REQUIRED]},
+    {"name": "price", "validation": [Validation.REQUIRED, Validation.IS_NUMBER]},
+    {"name": "price_rrc", "validation": [Validation.REQUIRED, Validation.IS_NUMBER]},
     {
-        'name': 'name',
-        'validation': [Validation.REQUIRED]
-    },
-    {
-        'name': 'categories',
-        'validation': [Validation.REQUIRED]
-    },
-    {
-        'name': 'price',
-        'validation': [Validation.REQUIRED, Validation.IS_NUMBER]
-    },
-    {
-        'name': 'price_rrc',
-        'validation': [Validation.REQUIRED, Validation.IS_NUMBER]
-    },
-    {
-        'name': 'quantity',
-        'validation': [Validation.REQUIRED, Validation.IS_NUMBER],
+        "name": "quantity",
+        "validation": [Validation.REQUIRED, Validation.IS_NUMBER],
     },
 ]

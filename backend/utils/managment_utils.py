@@ -12,5 +12,5 @@ def dump_data(table: str, output: str, **params):
 
 
 def load_data(fixture: str):
-    management.call_command('loaddata', fixture)
+    management.call_command("loaddata", fixture)
     print(f"Load data from {fixture}")

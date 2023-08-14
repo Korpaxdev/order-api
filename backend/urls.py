@@ -1,6 +1,7 @@
 from django.urls import path
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
+from backend.views.product_views import ProductListView, ProductShopDetailListView
 from backend.views.shop_views import (
     ShopDetailView,
     ShopListView,
@@ -22,4 +23,7 @@ urlpatterns = [
     path("shops/<slug>/products/", ShopPriceListView.as_view(), name="shop_price_list"),
     path("shops/<slug>/status/", ShopUpdateStatusView.as_view(), name="shop_update_status"),
     path("shops/<slug>/price_file/", ShopPriceFileUpdate.as_view(), name="shop_update_price_file"),
+    # product
+    path("products/", ProductListView.as_view(), name="products"),
+    path("products/<slug>/", ProductShopDetailListView.as_view(), name="product_details_list"),
 ]

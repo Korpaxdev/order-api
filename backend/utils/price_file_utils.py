@@ -26,7 +26,7 @@ def get_fixtures_paths(shop_id: int) -> FixturesPathsType:
         path.mkdir(parents=True, exist_ok=True)
     fixtures: FixturesPathsType = {
         "product": str(products_fixtures_path / fixture_name),
-        "product_param": str(product_params_fixtures_path / fixture_name)
+        "product_param": str(product_params_fixtures_path / fixture_name),
     }
     return fixtures
 
@@ -42,10 +42,10 @@ def set_all_position_to_0(shop: ShopModel):
 
 def validate_product(product: dict):
     for field in PRODUCT_FIELDS:
-        if Validation.REQUIRED in field['validation'] and not product.get(field['name']):
-            raise PriceFileException(PriceFileMessages.REQUIRED_FIELD % field['name'])
-        if Validation.IS_NUMBER in field['validation'] and not isinstance(product.get(field['name']), int):
-            raise PriceFileException(PriceFileMessages.NOT_A_NUMBER % field['name'])
+        if Validation.REQUIRED in field["validation"] and not product.get(field["name"]):
+            raise PriceFileException(PriceFileMessages.REQUIRED_FIELD % field["name"])
+        if Validation.IS_NUMBER in field["validation"] and not isinstance(product.get(field["name"]), int):
+            raise PriceFileException(PriceFileMessages.NOT_A_NUMBER % field["name"])
 
 
 def validate_price_data(price_data: any) -> list[ProductType]:
