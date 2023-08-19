@@ -7,13 +7,9 @@ from backend.filters.shop_filters import ShopListFilterSet
 from backend.models import ProductShopModel, ShopModel
 from backend.permissions.shop_permissions import IsManagerOrAdminPermission
 from backend.serializers.product_serializers import ProductShopDetailListSerializer
-from backend.serializers.shop_serializers import (
-    ShopDetailSerializer,
-    ShopListSerializer,
-    ShopPriceFileUpdateSerializer,
-    ShopUpdateStatusSerializer,
-)
-from backend.tasks import remove_file, update_price_file
+from backend.serializers.shop_serializers import (ShopDetailSerializer, ShopListSerializer,
+                                                  ShopPriceFileUpdateSerializer, ShopUpdateStatusSerializer)
+from backend.tasks import remove_file_task, update_price_file_task
 
 
 class ShopListView(generics.ListAPIView):
@@ -61,7 +57,7 @@ class ShopPriceFileUpdate(generics.GenericAPIView):
             raise exceptions.ValidationError(serializer.errors)
         old_price_file = instance.price_file
         if old_price_file and old_price_file.name:
-            remove_file.delay(old_price_file.path)
+            remove_file_task.delay(old_price_file.path)
         serializer.save()
-        update_price_file.delay(instance.pk, instance.price_file.path)
+        update_price_file_task.delay(instance.pk, instance.price_file.path, request.user.pk)
         return Response(serializer.data)

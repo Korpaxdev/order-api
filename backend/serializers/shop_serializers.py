@@ -3,8 +3,7 @@ from django.core.files.uploadedfile import InMemoryUploadedFile
 from django.http import HttpRequest
 from rest_framework import serializers
 
-from backend.models import SHOP_STATUS_CHOICES, ProductShopModel, ShopModel
-from backend.serializers.product_serializers import ProductParameterSerializer
+from backend.models import ShopModel
 
 
 class ShopListSerializer(serializers.ModelSerializer):
@@ -42,7 +41,7 @@ class ShopUpdateStatusSerializer(serializers.ModelSerializer):
 
     def validate_status(self, value):
         if value and not self.instance.price_file:
-            status_name = dict(SHOP_STATUS_CHOICES).get(value)
+            status_name = dict(ShopModel.SHOP_STATUS_CHOICES).get(value)
             raise serializers.ValidationError(
                 f"Невозможно установить статус {status_name}, когда у магазина отсутствует прайс файл"
             )

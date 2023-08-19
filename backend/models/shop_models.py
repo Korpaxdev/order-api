@@ -5,12 +5,8 @@ from django.conf import settings
 from django.contrib.auth.models import User
 from django.core.files.uploadedfile import InMemoryUploadedFile
 from django.db import models
+from django.urls import reverse
 from pytils.translit import slugify
-
-SHOP_STATUS_CHOICES = (
-    (True, "Готов принимать заказы"),
-    (False, "Не готов принимать заказы"),
-)
 
 
 def update_filename(instance: "ShopModel", filename: str):
@@ -19,6 +15,11 @@ def update_filename(instance: "ShopModel", filename: str):
 
 
 class ShopModel(models.Model):
+    SHOP_STATUS_CHOICES = (
+        (True, "Готов принимать заказы"),
+        (False, "Не готов принимать заказы"),
+    )
+
     name = models.CharField(max_length=51, unique=True, verbose_name="Название магазина")
     price_file = models.FileField(upload_to=update_filename, blank=True, null=True, verbose_name="Прайс файл магазина")
     status = models.BooleanField(default=False, choices=SHOP_STATUS_CHOICES, verbose_name="Статус магазина")
@@ -36,6 +37,12 @@ class ShopModel(models.Model):
 
     def is_manager_or_admin(self, user: User):
         return not user.is_anonymous and (user.is_superuser or self.managers.filter(user=user).exists())
+
+    def get_absolute_url(self):
+        return reverse('shop_detail', kwargs={'slug': self.slug})
+
+    def get_products_url(self):
+        return reverse('shop_price_list', kwargs={'slug': self.slug})
 
     @staticmethod
     def is_valid_price_file(price_file: InMemoryUploadedFile):

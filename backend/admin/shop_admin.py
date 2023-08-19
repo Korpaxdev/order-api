@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib import admin
 
-from backend.models import SHOP_STATUS_CHOICES, ShopModel
+from backend.models import ShopModel
 
 
 class ShopForm(forms.ModelForm):
@@ -12,7 +12,7 @@ class ShopForm(forms.ModelForm):
     def clean(self):
         cleaned_data = super().clean()
         status = cleaned_data.get("status")
-        status_name = dict(SHOP_STATUS_CHOICES).get(status)
+        status_name = dict(ShopModel.SHOP_STATUS_CHOICES).get(status)
         if status and not cleaned_data.get("price_file"):
             self.add_error(
                 "status", f"Невозможно установить статус {status_name}, когда у магазина отсутствует прайс файл"

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.sites",
     # 3rd party apps
     "rest_framework",
     "debug_toolbar",
@@ -135,8 +136,17 @@ MEDIA_URL = "media/"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+SITE_ID = 1
 
-INTERNAL_IPS = ("127.0.0.1",)
+# ---------- EMAIL ----------
+EMAIL_USE_TLS = True
+EMAIL_HOST = getenv("EMAIL_HOST")
+EMAIL_PORT = getenv("EMAIL_PORT")
+EMAIL_HOST_USER = getenv("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = getenv("EMAIL_HOST_PASSWORD")
+
+# ---------- REST_FRAMEWORK ----------
+
 REST_FRAMEWORK = {
     "DEFAULT_FILTER_BACKENDS": ("django_filters.rest_framework.DjangoFilterBackend",),
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
@@ -147,9 +157,14 @@ REST_FRAMEWORK = {
     ),
 }
 
-PRICE_FILE_FORMATS = [".yml"]
-PRICE_FILE_BACKUP_FIXTURES = BASE_DIR / "backup_fixtures"
+# ---------- CELERY ----------
 
 CELERY_BROKER_URL = getenv("CELERY_BROKER_URL")
 CELERY_RESULT_BACKEND = getenv("CELERY_RESULT_BACKEND")
 CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True
+
+# ---------- ADDITIONAL_CONFIG ----------
+
+INTERNAL_IPS = ("127.0.0.1",)
+PRICE_FILE_FORMATS = [".yml"]
+PRICE_FILE_BACKUP_FIXTURES = BASE_DIR / "backup_fixtures"

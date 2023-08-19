@@ -1,6 +1,15 @@
 from django.contrib import admin
 
-from backend.models import UserManagerModel, UserModel
+from backend.models import OrderAddressModel, OrderModel, OrderPositionModel, UserManagerModel, UserModel
+
+# ---------- Inline classes ----------
+
+class OrderItemInline(admin.TabularInline):
+    extra = 1
+    model = OrderPositionModel
+
+
+# ---------- Admin classes ----------
 
 
 @admin.register(UserModel)
@@ -34,3 +43,14 @@ class UserManagerModelAdmin(admin.ModelAdmin):
     @admin.display(description="Магазины")
     def get_shops(self, instance: UserManagerModel):
         return [shop.name for shop in instance.shops.all()]
+
+
+@admin.register(OrderModel)
+class OrderModelAdmin(admin.ModelAdmin):
+    raw_id_fields = ('user', 'address')
+    inlines = (OrderItemInline,)
+
+
+@admin.register(OrderAddressModel)
+class OrderAddressModelAdmin(admin.ModelAdmin):
+    pass
