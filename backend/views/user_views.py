@@ -3,12 +3,8 @@ from rest_framework import generics, permissions
 from rest_framework.response import Response
 
 from backend.models import OrderItemsModel, OrderModel, UserModel
-from backend.serializers.user_serializers import (
-    OrderDetailSerializer,
-    OrderPositionSerializer,
-    OrderSerializer,
-    UserSerializer,
-)
+from backend.serializers.user_serializers import (OrderDetailSerializer, OrderPositionSerializer, OrderSerializer,
+                                                  UserSerializer)
 
 
 class UserProfileView(generics.GenericAPIView):

@@ -38,3 +38,4 @@ class ErrorMessages:
     POSITION_IS_OUT_OF_STOCK = "Такой позиции сейчас нет в наличии в магазине"
     LESSER_QUANTITY = "Количество товара в магазине меньше чем указанное количество в заказе"
     USER_EMAIL_IS_EXIST = "Такой email уже используется"
+    QUANTITY_GREATER_THAN_0 = "Количество товара в заказе должно быть больше 0"

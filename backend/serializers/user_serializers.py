@@ -2,15 +2,8 @@ from django.core.validators import MinValueValidator
 from rest_framework import serializers
 from rest_framework.reverse import reverse
 
-from backend.models import (
-    OrderAddressModel,
-    OrderItemsModel,
-    OrderModel,
-    ProductModel,
-    ProductShopModel,
-    ShopModel,
-    UserModel,
-)
+from backend.models import (OrderAddressModel, OrderItemsModel, OrderModel, ProductModel, ProductShopModel, ShopModel,
+                            UserModel)
 from backend.serializers.product_serializers import ProductShopDetailListSerializer
 from backend.utils.constants import ErrorMessages
 

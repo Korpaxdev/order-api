@@ -1,5 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.urls import reverse
 
 
 class UserModel(AbstractUser):
@@ -57,6 +58,9 @@ class OrderModel(models.Model):
 
     def get_total_price(self):
         return sum([item.get_sum_price() for item in self.items.all()])
+
+    def get_absolute_url(self):
+        return reverse("order_detail", kwargs={"pk": self.pk})
 
 
 class OrderItemsModel(models.Model):

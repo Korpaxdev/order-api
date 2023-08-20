@@ -1,6 +1,31 @@
+from django import forms
 from django.contrib import admin
 
-from backend.models import OrderAddressModel, OrderItemsModel, OrderModel, UserManagerModel, UserModel
+from backend.models import OrderAddressModel, OrderItemsModel, OrderModel, ProductShopModel, UserManagerModel, UserModel
+from backend.tasks.email_tasks import send_status_change_email
+from backend.utils.constants import ErrorMessages
+
+
+# ---------- Form Classes ----------
+class OrderItemForm(forms.ModelForm):
+    class Meta:
+        model = OrderItemsModel
+        fields = ("position", "quantity", "price", "price_rrc")
+
+    def clean(self):
+        cleaned_data = self.cleaned_data
+        quantity: int = cleaned_data.get("quantity")
+        if not quantity:
+            self.add_error("quantity", ErrorMessages.QUANTITY_GREATER_THAN_0)
+        position: ProductShopModel | None = cleaned_data.get("position")
+        if not position:
+            return
+        elif not position.quantity:
+            self.add_error("position", ErrorMessages.POSITION_IS_OUT_OF_STOCK)
+        elif position.quantity < quantity:
+            self.add_error("quantity", ErrorMessages.LESSER_QUANTITY)
+            self.add_error("position", ErrorMessages.LESSER_QUANTITY)
+
 
 # ---------- Inline classes ----------
 
@@ -10,6 +35,8 @@ class OrderItemInline(admin.TabularInline):
     model = OrderItemsModel
     fields = ("position", "quantity", "price", "price_rrc", "get_total_price")
     readonly_fields = ("price", "price_rrc", "get_total_price")
+    form = OrderItemForm
+    raw_id_fields = ("position",)
 
     @admin.display(description="Итого")
     def get_total_price(self, instance: OrderItemsModel):
@@ -65,7 +92,13 @@ class OrderModelAdmin(admin.ModelAdmin):
     def get_total_price(self, instance: OrderModel):
         return instance.get_total_price()
 
+    def save_model(self, request, obj, form, change):
+        if change and "status" in form.changed_data:
+            send_status_change_email.delay(request.user.pk, obj.pk)
+        super(OrderModelAdmin, self).save_model(request, obj, form, change)
+
 
 @admin.register(OrderAddressModel)
 class OrderAddressModelAdmin(admin.ModelAdmin):
-    pass
+    list_display = ("id", "postal_code", "country", "region", "city")
+    list_display_links = ("id", "postal_code")
