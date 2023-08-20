@@ -39,10 +39,10 @@ class ShopModel(models.Model):
         return not user.is_anonymous and (user.is_superuser or self.managers.filter(user=user).exists())
 
     def get_absolute_url(self):
-        return reverse('shop_detail', kwargs={'slug': self.slug})
+        return reverse("shop_detail", kwargs={"slug": self.slug})
 
     def get_products_url(self):
-        return reverse('shop_price_list', kwargs={'slug': self.slug})
+        return reverse("shop_price_list", kwargs={"slug": self.slug})
 
     @staticmethod
     def is_valid_price_file(price_file: InMemoryUploadedFile):

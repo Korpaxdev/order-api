@@ -50,9 +50,7 @@ class Migration(migrations.Migration):
                 ),
                 (
                     "created_at",
-                    models.DateTimeField(
-                        auto_now_add=True, verbose_name="Дата создания"
-                    ),
+                    models.DateTimeField(auto_now_add=True, verbose_name="Дата создания"),
                 ),
                 (
                     "status",
@@ -110,16 +108,12 @@ class Migration(migrations.Migration):
                 ),
                 (
                     "quantity",
-                    models.PositiveIntegerField(
-                        default=1, verbose_name="Количество товара"
-                    ),
+                    models.PositiveIntegerField(default=1, verbose_name="Количество товара"),
                 ),
                 ("price", models.PositiveIntegerField(verbose_name="Цена товара")),
                 (
                     "price_rrc",
-                    models.PositiveIntegerField(
-                        verbose_name="Рекомендованная розничная цена"
-                    ),
+                    models.PositiveIntegerField(verbose_name="Рекомендованная розничная цена"),
                 ),
                 (
                     "order",

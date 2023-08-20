@@ -2,10 +2,20 @@ from django.urls import path
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 from backend.views.product_views import ProductListView, ProductShopDetailListView
-from backend.views.shop_views import (ShopDetailView, ShopListView, ShopPriceFileUpdate, ShopPriceListView,
-                                      ShopUpdateStatusView)
-from backend.views.user_views import (UserOrderDetailView, UserOrderPositionsView, UserOrdersView, UserProfileView,
-                                      UserRegisterView)
+from backend.views.shop_views import (
+    ShopDetailView,
+    ShopListView,
+    ShopPriceFileUpdate,
+    ShopPriceListView,
+    ShopUpdateStatusView,
+)
+from backend.views.user_views import (
+    UserOrderDetailView,
+    UserOrderPositionsView,
+    UserOrdersView,
+    UserProfileView,
+    UserRegisterView,
+)
 
 urlpatterns = [
     # user

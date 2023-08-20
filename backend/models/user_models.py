@@ -55,10 +55,12 @@ class OrderModel(models.Model):
     def __str__(self):
         return f"Заказ пользователя {self.user.username}"
 
+    def get_total_price(self):
+        return sum([item.get_sum_price() for item in self.items.all()])
 
-class OrderPositionModel(models.Model):
-    order = models.ForeignKey(OrderModel, on_delete=models.CASCADE, related_name="positions",
-                              verbose_name="Заказ")
+
+class OrderItemsModel(models.Model):
+    order = models.ForeignKey(OrderModel, on_delete=models.CASCADE, related_name="items", verbose_name="Заказ")
     position = models.ForeignKey("ProductShopModel", on_delete=models.PROTECT, verbose_name="Товар")
     quantity = models.PositiveIntegerField(default=1, verbose_name="Количество товара")
     price = models.PositiveIntegerField(verbose_name="Цена товара")

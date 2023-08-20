@@ -16,8 +16,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name="ordermodel",
             name="additional",
-            field=models.TextField(
-                blank=True, null=True, verbose_name="Дополнительная информация"
-            ),
+            field=models.TextField(blank=True, null=True, verbose_name="Дополнительная информация"),
         ),
     ]

@@ -7,8 +7,12 @@ from backend.filters.shop_filters import ShopListFilterSet
 from backend.models import ProductShopModel, ShopModel
 from backend.permissions.shop_permissions import IsManagerOrAdminPermission
 from backend.serializers.product_serializers import ProductShopDetailListSerializer
-from backend.serializers.shop_serializers import (ShopDetailSerializer, ShopListSerializer,
-                                                  ShopPriceFileUpdateSerializer, ShopUpdateStatusSerializer)
+from backend.serializers.shop_serializers import (
+    ShopDetailSerializer,
+    ShopListSerializer,
+    ShopPriceFileUpdateSerializer,
+    ShopUpdateStatusSerializer,
+)
 from backend.tasks import remove_file_task, update_price_file_task
 
 

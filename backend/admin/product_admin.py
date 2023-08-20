@@ -25,10 +25,11 @@ class ProductParameterModelAdmin(admin.ModelAdmin):
 
 @admin.register(ProductModel)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ("name", "get_categories")
+    list_display = ("id", "name", "get_categories")
     readonly_fields = ("slug",)
     search_fields = ("name",)
     list_filter = ("categories",)
+    list_display_links = ("id", "name")
 
     @admin.display(description="Категории")
     def get_categories(self, instance: ProductModel):

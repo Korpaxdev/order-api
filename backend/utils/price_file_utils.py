@@ -3,7 +3,7 @@ import uuid
 from django.conf import settings
 
 from backend.models import ShopModel
-from backend.utils.constants import PRODUCT_FIELDS, PriceFileMessages, Validation
+from backend.utils.constants import PRODUCT_FIELDS, ErrorMessages, Validation
 from backend.utils.exceptions import PriceFileException
 from backend.utils.types import FixturesPathsType, ProductType
 
@@ -43,14 +43,14 @@ def set_all_position_to_0(shop: ShopModel):
 def validate_product(product: dict):
     for field in PRODUCT_FIELDS:
         if Validation.REQUIRED in field["validation"] and not product.get(field["name"]):
-            raise PriceFileException(PriceFileMessages.REQUIRED_FIELD % field["name"])
+            raise PriceFileException(ErrorMessages.PRICE_FILE_REQUIRED_FIELD % field["name"])
         if Validation.IS_NUMBER in field["validation"] and not isinstance(product.get(field["name"]), int):
-            raise PriceFileException(PriceFileMessages.NOT_A_NUMBER % field["name"])
+            raise PriceFileException(ErrorMessages.PRICE_FILE_NOT_A_NUMBER % field["name"])
 
 
 def validate_price_data(price_data: any) -> list[ProductType]:
     if not isinstance(price_data, list):
-        raise PriceFileException(PriceFileMessages.INCORRECT_FILE)
+        raise PriceFileException(ErrorMessages.PRICE_FILE_INCORRECT_FILE)
     for product in price_data:
         validate_product(product)
     return price_data

@@ -16,11 +16,9 @@ def send_email_task(user_id: int, shop_id: int, template: str):
     shop = ShopModel.objects.get(id=shop_id)
     domain = Site.objects.get_current().domain
 
-    message = EmailMultiAlternatives(subject="Обновление прайса",
-                                     from_email=settings.EMAIL_HOST_USER,
-                                     to=(user.email,))
+    message = EmailMultiAlternatives(subject="Обновление прайса", from_email=settings.EMAIL_HOST_USER, to=(user.email,))
 
-    html_body = render_to_string(template, context={'shop': shop, 'domain': domain})
+    html_body = render_to_string(template, context={"shop": shop, "domain": domain})
     message.attach_alternative(html_body, "text/html")
     message.send()
     print(f"Message successfully sent to {user.username}")

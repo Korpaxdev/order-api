@@ -1,12 +1,19 @@
 from django.contrib import admin
 
-from backend.models import OrderAddressModel, OrderModel, OrderPositionModel, UserManagerModel, UserModel
+from backend.models import OrderAddressModel, OrderItemsModel, OrderModel, UserManagerModel, UserModel
 
 # ---------- Inline classes ----------
 
+
 class OrderItemInline(admin.TabularInline):
     extra = 1
-    model = OrderPositionModel
+    model = OrderItemsModel
+    fields = ("position", "quantity", "price", "price_rrc", "get_total_price")
+    readonly_fields = ("price", "price_rrc", "get_total_price")
+
+    @admin.display(description="Итого")
+    def get_total_price(self, instance: OrderItemsModel):
+        return instance.get_sum_price()
 
 
 # ---------- Admin classes ----------
@@ -47,8 +54,16 @@ class UserManagerModelAdmin(admin.ModelAdmin):
 
 @admin.register(OrderModel)
 class OrderModelAdmin(admin.ModelAdmin):
-    raw_id_fields = ('user', 'address')
+    raw_id_fields = ("user", "address")
     inlines = (OrderItemInline,)
+    list_display = ("id", "user", "status", "created_at", "get_total_price")
+    list_display_links = ("id", "user")
+    search_fields = ("user__username",)
+    list_filter = ("status", "created_at")
+
+    @admin.display(description="Итого")
+    def get_total_price(self, instance: OrderModel):
+        return instance.get_total_price()
 
 
 @admin.register(OrderAddressModel)

@@ -21,7 +21,8 @@ class ShopForm(forms.ModelForm):
 
 @admin.register(ShopModel)
 class ShopAdmin(admin.ModelAdmin):
-    list_display = ("name", "status")
+    list_display = ("id", "name", "status")
     readonly_fields = ("slug",)
     search_fields = ("name",)
     form = ShopForm
+    list_display_links = ("id", "name")
