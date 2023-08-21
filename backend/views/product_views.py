@@ -20,9 +20,10 @@ class ProductListView(generics.ListAPIView):
 class ProductShopDetailListView(generics.ListAPIView):
     serializer_class = ProductShopDetailListSerializer
     lookup_field = "slug"
+    lookup_url_kwarg = "product"
 
     def get_queryset(self):
-        slug = self.kwargs.get(self.lookup_field)
+        slug = self.kwargs.get(self.lookup_url_kwarg)
         return (
             ProductShopModel.objects.filter(product__slug=slug, shop__status=True, quantity__gt=0)
             .select_related("product", "shop")

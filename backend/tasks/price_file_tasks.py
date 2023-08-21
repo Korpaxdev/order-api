@@ -3,8 +3,7 @@ import os
 import yaml
 from celery import shared_task
 
-from backend.models import CategoryModel, ParameterModel, ProductModel, ProductParameterModel, ShopModel, UserModel
-from backend.tasks.email_tasks import send_email_task
+from backend.models import CategoryModel, ParameterModel, ProductModel, ProductParameterModel, ShopModel
 from backend.utils.managment_utils import dump_data, load_data
 from backend.utils.price_file_utils import get_fixtures_paths, set_all_position_to_0, validate_price_data
 
@@ -71,8 +70,6 @@ def update_price_file_task(shop_id: int, price_file: str, user_id: int):
 
         for fixture in fixtures.values():
             remove_file_task.delay(fixture)
-
-        send_email_task.delay(user_id, shop.pk, "email_templates/price_success_update.html")
 
     except Exception as e:
         set_all_position_to_0(shop)

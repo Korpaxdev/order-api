@@ -2,8 +2,15 @@ from django.core.validators import MinValueValidator
 from rest_framework import serializers
 from rest_framework.reverse import reverse
 
-from backend.models import (OrderAddressModel, OrderItemsModel, OrderModel, ProductModel, ProductShopModel, ShopModel,
-                            UserModel)
+from backend.models import (
+    OrderAddressModel,
+    OrderItemsModel,
+    OrderModel,
+    ProductModel,
+    ProductShopModel,
+    ShopModel,
+    UserModel,
+)
 from backend.serializers.product_serializers import ProductShopDetailListSerializer
 from backend.utils.constants import ErrorMessages
 
@@ -51,7 +58,9 @@ class OrderItemsCreateSerializer(serializers.ModelSerializer):
 
 class OrderSerializer(serializers.ModelSerializer):
     status = serializers.CharField(source="get_status_display", read_only=True)
-    details = serializers.HyperlinkedIdentityField("order_detail", read_only=True)
+    details = serializers.HyperlinkedIdentityField(
+        "order_detail", lookup_field="pk", lookup_url_kwarg="order", read_only=True
+    )
     address = OrderAddressSerializer(write_only=True)
     order_items = OrderItemsCreateSerializer(many=True, allow_null=False, allow_empty=False, write_only=True)
 
@@ -73,15 +82,7 @@ class OrderSerializer(serializers.ModelSerializer):
 
 class OrderProductShopSerializer(ProductShopDetailListSerializer):
     class Meta(ProductShopDetailListSerializer.Meta):
-        fields = (
-            "product_id",
-            "product_name",
-            "categories",
-            "shop_id",
-            "shop_name",
-            "description",
-            "params",
-        )
+        fields = ("product_id", "product_name", "shop_id", "shop_name", "description", "params")
 
 
 class OrderPositionSerializer(serializers.ModelSerializer):
@@ -100,15 +101,12 @@ class OrderPositionSerializer(serializers.ModelSerializer):
 class OrderDetailSerializer(serializers.ModelSerializer):
     status = serializers.CharField(source="get_status_display", read_only=True)
     address = OrderAddressSerializer(read_only=True)
-    items = serializers.SerializerMethodField("get_positions_link", read_only=True)
+    items = serializers.HyperlinkedIdentityField("order_positions", lookup_field="pk", lookup_url_kwarg="order")
     total_price = serializers.SerializerMethodField("get_total_price", read_only=True)
 
     class Meta:
         model = OrderModel
         fields = ("id", "created_at", "status", "address", "additional", "items", "total_price")
-
-    def get_positions_link(self, instance: OrderModel):
-        return reverse("order_positions", request=self.context["request"], kwargs={"pk": instance.pk})
 
     @staticmethod
     def get_total_price(instance: OrderModel):

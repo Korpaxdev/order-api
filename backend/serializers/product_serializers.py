@@ -14,7 +14,9 @@ class ProductParameterSerializer(serializers.ModelSerializer):
 
 class ProductListSerializer(serializers.ModelSerializer):
     categories = serializers.SerializerMethodField("get_categories")
-    details = serializers.HyperlinkedIdentityField("product_details_list", lookup_field="slug")
+    details = serializers.HyperlinkedIdentityField(
+        "product_details_list", lookup_field="slug", lookup_url_kwarg="product"
+    )
 
     class Meta:
         model = ProductModel

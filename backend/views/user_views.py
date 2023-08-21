@@ -3,8 +3,12 @@ from rest_framework import generics, permissions
 from rest_framework.response import Response
 
 from backend.models import OrderItemsModel, OrderModel, UserModel
-from backend.serializers.user_serializers import (OrderDetailSerializer, OrderPositionSerializer, OrderSerializer,
-                                                  UserSerializer)
+from backend.serializers.user_serializers import (
+    OrderDetailSerializer,
+    OrderPositionSerializer,
+    OrderSerializer,
+    UserSerializer,
+)
 
 
 class UserProfileView(generics.GenericAPIView):
@@ -33,6 +37,7 @@ class UserOrdersView(generics.ListCreateAPIView):
 class UserOrderDetailView(generics.RetrieveAPIView):
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class = OrderDetailSerializer
+    lookup_url_kwarg = "order"
 
     def get_queryset(self):
         return OrderModel.objects.filter(user=self.request.user).prefetch_related("items__position")
@@ -41,10 +46,11 @@ class UserOrderDetailView(generics.RetrieveAPIView):
 class UserOrderPositionsView(generics.ListAPIView):
     permissions = (permissions.IsAuthenticated,)
     serializer_class = OrderPositionSerializer
+    lookup_url_kwarg = "order"
 
     def get_queryset(self):
         return (
-            OrderItemsModel.objects.filter(order=self.kwargs["pk"], order__user=self.request.user)
+            OrderItemsModel.objects.filter(order=self.kwargs["order"], order__user=self.request.user)
             .select_related("position__product", "position__shop")
             .prefetch_related("position__product__categories", "position__product_parameters__param")
         )

@@ -1,14 +1,21 @@
 from django.core.files.uploadedfile import InMemoryUploadedFile
 from django.http import HttpRequest
 from rest_framework import serializers
+from rest_framework.reverse import reverse
 
-from backend.models import ShopModel
+from backend.models import OrderModel, ShopModel
+from backend.serializers.user_serializers import (
+    OrderDetailSerializer,
+    OrderPositionSerializer,
+    OrderProductShopSerializer,
+    OrderSerializer,
+)
 from backend.utils.constants import ErrorMessages
 
 
 class ShopListSerializer(serializers.ModelSerializer):
     status = serializers.CharField(source="get_status_display")
-    detail = serializers.HyperlinkedIdentityField("shop_detail", lookup_field="slug")
+    detail = serializers.HyperlinkedIdentityField("shop_detail", lookup_field="slug", lookup_url_kwarg="shop")
 
     class Meta:
         model = ShopModel
@@ -17,10 +24,10 @@ class ShopListSerializer(serializers.ModelSerializer):
 
 class ShopDetailSerializer(serializers.ModelSerializer):
     status = serializers.CharField(source="get_status_display")
-    price_list = serializers.HyperlinkedIdentityField("shop_price_list", lookup_field="slug")
+    price_list = serializers.HyperlinkedIdentityField("shop_price_list", lookup_field="slug", lookup_url_kwarg="shop")
+    orders = serializers.HyperlinkedIdentityField("shop_orders", lookup_field="slug", lookup_url_kwarg="shop")
 
     def __init__(self, instance: ShopModel, **kwargs):
-        # Проверяется если пользователь админ или менеджер то поле price_file остается, если же нет то удаляется
         context = kwargs["context"]
         request: HttpRequest = context["request"]
         if not instance.status:
@@ -31,7 +38,7 @@ class ShopDetailSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ShopModel
-        fields = ("id", "name", "email", "phone", "status", "price_list", "price_file")
+        fields = ("id", "name", "email", "phone", "status", "price_list", "price_file", "orders")
 
 
 class ShopUpdateStatusSerializer(serializers.ModelSerializer):
@@ -57,3 +64,42 @@ class ShopPriceFileUpdateSerializer(serializers.ModelSerializer):
         if not instance.is_valid_price_file(value):
             raise serializers.ValidationError(ErrorMessages.PRICE_FILE_INCORRECT_FORMAT)
         return value
+
+
+class ShopOrderSerializer(OrderSerializer):
+    details = serializers.SerializerMethodField("get_details_url")
+
+    def get_details_url(self, instance: OrderModel):
+        view = self.context["view"]
+        return reverse(
+            "shop_order_details",
+            request=self.context["request"],
+            kwargs={"shop": view.kwargs.get(view.lookup_url_kwarg), "order": instance.pk},
+        )
+
+
+class ShopOrderDetailsSerializer(OrderDetailSerializer):
+    items = serializers.SerializerMethodField("get_items_url")
+
+    class Meta(OrderDetailSerializer.Meta):
+        fields = ("id", "created_at", "status", "address", "items")
+
+    def get_items_url(self, instance: OrderModel):
+        view = self.context["view"]
+        return reverse(
+            "shop_order_items",
+            request=self.context["request"],
+            kwargs={"shop": view.kwargs.get(view.lookup_shop_url_kwarg), "order": instance.pk},
+        )
+
+
+class ShopOrderPositionSerializer(OrderProductShopSerializer):
+    class Meta(OrderProductShopSerializer.Meta):
+        fields = ("product_id", "product_name", "description", "params")
+
+
+class ShopOrderItemsSerializer(OrderPositionSerializer):
+    position = ShopOrderPositionSerializer(read_only=True)
+
+    class Meta(OrderPositionSerializer.Meta):
+        fields = ("position", "quantity", "price", "price_rrc")
