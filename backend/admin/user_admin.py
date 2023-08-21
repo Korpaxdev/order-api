@@ -1,5 +1,6 @@
 from django import forms
 from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin
 
 from backend.models import OrderAddressModel, OrderItemsModel, OrderModel, ProductShopModel, UserManagerModel, UserModel
 from backend.tasks.email_tasks import send_status_change_email
@@ -47,19 +48,7 @@ class OrderItemInline(admin.TabularInline):
 
 
 @admin.register(UserModel)
-class UserModelAdmin(admin.ModelAdmin):
-    fields = (
-        "username",
-        "password",
-        "email",
-        "first_name",
-        "last_name",
-        "is_superuser",
-        "is_staff",
-        "is_active",
-        "date_joined",
-        "last_login",
-    )
+class UserModelAdmin(UserAdmin):
     search_fields = ("username", "email")
     list_display = ("username", "email", "is_superuser", "is_staff", "is_active")
 

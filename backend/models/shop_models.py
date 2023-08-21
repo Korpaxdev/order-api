@@ -2,7 +2,6 @@ from datetime import datetime
 from pathlib import Path
 
 from django.conf import settings
-from django.contrib.auth.models import User
 from django.core.files.uploadedfile import InMemoryUploadedFile
 from django.db import models
 from django.urls import reverse
@@ -34,9 +33,6 @@ class ShopModel(models.Model):
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
         super(ShopModel, self).save(*args, **kwargs)
-
-    def is_manager_or_admin(self, user: User):
-        return not user.is_anonymous and (user.is_superuser or self.managers.filter(user=user).exists())
 
     def get_absolute_url(self):
         return reverse("shop_detail", kwargs={"slug": self.slug})

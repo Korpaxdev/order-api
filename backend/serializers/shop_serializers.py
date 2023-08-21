@@ -1,9 +1,8 @@
 from django.core.files.uploadedfile import InMemoryUploadedFile
-from django.http import HttpRequest
 from rest_framework import serializers
 from rest_framework.reverse import reverse
 
-from backend.models import OrderModel, ShopModel
+from backend.models import OrderModel, ShopModel, UserModel
 from backend.serializers.user_serializers import (
     OrderDetailSerializer,
     OrderPositionSerializer,
@@ -28,13 +27,12 @@ class ShopDetailSerializer(serializers.ModelSerializer):
     orders = serializers.HyperlinkedIdentityField("shop_orders", lookup_field="slug", lookup_url_kwarg="shop")
 
     def __init__(self, instance: ShopModel, **kwargs):
-        context = kwargs["context"]
-        request: HttpRequest = context["request"]
+        super().__init__(instance, **kwargs)
+        user: UserModel = self.context["request"].user
         if not instance.status:
             del self.fields["price_list"]
-        if not instance.is_manager_or_admin(request.user):
+        if user.is_anonymous or (not user.is_manager(instance) and not user.is_superuser):
             del self.fields["price_file"]
-        super().__init__(instance, **kwargs)
 
     class Meta:
         model = ShopModel

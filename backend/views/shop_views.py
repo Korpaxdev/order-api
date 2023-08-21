@@ -48,6 +48,7 @@ class ShopPriceListView(generics.ListAPIView):
 
 
 class ShopUpdateStatusView(generics.UpdateAPIView):
+    permission_classes = (permissions.IsAuthenticated, IsManagerOrAdminPermission)
     queryset = ShopModel.objects.all()
     serializer_class = ShopUpdateStatusSerializer
     lookup_field = "slug"
@@ -55,7 +56,7 @@ class ShopUpdateStatusView(generics.UpdateAPIView):
 
 
 class ShopPriceFileUpdate(generics.GenericAPIView):
-    permission_classes = (IsManagerOrAdminPermission,)
+    permission_classes = (permissions.IsAuthenticated, IsManagerOrAdminPermission)
     queryset = ShopModel.objects.all()
     serializer_class = ShopPriceFileUpdateSerializer
     lookup_field = "slug"
@@ -75,7 +76,7 @@ class ShopPriceFileUpdate(generics.GenericAPIView):
 
 
 class ShopOrderView(generics.ListAPIView):
-    permission_classes = (permissions.IsAuthenticated,)
+    permission_classes = (permissions.IsAuthenticated, IsManagerOrAdminPermission)
     serializer_class = ShopOrderSerializer
     lookup_url_kwarg = "shop"
     lookup_field = "slug"
@@ -85,7 +86,7 @@ class ShopOrderView(generics.ListAPIView):
 
 
 class ShopOrderDetailsView(generics.RetrieveAPIView):
-    permission_classes = (permissions.IsAuthenticated,)
+    permission_classes = (permissions.IsAuthenticated, IsManagerOrAdminPermission)
     serializer_class = ShopOrderDetailsSerializer
     lookup_url_kwarg = "order"
     lookup_shop_url_kwarg = "shop"
@@ -99,7 +100,7 @@ class ShopOrderDetailsView(generics.RetrieveAPIView):
 
 
 class ShopOrderItemsView(generics.ListAPIView):
-    permission_classes = (permissions.IsAuthenticated,)
+    permission_classes = (permissions.IsAuthenticated, IsManagerOrAdminPermission)
     serializer_class = ShopOrderItemsSerializer
     lookup_url_kwarg = "order"
     lookup_shop_url_kwarg = "shop"

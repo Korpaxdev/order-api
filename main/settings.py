@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+from datetime import timedelta
 from os import getenv
 from pathlib import Path
 
@@ -168,3 +168,5 @@ CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True
 INTERNAL_IPS = ("127.0.0.1",)
 PRICE_FILE_FORMATS = [".yml"]
 PRICE_FILE_BACKUP_FIXTURES = BASE_DIR / "backup_fixtures"
+
+ACCESS_TOKEN_LIFETIME = timedelta(minutes=10)

@@ -2,9 +2,12 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.urls import reverse
 
+from backend.models import ShopModel
+
 
 class UserModel(AbstractUser):
-    pass
+    def is_manager(self, shop: ShopModel):
+        return UserManagerModel.objects.filter(user=self, shops=shop).exists()
 
 
 class UserManagerModel(models.Model):
