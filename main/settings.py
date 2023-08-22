@@ -138,6 +138,8 @@ MEDIA_URL = "media/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 SITE_ID = 1
 
+PASSWORD_TOKEN_RESET_LIFETIME = timedelta(days=5)
+
 # ---------- EMAIL ----------
 EMAIL_USE_TLS = True
 EMAIL_HOST = getenv("EMAIL_HOST")

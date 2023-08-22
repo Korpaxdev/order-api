@@ -1,6 +1,7 @@
 from collections import defaultdict
 
 from django.core.validators import MinValueValidator
+from django.utils.datetime_safe import datetime
 from rest_framework import serializers
 from rest_framework.reverse import reverse
 
@@ -11,10 +12,11 @@ from backend.models import (
     ProductModel,
     ProductShopModel,
     ShopModel,
-    UserModel,
+    UserModel, PasswordResetTokenModel,
 )
 from backend.serializers.product_serializers import ProductShopDetailListSerializer
 from backend.utils.constants import ErrorMessages
+from backend.utils.validation import password_validation
 
 
 class OrderAddressSerializer(serializers.ModelSerializer):
@@ -146,3 +148,42 @@ class UserSerializer(serializers.ModelSerializer):
 
     def get_orders_link(self, instance: UserModel):
         return reverse("orders", request=self.context["request"])
+
+
+class UserPasswordResetTokenSerializer(serializers.ModelSerializer):
+    email = serializers.EmailField(required=True, write_only=True)
+
+    class Meta:
+        model = PasswordResetTokenModel
+        fields = ('email',)
+
+    @staticmethod
+    def validate_email(value: str):
+        user = UserModel.objects.filter(email=value).first()
+        if not user:
+            raise serializers.ValidationError("Пользователя с таким email не существует")
+        token = PasswordResetTokenModel.objects.filter(user__email=value, expire__gt=datetime.now()).first()
+        if token:
+            raise serializers.ValidationError(
+                "Для пользователя с таким email уже было отправлено письмо для сброса пароля")
+        return value
+
+    def create(self, validated_data):
+        email = validated_data.get('email')
+        user = UserModel.objects.get(email=email)
+        instance = PasswordResetTokenModel.objects.create(user=user)
+        return instance
+
+
+class UserUpdatePasswordSerializer(serializers.ModelSerializer):
+    password = serializers.CharField(validators=[password_validation], write_only=True, required=True)
+
+    class Meta:
+        model = UserModel
+        fields = ('username', 'email', 'password')
+        read_only_fields = ('username', 'email')
+
+    def update(self, instance: UserModel, validated_data):
+        instance.set_password(validated_data.get('password'))
+        instance.save()
+        return instance
