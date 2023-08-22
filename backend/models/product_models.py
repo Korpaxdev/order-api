@@ -14,8 +14,8 @@ class CategoryModel(models.Model):
 
 
 class ProductModel(models.Model):
-    name = models.CharField(max_length=100, unique=True, verbose_name="Название товара")
-    categories = models.ManyToManyField(CategoryModel, related_name="products", verbose_name="Категории товара")
+    name = models.CharField(max_length=100, unique=True, verbose_name="Название")
+    categories = models.ManyToManyField(CategoryModel, related_name="products", verbose_name="Категории")
     shops = models.ManyToManyField("ShopModel", through="ProductShopModel", verbose_name="Магазины")
     slug = models.SlugField(max_length=100, blank=True, null=True, unique=True)
 
@@ -35,9 +35,9 @@ class ProductShopModel(models.Model):
     product = models.ForeignKey(ProductModel, on_delete=models.CASCADE, verbose_name="Товар")
     shop = models.ForeignKey("ShopModel", on_delete=models.CASCADE, related_name="positions", verbose_name="Магазин")
     description = models.TextField(blank=True, null=True, verbose_name="Описание товара")
-    quantity = models.PositiveIntegerField(verbose_name="Количество товара")
-    price = models.PositiveIntegerField(verbose_name="Цена товара")
-    price_rrc = models.PositiveIntegerField(verbose_name="Рекомендованная розничная цена товара")
+    quantity = models.PositiveIntegerField(verbose_name="Количество")
+    price = models.PositiveIntegerField(verbose_name="Цена")
+    price_rrc = models.PositiveIntegerField(verbose_name="РРЦ")
 
     class Meta:
         verbose_name = "Товар в магазинах"

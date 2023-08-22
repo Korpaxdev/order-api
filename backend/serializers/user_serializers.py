@@ -1,9 +1,18 @@
+from collections import defaultdict
+
 from django.core.validators import MinValueValidator
 from rest_framework import serializers
 from rest_framework.reverse import reverse
 
-from backend.models import (OrderAddressModel, OrderItemsModel, OrderModel, ProductModel, ProductShopModel, ShopModel,
-                            UserModel)
+from backend.models import (
+    OrderAddressModel,
+    OrderItemsModel,
+    OrderModel,
+    ProductModel,
+    ProductShopModel,
+    ShopModel,
+    UserModel,
+)
 from backend.serializers.product_serializers import ProductShopDetailListSerializer
 from backend.utils.constants import ErrorMessages
 
@@ -15,13 +24,13 @@ class OrderAddressSerializer(serializers.ModelSerializer):
 
 
 class OrderItemsCreateSerializer(serializers.ModelSerializer):
-    product_id = serializers.IntegerField(source="position.product", required=True)
-    shop_id = serializers.IntegerField(source="position.shop", required=True)
+    product = serializers.IntegerField(source="position.product")
+    shop = serializers.IntegerField(source="position.shop")
     quantity = serializers.IntegerField(required=True, allow_null=False, validators=[MinValueValidator(1)])
 
     class Meta:
         model = OrderItemsModel
-        fields = ("product_id", "shop_id", "quantity")
+        fields = ("product", "shop", "quantity")
 
     @staticmethod
     def validate_product_id(value):
@@ -71,6 +80,17 @@ class OrderSerializer(serializers.ModelSerializer):
             position = ProductShopModel.objects.get(**item.get("position"))
             OrderItemsModel.objects.create(order=order, position=position, quantity=item.get("quantity"))
         return order
+
+    @staticmethod
+    def validate_order_items(validated_data):
+        duplicates = defaultdict(list)
+        for data in validated_data:
+            position = data["position"]
+            if position in duplicates["position"]:
+                raise serializers.ValidationError("Поля product и shop вместе должны быть уникальными")
+            else:
+                duplicates["position"].append(position)
+        return validated_data
 
 
 class OrderProductShopSerializer(ProductShopDetailListSerializer):

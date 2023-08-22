@@ -69,11 +69,11 @@ class OrderModel(models.Model):
 class OrderItemsModel(models.Model):
     order = models.ForeignKey(OrderModel, on_delete=models.CASCADE, related_name="items", verbose_name="Заказ")
     position = models.ForeignKey(
-        "ProductShopModel", related_name="order_items", on_delete=models.PROTECT, verbose_name="Товар"
+        "ProductShopModel", related_name="order_items", on_delete=models.PROTECT, verbose_name="Позиция"
     )
-    quantity = models.PositiveIntegerField(default=1, verbose_name="Количество товара")
-    price = models.PositiveIntegerField(verbose_name="Цена товара")
-    price_rrc = models.PositiveIntegerField(verbose_name="Рекомендованная розничная цена")
+    quantity = models.PositiveIntegerField(default=1, verbose_name="Количество")
+    price = models.PositiveIntegerField(verbose_name="Цена")
+    price_rrc = models.PositiveIntegerField(verbose_name="РРЦ")
 
     class Meta:
         verbose_name = "Позиция"
