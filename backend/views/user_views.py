@@ -3,12 +3,14 @@ from rest_framework import generics, permissions, status
 from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
 
-from backend.models import OrderItemsModel, OrderModel, UserModel, PasswordResetTokenModel
+from backend.models import OrderItemsModel, OrderModel, PasswordResetTokenModel, UserModel
 from backend.serializers.user_serializers import (
     OrderDetailSerializer,
     OrderPositionSerializer,
     OrderSerializer,
-    UserSerializer, UserPasswordResetTokenSerializer, UserUpdatePasswordSerializer,
+    UserPasswordResetTokenSerializer,
+    UserSerializer,
+    UserUpdatePasswordSerializer,
 )
 from backend.tasks.email_tasks import send_password_reset_email
 
@@ -67,9 +69,12 @@ class CreateUserPasswordResetView(generics.GenericAPIView):
         serializer.is_valid(raise_exception=True)
         instance = serializer.create(validated_data=serializer.validated_data)
         send_password_reset_email.delay(instance.pk)
-        return Response({
-            'detail': f'Email со ссылкой для сброса пароля было отправлено на указанный email адрес. Ссылка будет активна до: {instance.expire}'},
-            status=status.HTTP_204_NO_CONTENT)
+        return Response(
+            {
+                "detail": f"Email со ссылкой для сброса пароля было отправлено на указанный email адрес. Ссылка будет активна до: {instance.expire}"
+            },
+            status=status.HTTP_204_NO_CONTENT,
+        )
 
 
 class UserPasswordUpdateView(generics.GenericAPIView):
@@ -77,8 +82,8 @@ class UserPasswordUpdateView(generics.GenericAPIView):
     queryset = UserModel.objects.all()
 
     def patch(self, request, *args, **kwargs):
-        user = get_object_or_404(UserModel, username=kwargs.get('user'))
-        token = get_object_or_404(PasswordResetTokenModel, token=kwargs.get('token'), user=user)
+        user = get_object_or_404(UserModel, username=kwargs.get("user"))
+        token = get_object_or_404(PasswordResetTokenModel, token=kwargs.get("token"), user=user)
         serializer = UserUpdatePasswordSerializer(data=self.request.data, instance=user)
         serializer.is_valid(raise_exception=True)
         serializer.save()

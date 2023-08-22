@@ -1,5 +1,8 @@
-from django.contrib.auth.password_validation import MinimumLengthValidator, CommonPasswordValidator, \
-    NumericPasswordValidator
+from django.contrib.auth.password_validation import (
+    CommonPasswordValidator,
+    MinimumLengthValidator,
+    NumericPasswordValidator,
+)
 
 
 def password_validation(password: str):

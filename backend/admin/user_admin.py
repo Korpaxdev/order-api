@@ -2,8 +2,15 @@ from django import forms
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 
-from backend.models import OrderAddressModel, OrderItemsModel, OrderModel, ProductShopModel, UserManagerModel, \
-    UserModel, PasswordResetTokenModel
+from backend.models import (
+    OrderAddressModel,
+    OrderItemsModel,
+    OrderModel,
+    PasswordResetTokenModel,
+    ProductShopModel,
+    UserManagerModel,
+    UserModel,
+)
 from backend.tasks.email_tasks import send_status_change_email
 from backend.utils.constants import ErrorMessages
 
@@ -96,8 +103,8 @@ class OrderAddressModelAdmin(admin.ModelAdmin):
 
 @admin.register(PasswordResetTokenModel)
 class PasswordResetTokenModelAdmin(admin.ModelAdmin):
-    readonly_fields = ('token', 'user')
-    list_display = ('pk', 'user', 'expire')
-    list_display_links = ('pk', 'user')
-    search_fields = ('user__username', 'pk')
-    list_filter = ('expire',)
+    readonly_fields = ("token", "user")
+    list_display = ("pk", "user", "expire")
+    list_display_links = ("pk", "user")
+    search_fields = ("user__username", "pk")
+    list_filter = ("expire",)

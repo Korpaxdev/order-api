@@ -12,7 +12,8 @@ from backend.models import (
     ProductModel,
     ProductShopModel,
     ShopModel,
-    UserModel, PasswordResetTokenModel,
+    UserModel,
+    PasswordResetTokenModel,
 )
 from backend.serializers.product_serializers import ProductShopDetailListSerializer
 from backend.utils.constants import ErrorMessages
@@ -155,7 +156,7 @@ class UserPasswordResetTokenSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = PasswordResetTokenModel
-        fields = ('email',)
+        fields = ("email",)
 
     @staticmethod
     def validate_email(value: str):
@@ -165,11 +166,12 @@ class UserPasswordResetTokenSerializer(serializers.ModelSerializer):
         token = PasswordResetTokenModel.objects.filter(user__email=value, expire__gt=datetime.now()).first()
         if token:
             raise serializers.ValidationError(
-                "Для пользователя с таким email уже было отправлено письмо для сброса пароля")
+                "Для пользователя с таким email уже было отправлено письмо для сброса пароля"
+            )
         return value
 
     def create(self, validated_data):
-        email = validated_data.get('email')
+        email = validated_data.get("email")
         user = UserModel.objects.get(email=email)
         instance = PasswordResetTokenModel.objects.create(user=user)
         return instance
@@ -180,10 +182,10 @@ class UserUpdatePasswordSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = UserModel
-        fields = ('username', 'email', 'password')
-        read_only_fields = ('username', 'email')
+        fields = ("username", "email", "password")
+        read_only_fields = ("username", "email")
 
     def update(self, instance: UserModel, validated_data):
-        instance.set_password(validated_data.get('password'))
+        instance.set_password(validated_data.get("password"))
         instance.save()
         return instance

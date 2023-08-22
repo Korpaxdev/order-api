@@ -5,7 +5,7 @@ from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.urls import reverse
 
-from backend.models import OrderModel, UserModel, PasswordResetTokenModel
+from backend.models import OrderModel, PasswordResetTokenModel, UserModel
 
 
 def send_email(subject: str, to: list | tuple, context: dict, template: str):
@@ -35,11 +35,11 @@ def send_status_change_email(to_user_id: int, order_id: int):
 @shared_task
 def send_password_reset_email(password_reset_id: int):
     subject = "Сброс пароля"
-    template = 'email_templates/password_reset.html'
+    template = "email_templates/password_reset.html"
     password_reset = PasswordResetTokenModel.objects.get(id=password_reset_id)
     domain = Site.objects.get_current().domain
     context = {
-        'url': f"{domain}{reverse('password_update', kwargs={'user': password_reset.user.username, 'token': password_reset.token})}",
+        "url": f"{domain}{reverse('password_update', kwargs={'user': password_reset.user.username, 'token': password_reset.token})}",
         "expire": password_reset.expire,
     }
     send_email(subject=subject, to=(password_reset.user.email,), context=context, template=template)
