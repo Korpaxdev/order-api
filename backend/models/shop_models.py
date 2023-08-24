@@ -35,10 +35,10 @@ class ShopModel(models.Model):
         super(ShopModel, self).save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse("shop_detail", kwargs={"slug": self.slug})
+        return reverse("shop_details", kwargs={"shop": self.slug})
 
     def get_products_url(self):
-        return reverse("shop_price_list", kwargs={"slug": self.slug})
+        return reverse("shop_price_list", kwargs={"shop": self.slug})
 
     @staticmethod
     def is_valid_price_file(price_file: InMemoryUploadedFile):

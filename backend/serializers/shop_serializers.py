@@ -39,6 +39,12 @@ class ShopUpdateStatusSerializer(serializers.ModelSerializer):
     class Meta:
         model = ShopModel
         fields = ("status",)
+        extra_kwargs = {
+            'status': {
+                'required': True,
+                'allow_null': False
+            }
+        }
 
     def validate_status(self, value):
         if value and not self.instance.price_file:

@@ -4,8 +4,12 @@ import yaml
 from celery import shared_task
 
 from backend.models import CategoryModel, ParameterModel, ProductModel, ProductParameterModel, ShopModel
+from backend.tasks.email_tasks import send_price_success_updated_email, send_price_error_updated_email
+from backend.utils.constants import ErrorMessages
+from backend.utils.exceptions import PriceFileException
 from backend.utils.managment_utils import dump_data, load_data
-from backend.utils.price_file_utils import get_fixtures_paths, set_all_position_to_0, validate_price_data
+from backend.utils.price_file_utils import get_fixtures_paths, validate_price_data, set_all_position_to_0
+from backend.utils.types import FixturesPathsType
 
 
 @shared_task
@@ -16,7 +20,6 @@ def remove_file_task(filepath: str):
 
 @shared_task
 def update_price_file_task(shop_id: int, price_file: str, user_id: int):
-    print(price_file)
     shop = ShopModel.objects.get(pk=shop_id)
     fixtures = get_fixtures_paths(shop.pk)
     try:
@@ -42,10 +45,10 @@ def update_price_file_task(shop_id: int, price_file: str, user_id: int):
                 cats = []
 
                 for price_category in price_product["categories"]:
-                    category, _ = CategoryModel.objects.get_or_create(name=price_category)
+                    category, _ = CategoryModel.objects.get_or_create(name__iexact=price_category)
                     cats.append(category)
 
-                product, _ = ProductModel.objects.get_or_create(name=price_product["name"])
+                product, _ = ProductModel.objects.get_or_create(name__iexact=price_product["name"])
                 product.categories.add(*cats)
 
                 position, _ = shop.positions.update_or_create(
@@ -59,9 +62,11 @@ def update_price_file_task(shop_id: int, price_file: str, user_id: int):
                     },
                 )
 
+                position.product_parameters.all().delete()
+
                 for price_param in price_product.get("params", []):
                     for price_param_name, price_param_value in price_param.items():
-                        param, _ = ParameterModel.objects.get_or_create(name=price_param_name)
+                        param, _ = ParameterModel.objects.get_or_create(name__iexact=price_param_name)
                         product_param, _ = ProductParameterModel.objects.update_or_create(
                             product=position, param=param, value=price_param_value
                         )
@@ -71,10 +76,20 @@ def update_price_file_task(shop_id: int, price_file: str, user_id: int):
         for fixture in fixtures.values():
             remove_file_task.delay(fixture)
 
+        send_price_success_updated_email.delay(user_id, shop_id)
+    except PriceFileException as e:
+        restore_backup(shop, fixtures)
+        send_price_error_updated_email.delay(user_id, shop_id, str(e))
+        print(e)
     except Exception as e:
-        set_all_position_to_0(shop)
-        for fixture in fixtures.values():
-            load_data(fixture)
-            remove_file_task.delay(fixture)
-        print(f"Restore backup for {shop.name} {shop.pk}")
-        raise e
+        restore_backup(shop, fixtures)
+        send_price_error_updated_email.delay(user_id, shop_id, ErrorMessages.PRICE_FILE_UNKNOWN_ERROR)
+        print(e)
+
+
+def restore_backup(shop: ShopModel, fixtures: FixturesPathsType):
+    set_all_position_to_0(shop)
+    for fixture in fixtures.values():
+        load_data(fixture)
+        remove_file_task.delay(fixture)
+    print(f"Restore backup for {shop.name} {shop.pk}")

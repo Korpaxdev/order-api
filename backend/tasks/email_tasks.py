@@ -4,7 +4,7 @@ from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.urls import reverse
 
-from backend.models import OrderModel, PasswordResetTokenModel, UserModel
+from backend.models import OrderModel, PasswordResetTokenModel, UserModel, ShopModel
 from backend.utils.constants import SITE_DOMAIN, EmailBaseSetup, EmailSendConfig
 
 
@@ -24,7 +24,7 @@ def send_status_change_email(to_user_id: int, order_id: int):
         "username": user.username,
         "order_id": order.pk,
         "status": order.get_status_display(),
-        "details": f"{SITE_DOMAIN}{order.get_absolute_url()}",
+        "details": f"http://{SITE_DOMAIN}{order.get_absolute_url()}",
     }
     send_email(EmailSendConfig.STATUS_CHANGE, to=(user.email,), context=context)
 
@@ -33,7 +33,32 @@ def send_status_change_email(to_user_id: int, order_id: int):
 def send_password_reset_email(password_reset_id: int):
     password_reset = PasswordResetTokenModel.objects.get(id=password_reset_id)
     context = {
-        "url": f"{SITE_DOMAIN}{reverse('password_update', kwargs={'user': password_reset.user.username, 'token': password_reset.token})}",
+        "url": f"http://{SITE_DOMAIN}{reverse('password_update', kwargs={'user': password_reset.user.username, 'token': password_reset.token})}",
         "expire": password_reset.expire,
     }
     send_email(EmailSendConfig.PASSWORD_RESET, to=(password_reset.user.email,), context=context)
+
+
+@shared_task
+def send_price_success_updated_email(user_id: int, shop_id: int):
+    user = UserModel.objects.get(pk=user_id)
+    shop = ShopModel.objects.get(pk=shop_id)
+    context = {
+        "url": f"http://{SITE_DOMAIN}{shop.get_products_url()}",
+        "username": user.username,
+        "shop": shop.name,
+    }
+    send_email(EmailSendConfig.PRICE_UPDATE, to=(user.email,), context=context)
+
+
+@shared_task
+def send_price_error_updated_email(user_id: int, shop_id: int, error_message: str):
+    print('PRICE_ERROR')
+    user = UserModel.objects.get(pk=user_id)
+    shop = ShopModel.objects.get(pk=shop_id)
+    context = {
+        "error_message": error_message,
+        "username": user.username,
+        "shop": shop.name,
+    }
+    send_email(EmailSendConfig.PRICE_UPDATE_ERROR, to=(user.email,), context=context)

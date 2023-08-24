@@ -37,6 +37,10 @@ class EmailSendConfig:
     STATUS_CHANGE = EmailBaseSetup(subject="Ваш статус заказа был изменен",
                                    template="email_templates/change_order_status.html")
     PASSWORD_RESET = EmailBaseSetup(subject="Сброс пароля", template="email_templates/password_reset.html")
+    PRICE_UPDATE = EmailBaseSetup(subject="Прайс файл успешно обновлен",
+                                  template="email_templates/price_success_update.html")
+    PRICE_UPDATE_ERROR = EmailBaseSetup(subject="Ошибка при обновлении прайса",
+                                        template="email_templates/price_update_error.html")
 
 
 @dataclass(frozen=True)
@@ -59,3 +63,5 @@ class ErrorMessages:
     USER_WITH_EMAIL_NOT_FOUND = 'Пользователя с таким email не существует'
     PRODUCT_SHOP_UNIQUE_TOGETHER = "Поля product и shop вместе должны быть уникальными"
     SHOP_DOESNT_ACCEPT_ORDERS = "Указанный магазин не принимает заказы"
+    PRICE_FILE_SERIALIZE_ERROR = "Ошибка при сериализации файла"
+    PRICE_FILE_UNKNOWN_ERROR = "Неизвестная ошибка"

@@ -20,7 +20,7 @@ urlpatterns = [
     path("users/password/update/<str:user>/<uuid:token>/", UserPasswordUpdateView.as_view(), name="password_update"),
     # shop
     path("shops/", ShopListView.as_view(), name="shops"),
-    path("shops/<slug:shop>/", ShopDetailView.as_view(), name="shop_detail"),
+    path("shops/<slug:shop>/", ShopDetailView.as_view(), name="shop_details"),
     path("shops/<slug:shop>/orders/", ShopOrderView.as_view(), name="shop_orders"),
     path("shops/<slug:shop>/orders/<int:order>/", ShopOrderDetailsView.as_view(), name="shop_order_details"),
     path("shops/<slug:shop>/orders/<int:order>/items/", ShopOrderItemsView.as_view(), name="shop_order_items"),
