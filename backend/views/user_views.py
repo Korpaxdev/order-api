@@ -4,14 +4,9 @@ from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
 
 from backend.models import OrderItemsModel, OrderModel, PasswordResetTokenModel, UserModel
-from backend.serializers.user_serializers import (
-    OrderDetailSerializer,
-    OrderPositionSerializer,
-    OrderSerializer,
-    UserPasswordResetTokenSerializer,
-    UserSerializer,
-    UserUpdatePasswordSerializer,
-)
+from backend.serializers.user_serializers import (OrderDetailSerializer, OrderPositionSerializer, OrderSerializer,
+                                                  UserPasswordResetTokenSerializer, UserSerializer,
+                                                  UserUpdatePasswordSerializer)
 from backend.tasks.email_tasks import send_password_reset_email
 
 

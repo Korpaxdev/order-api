@@ -1,8 +1,11 @@
 from dataclasses import dataclass
 
 from django.conf import settings
+from django.contrib.sites.models import Site
 
 from backend.utils.types import ProductFieldType
+
+SITE_DOMAIN = Site.objects.get_current().domain
 
 
 @dataclass(frozen=True)
@@ -23,6 +26,19 @@ PRODUCT_FIELDS: list[ProductFieldType] = [
 ]
 
 
+@dataclass()
+class EmailBaseSetup:
+    subject: str
+    template: str
+
+
+@dataclass(frozen=True)
+class EmailSendConfig:
+    STATUS_CHANGE = EmailBaseSetup(subject="Ваш статус заказа был изменен",
+                                   template="email_templates/change_order_status.html")
+    PASSWORD_RESET = EmailBaseSetup(subject="Сброс пароля", template="email_templates/password_reset.html")
+
+
 @dataclass(frozen=True)
 class ErrorMessages:
     PRICE_FILE_INCORRECT_FILE = "Прайс файл должен содержать список товаров"
@@ -39,3 +55,7 @@ class ErrorMessages:
     LESSER_QUANTITY = "Количество товара в магазине меньше чем указанное количество в заказе"
     USER_EMAIL_IS_EXIST = "Такой email уже используется"
     QUANTITY_GREATER_THAN_0 = "Количество товара в заказе должно быть больше 0"
+    RESET_PASSWORD_EMAIL_ALREADY_SENT = 'Для пользователя с таким email уже было отправлено письмо для сброса пароля"'
+    USER_WITH_EMAIL_NOT_FOUND = 'Пользователя с таким email не существует'
+    PRODUCT_SHOP_UNIQUE_TOGETHER = "Поля product и shop вместе должны быть уникальными"
+    SHOP_DOESNT_ACCEPT_ORDERS = "Указанный магазин не принимает заказы"

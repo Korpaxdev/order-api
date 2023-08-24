@@ -5,16 +5,8 @@ from django.utils.datetime_safe import datetime
 from rest_framework import serializers
 from rest_framework.reverse import reverse
 
-from backend.models import (
-    OrderAddressModel,
-    OrderItemsModel,
-    OrderModel,
-    ProductModel,
-    ProductShopModel,
-    ShopModel,
-    UserModel,
-    PasswordResetTokenModel,
-)
+from backend.models import (OrderAddressModel, OrderItemsModel, OrderModel, PasswordResetTokenModel, ProductModel,
+                            ProductShopModel, ShopModel, UserModel)
 from backend.serializers.product_serializers import ProductShopDetailListSerializer
 from backend.utils.constants import ErrorMessages
 from backend.utils.validation import password_validation
@@ -36,17 +28,19 @@ class OrderItemsCreateSerializer(serializers.ModelSerializer):
         fields = ("product", "shop", "quantity")
 
     @staticmethod
-    def validate_product_id(value):
-        product = ProductModel.objects.filter(pk=value)
-        if not product.exists():
+    def validate_product(value):
+        product = ProductModel.objects.filter(pk=value).first()
+        if not product:
             raise serializers.ValidationError(ErrorMessages.PRODUCT_WITH_ID_NOT_FOUND)
         return value
 
     @staticmethod
-    def validate_shop_id(value):
-        shop = ShopModel.objects.filter(pk=value)
-        if not shop.exists():
+    def validate_shop(value):
+        shop: ShopModel | None = ShopModel.objects.filter(pk=value).first()
+        if not shop:
             raise serializers.ValidationError(ErrorMessages.SHOP_WITH_ID_NOT_FOUND)
+        if not shop.status:
+            raise serializers.ValidationError(ErrorMessages.SHOP_DOESNT_ACCEPT_ORDERS)
         return value
 
     def validate(self, validated_data):
@@ -90,7 +84,7 @@ class OrderSerializer(serializers.ModelSerializer):
         for data in validated_data:
             position = data["position"]
             if position in duplicates["position"]:
-                raise serializers.ValidationError("Поля product и shop вместе должны быть уникальными")
+                raise serializers.ValidationError(ErrorMessages.PRODUCT_SHOP_UNIQUE_TOGETHER)
             else:
                 duplicates["position"].append(position)
         return validated_data
@@ -162,11 +156,11 @@ class UserPasswordResetTokenSerializer(serializers.ModelSerializer):
     def validate_email(value: str):
         user = UserModel.objects.filter(email=value).first()
         if not user:
-            raise serializers.ValidationError("Пользователя с таким email не существует")
+            raise serializers.ValidationError(ErrorMessages.USER_WITH_EMAIL_NOT_FOUND)
         token = PasswordResetTokenModel.objects.filter(user__email=value, expire__gt=datetime.now()).first()
         if token:
             raise serializers.ValidationError(
-                "Для пользователя с таким email уже было отправлено письмо для сброса пароля"
+                ErrorMessages.RESET_PASSWORD_EMAIL_ALREADY_SENT
             )
         return value
 

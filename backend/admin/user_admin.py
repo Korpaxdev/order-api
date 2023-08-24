@@ -2,15 +2,8 @@ from django import forms
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 
-from backend.models import (
-    OrderAddressModel,
-    OrderItemsModel,
-    OrderModel,
-    PasswordResetTokenModel,
-    ProductShopModel,
-    UserManagerModel,
-    UserModel,
-)
+from backend.models import (OrderAddressModel, OrderItemsModel, OrderModel, PasswordResetTokenModel, ProductShopModel,
+                            UserManagerModel, UserModel)
 from backend.tasks.email_tasks import send_status_change_email
 from backend.utils.constants import ErrorMessages
 
