@@ -141,6 +141,8 @@ SITE_ID = 1
 PASSWORD_TOKEN_RESET_LIFETIME = timedelta(days=5)
 
 # ---------- EMAIL ----------
+ADMIN_EMAIL = getenv("ADMIN_EMAIL")
+
 EMAIL_USE_TLS = True
 EMAIL_HOST = getenv("EMAIL_HOST")
 EMAIL_PORT = getenv("EMAIL_PORT")

@@ -16,6 +16,7 @@ from backend.models import (
     UserModel,
 )
 from backend.serializers.product_serializers import ProductShopDetailListSerializer
+from backend.tasks.email_tasks import send_new_order_email
 from backend.utils.constants import ErrorMessages
 from backend.utils.validation import password_validation
 
@@ -78,13 +79,18 @@ class OrderSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         user = self.context["request"].user
-        address, _ = OrderAddressModel.objects.get_or_create(**validated_data.get("address"))
+        address = validated_data.get('address')
+        address, _ = OrderAddressModel.objects.get_or_create(postal_code=address.get('postal_code'),
+                                                             country__iexact=address.get('country'),
+                                                             region__iexact=address.get('region'),
+                                                             city__iexact=address.get('city'), defaults=address)
         order = self.Meta.model.objects.create(user=user, address=address, additional=validated_data.get("additional"))
         order_items = validated_data.get("order_items")
         for order_item in order_items:
             order_item_quantity = order_item.get("quantity")
             position = ProductShopModel.objects.get(**order_item.get("position"))
             OrderItemsModel.objects.create(order=order, position=position, quantity=order_item_quantity)
+        send_new_order_email.delay(order.pk)
         return order
 
     @staticmethod

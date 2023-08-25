@@ -44,6 +44,7 @@ class EmailSendConfig:
     PRICE_UPDATE_ERROR = EmailBaseSetup(
         subject="Ошибка при обновлении прайса", template="email_templates/price_update_error.html"
     )
+    NEW_ORDER = EmailBaseSetup(subject="Новый заказ", template="email_templates/new_order.html")
 
 
 @dataclass(frozen=True)

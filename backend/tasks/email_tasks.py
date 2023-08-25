@@ -53,7 +53,6 @@ def send_price_success_updated_email(user_id: int, shop_id: int):
 
 @shared_task
 def send_price_error_updated_email(user_id: int, shop_id: int, error_message: str):
-    print("PRICE_ERROR")
     user = UserModel.objects.get(pk=user_id)
     shop = ShopModel.objects.get(pk=shop_id)
     context = {
@@ -62,3 +61,14 @@ def send_price_error_updated_email(user_id: int, shop_id: int, error_message: st
         "shop": shop.name,
     }
     send_email(EmailSendConfig.PRICE_UPDATE_ERROR, to=(user.email,), context=context)
+
+
+@shared_task
+def send_new_order_email(order_id: int):
+    order = OrderModel.objects.get(pk=order_id)
+    context = {
+        "order_id": order_id,
+        "user": order.user.username,
+        "url": f"http://{SITE_DOMAIN}{order.get_admin_url()}"
+    }
+    send_email(EmailSendConfig.NEW_ORDER, to=(settings.ADMIN_EMAIL,), context=context)

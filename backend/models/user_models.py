@@ -84,6 +84,9 @@ class OrderModel(models.Model):
     def get_absolute_url(self):
         return reverse("order_detail", kwargs={"order": self.pk})
 
+    def get_admin_url(self):
+        return reverse("admin:%s_%s_change" % (self._meta.app_label, self._meta.model_name), args=(self.id,))
+
     def __str__(self):
         return f"Заказ пользователя {self.user.username}"
 
