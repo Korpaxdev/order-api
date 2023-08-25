@@ -5,8 +5,16 @@ from django.utils.datetime_safe import datetime
 from rest_framework import serializers
 from rest_framework.reverse import reverse
 
-from backend.models import (OrderAddressModel, OrderItemsModel, OrderModel, PasswordResetTokenModel, ProductModel,
-                            ProductShopModel, ShopModel, UserModel)
+from backend.models import (
+    OrderAddressModel,
+    OrderItemsModel,
+    OrderModel,
+    PasswordResetTokenModel,
+    ProductModel,
+    ProductShopModel,
+    ShopModel,
+    UserModel,
+)
 from backend.serializers.product_serializers import ProductShopDetailListSerializer
 from backend.utils.constants import ErrorMessages
 from backend.utils.validation import password_validation
@@ -73,9 +81,10 @@ class OrderSerializer(serializers.ModelSerializer):
         address, _ = OrderAddressModel.objects.get_or_create(**validated_data.get("address"))
         order = self.Meta.model.objects.create(user=user, address=address, additional=validated_data.get("additional"))
         order_items = validated_data.get("order_items")
-        for item in order_items:
-            position = ProductShopModel.objects.get(**item.get("position"))
-            OrderItemsModel.objects.create(order=order, position=position, quantity=item.get("quantity"))
+        for order_item in order_items:
+            order_item_quantity = order_item.get("quantity")
+            position = ProductShopModel.objects.get(**order_item.get("position"))
+            OrderItemsModel.objects.create(order=order, position=position, quantity=order_item_quantity)
         return order
 
     @staticmethod
@@ -124,13 +133,13 @@ class OrderDetailSerializer(serializers.ModelSerializer):
 
 
 class UserSerializer(serializers.ModelSerializer):
+    password = serializers.CharField(validators=[password_validation], write_only=True, required=True)
     email = serializers.EmailField(required=True)
     orders = serializers.SerializerMethodField("get_orders_link", read_only=True)
 
     class Meta:
         model = UserModel
         fields = ("username", "email", "password", "orders")
-        extra_kwargs = {"password": {"write_only": True}}
 
     @staticmethod
     def validate_email(value: str):
@@ -159,9 +168,7 @@ class UserPasswordResetTokenSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError(ErrorMessages.USER_WITH_EMAIL_NOT_FOUND)
         token = PasswordResetTokenModel.objects.filter(user__email=value, expire__gt=datetime.now()).first()
         if token:
-            raise serializers.ValidationError(
-                ErrorMessages.RESET_PASSWORD_EMAIL_ALREADY_SENT
-            )
+            raise serializers.ValidationError(ErrorMessages.RESET_PASSWORD_EMAIL_ALREADY_SENT)
         return value
 
     def create(self, validated_data):

@@ -41,13 +41,19 @@ class OrderAddressModel(models.Model):
 
 
 class OrderModel(models.Model):
+    NEW = "new"
+    CONFIRMED = "confirmed"
+    ASSEMBLED = "assembled"
+    SENT = "sent"
+    DELIVERED = "delivered"
+    CANCELLED = "cancelled"
     ORDER_STATUS_CHOICES = (
-        ("new", "Новый"),
-        ("confirmed", "Подтвержден"),
-        ("assembled", "Собран"),
-        ("sent", "Отправлен"),
-        ("delivered", "Доставлен"),
-        ("canceled", "Отменен"),
+        (NEW, "Новый"),
+        (CONFIRMED, "Подтвержден"),
+        (ASSEMBLED, "Собран"),
+        (SENT, "Отправлен"),
+        (DELIVERED, "Доставлен"),
+        (CANCELLED, "Отменен"),
     )
 
     user = models.ForeignKey(UserModel, on_delete=models.CASCADE, related_name="orders", verbose_name="Пользователь")
@@ -60,14 +66,26 @@ class OrderModel(models.Model):
         verbose_name = "Заказ пользователя"
         verbose_name_plural = "Заказы пользователей"
 
-    def __str__(self):
-        return f"Заказ пользователя {self.user.username}"
+    def delete(self, using=None, keep_parents=False):
+        self.restore_items_quantity_for_position()
+        super().delete(using, keep_parents)
+
+    def restore_items_quantity_for_position(self):
+        for item in self.items.all():
+            item.restore_quantity_for_position()
+
+    def remove_items_quantity_from_position(self):
+        for item in self.items.all():
+            item.remove_quantity_from_position()
 
     def get_total_price(self):
         return sum([item.get_sum_price() for item in self.items.all()])
 
     def get_absolute_url(self):
-        return reverse("order_detail", kwargs={"pk": self.pk})
+        return reverse("order_detail", kwargs={"order": self.pk})
+
+    def __str__(self):
+        return f"Заказ пользователя {self.user.username}"
 
 
 class OrderItemsModel(models.Model):
@@ -90,7 +108,21 @@ class OrderItemsModel(models.Model):
     def save(self, *args, **kwargs):
         self.price = self.position.price
         self.price_rrc = self.position.price_rrc
+        if not self.pk:
+            self.remove_quantity_from_position()
         super().save(*args, **kwargs)
+
+    def delete(self, *args, **kwargs):
+        self.restore_quantity_for_position()
+        super().delete(*args, **kwargs)
+
+    def remove_quantity_from_position(self):
+        self.position.quantity -= self.quantity
+        self.position.save()
+
+    def restore_quantity_for_position(self):
+        self.position.quantity += self.quantity
+        self.position.save()
 
     def __str__(self):
         return f"{self.position.product.name} - {self.position.shop.name} - {self.quantity}"

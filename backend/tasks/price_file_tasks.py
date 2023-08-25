@@ -4,11 +4,11 @@ import yaml
 from celery import shared_task
 
 from backend.models import CategoryModel, ParameterModel, ProductModel, ProductParameterModel, ShopModel
-from backend.tasks.email_tasks import send_price_success_updated_email, send_price_error_updated_email
+from backend.tasks.email_tasks import send_price_error_updated_email, send_price_success_updated_email
 from backend.utils.constants import ErrorMessages
 from backend.utils.exceptions import PriceFileException
 from backend.utils.managment_utils import dump_data, load_data
-from backend.utils.price_file_utils import get_fixtures_paths, validate_price_data, set_all_position_to_0
+from backend.utils.price_file_utils import get_fixtures_paths, set_all_position_to_0, validate_price_data
 from backend.utils.types import FixturesPathsType
 
 

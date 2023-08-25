@@ -3,8 +3,12 @@ from rest_framework import serializers
 from rest_framework.reverse import reverse
 
 from backend.models import OrderModel, ShopModel, UserModel
-from backend.serializers.user_serializers import (OrderDetailSerializer, OrderPositionSerializer,
-                                                  OrderProductShopSerializer, OrderSerializer)
+from backend.serializers.user_serializers import (
+    OrderDetailSerializer,
+    OrderPositionSerializer,
+    OrderProductShopSerializer,
+    OrderSerializer,
+)
 from backend.utils.constants import ErrorMessages
 
 
@@ -39,12 +43,7 @@ class ShopUpdateStatusSerializer(serializers.ModelSerializer):
     class Meta:
         model = ShopModel
         fields = ("status",)
-        extra_kwargs = {
-            'status': {
-                'required': True,
-                'allow_null': False
-            }
-        }
+        extra_kwargs = {"status": {"required": True, "allow_null": False}}
 
     def validate_status(self, value):
         if value and not self.instance.price_file:

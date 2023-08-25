@@ -4,7 +4,7 @@ from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.urls import reverse
 
-from backend.models import OrderModel, PasswordResetTokenModel, UserModel, ShopModel
+from backend.models import OrderModel, PasswordResetTokenModel, ShopModel, UserModel
 from backend.utils.constants import SITE_DOMAIN, EmailBaseSetup, EmailSendConfig
 
 
@@ -17,14 +17,14 @@ def send_email(base_setup: EmailBaseSetup, to: list | tuple, context: dict):
 
 
 @shared_task
-def send_status_change_email(to_user_id: int, order_id: int):
-    user = UserModel.objects.get(id=to_user_id)
+def send_status_change_email(order_id: int):
     order = OrderModel.objects.get(id=order_id)
+    user = order.user
     context = {
         "username": user.username,
         "order_id": order.pk,
         "status": order.get_status_display(),
-        "details": f"http://{SITE_DOMAIN}{order.get_absolute_url()}",
+        "url": f"http://{SITE_DOMAIN}{reverse('profile')}",
     }
     send_email(EmailSendConfig.STATUS_CHANGE, to=(user.email,), context=context)
 
@@ -53,7 +53,7 @@ def send_price_success_updated_email(user_id: int, shop_id: int):
 
 @shared_task
 def send_price_error_updated_email(user_id: int, shop_id: int, error_message: str):
-    print('PRICE_ERROR')
+    print("PRICE_ERROR")
     user = UserModel.objects.get(pk=user_id)
     shop = ShopModel.objects.get(pk=shop_id)
     context = {

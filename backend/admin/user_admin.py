@@ -2,8 +2,15 @@ from django import forms
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 
-from backend.models import (OrderAddressModel, OrderItemsModel, OrderModel, PasswordResetTokenModel, ProductShopModel,
-                            UserManagerModel, UserModel)
+from backend.models import (
+    OrderAddressModel,
+    OrderItemsModel,
+    OrderModel,
+    PasswordResetTokenModel,
+    ProductShopModel,
+    UserManagerModel,
+    UserModel,
+)
 from backend.tasks.email_tasks import send_status_change_email
 from backend.utils.constants import ErrorMessages
 
@@ -24,7 +31,7 @@ class OrderItemForm(forms.ModelForm):
             return
         elif not position.quantity:
             self.add_error("position", ErrorMessages.POSITION_IS_OUT_OF_STOCK)
-        elif position.quantity < quantity:
+        elif position.quantity < quantity and self.initial.get("quantity") != quantity:
             self.add_error("quantity", ErrorMessages.LESSER_QUANTITY)
             self.add_error("position", ErrorMessages.LESSER_QUANTITY)
 
@@ -82,10 +89,30 @@ class OrderModelAdmin(admin.ModelAdmin):
     def get_total_price(self, instance: OrderModel):
         return instance.get_total_price()
 
-    def save_model(self, request, obj, form, change):
-        if change and "status" in form.changed_data:
-            send_status_change_email.delay(request.user.pk, obj.pk)
-        super(OrderModelAdmin, self).save_model(request, obj, form, change)
+    def delete_queryset(self, request, queryset):
+        for item in queryset:
+            item.delete()
+
+    def save_formset(self, request, form, formset, change):
+        if change:
+            order_instance: OrderModel = form.instance
+            if "status" in form.changed_data:
+                send_status_change_email.delay(order_instance.pk)
+                previous_status = form.initial.get("status")
+                if order_instance.status == order_instance.CANCELLED:
+                    order_instance.restore_items_quantity_for_position()
+                elif previous_status == order_instance.CANCELLED and order_instance.status != previous_status:
+                    order_instance.remove_items_quantity_from_position()
+            for formset_form in formset.forms:
+                instance: OrderItemsModel = formset_form.instance
+                if not instance.pk:
+                    continue
+                elif "quantity" in formset_form.changed_data and order_instance.status != order_instance.CANCELLED:
+                    previous_quantity = formset_form.initial.get("quantity", 0)
+                    instance.position.quantity += previous_quantity - instance.quantity
+                    instance.position.save()
+
+        super().save_formset(request, form, formset, change)
 
 
 @admin.register(OrderAddressModel)
