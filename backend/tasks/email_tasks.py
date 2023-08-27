@@ -66,9 +66,5 @@ def send_price_error_updated_email(user_id: int, shop_id: int, error_message: st
 @shared_task
 def send_new_order_email(order_id: int):
     order = OrderModel.objects.get(pk=order_id)
-    context = {
-        "order_id": order_id,
-        "user": order.user.username,
-        "url": f"http://{SITE_DOMAIN}{order.get_admin_url()}"
-    }
+    context = {"order_id": order_id, "user": order.user.username, "url": f"http://{SITE_DOMAIN}{order.get_admin_url()}"}
     send_email(EmailSendConfig.NEW_ORDER, to=(settings.ADMIN_EMAIL,), context=context)

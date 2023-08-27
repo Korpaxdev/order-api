@@ -14,7 +14,7 @@ from backend.utils.constants import ErrorMessages
 
 class ShopListSerializer(serializers.ModelSerializer):
     status = serializers.CharField(source="get_status_display")
-    detail = serializers.HyperlinkedIdentityField("shop_detail", lookup_field="slug", lookup_url_kwarg="shop")
+    detail = serializers.HyperlinkedIdentityField("shop_details", lookup_field="slug", lookup_url_kwarg="shop")
 
     class Meta:
         model = ShopModel
@@ -33,6 +33,7 @@ class ShopDetailSerializer(serializers.ModelSerializer):
             del self.fields["price_list"]
         if user.is_anonymous or (not user.is_manager(instance) and not user.is_superuser):
             del self.fields["price_file"]
+            del self.fields["orders"]
 
     class Meta:
         model = ShopModel

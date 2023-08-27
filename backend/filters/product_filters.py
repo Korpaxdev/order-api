@@ -13,7 +13,7 @@ class ProductListFilterSet(django_filters.FilterSet):
 
 
 class ProductShopFilterSet(django_filters.FilterSet):
-    product_id = django_filters.NumberFilter(field_name="product__pk", lookup_expr="exact")
+    product_id = django_filters.NumberFilter(field_name="product__pk", lookup_expr="exact", label="Id товара")
     product_name = django_filters.CharFilter(field_name="product__name", lookup_expr="icontains")
     shop_id = django_filters.NumberFilter(field_name="shop__name", lookup_expr="exact")
     shop_name = django_filters.CharFilter(field_name="shop__name", lookup_expr="icontains")

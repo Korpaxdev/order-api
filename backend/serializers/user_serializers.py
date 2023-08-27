@@ -79,11 +79,14 @@ class OrderSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         user = self.context["request"].user
-        address = validated_data.get('address')
-        address, _ = OrderAddressModel.objects.get_or_create(postal_code=address.get('postal_code'),
-                                                             country__iexact=address.get('country'),
-                                                             region__iexact=address.get('region'),
-                                                             city__iexact=address.get('city'), defaults=address)
+        address = validated_data.get("address")
+        address, _ = OrderAddressModel.objects.get_or_create(
+            postal_code=address.get("postal_code"),
+            country__iexact=address.get("country"),
+            region__iexact=address.get("region"),
+            city__iexact=address.get("city"),
+            defaults=address,
+        )
         order = self.Meta.model.objects.create(user=user, address=address, additional=validated_data.get("additional"))
         order_items = validated_data.get("order_items")
         for order_item in order_items:
@@ -145,7 +148,7 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = UserModel
-        fields = ("username", "email", "password", "orders")
+        fields = ("pk", "username", "email", "password", "orders")
 
     @staticmethod
     def validate_email(value: str):
