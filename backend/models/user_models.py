@@ -105,7 +105,7 @@ class OrderItemsModel(models.Model):
         verbose_name_plural = "Позиции"
         unique_together = ("order", "position")
 
-    def get_sum_price(self):
+    def get_sum_price(self) -> int:
         return self.position.price * self.quantity
 
     def save(self, *args, **kwargs):

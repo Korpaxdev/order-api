@@ -17,11 +17,19 @@ from backend.utils.constants import ErrorMessages
 
 # ---------- Form Classes ----------
 class OrderItemForm(forms.ModelForm):
+    """Model Form для модели OrderItemModel"""
+
     class Meta:
         model = OrderItemsModel
         fields = ("position", "quantity", "price", "price_rrc")
 
     def clean(self):
+        """Валидация полей quantity и position
+        Условия валидации
+        1. quantity должен быть больше 0
+        2. у position quantity должен быть больше 0
+        3. quantity должен быть меньше чем position quantity
+        """
         cleaned_data = self.cleaned_data
         quantity: int = cleaned_data.get("quantity")
         if not quantity:
@@ -40,6 +48,8 @@ class OrderItemForm(forms.ModelForm):
 
 
 class OrderItemInline(admin.TabularInline):
+    """Tabular Inline для модели OrderItemModel"""
+
     extra = 1
     model = OrderItemsModel
     fields = ("position", "quantity", "price", "price_rrc", "get_total_price")
@@ -48,7 +58,7 @@ class OrderItemInline(admin.TabularInline):
     raw_id_fields = ("position",)
 
     @admin.display(description="Итого")
-    def get_total_price(self, instance: OrderItemsModel):
+    def get_total_price(self, instance: OrderItemsModel) -> int:
         return instance.get_sum_price()
 
 
@@ -57,27 +67,33 @@ class OrderItemInline(admin.TabularInline):
 
 @admin.register(UserModel)
 class UserModelAdmin(UserAdmin):
+    """Model Admin для Модели UserModel"""
+
     search_fields = ("username", "email")
     list_display = ("username", "email", "is_superuser", "is_staff", "is_active")
 
 
 @admin.register(UserManagerModel)
 class UserManagerModelAdmin(admin.ModelAdmin):
+    """Model Admin для модели UserManagerModel"""
+
     list_filter = ("shops",)
     list_display = ("get_user_name", "get_shops")
     search_fields = ("user__username",)
 
     @admin.display(description="Пользователь")
-    def get_user_name(self, instance: UserManagerModel):
+    def get_user_name(self, instance: UserManagerModel) -> str:
         return instance.user.username
 
     @admin.display(description="Магазины")
-    def get_shops(self, instance: UserManagerModel):
+    def get_shops(self, instance: UserManagerModel) -> list[str]:
         return [shop.name for shop in instance.shops.all()]
 
 
 @admin.register(OrderModel)
 class OrderModelAdmin(admin.ModelAdmin):
+    """Model Admin для модели OrderModel"""
+
     raw_id_fields = ("user", "address")
     inlines = (OrderItemInline,)
     list_display = ("id", "user", "status", "created_at", "get_total_price")
@@ -86,14 +102,22 @@ class OrderModelAdmin(admin.ModelAdmin):
     list_filter = ("status", "created_at")
 
     @admin.display(description="Итого")
-    def get_total_price(self, instance: OrderModel):
+    def get_total_price(self, instance: OrderModel) -> int:
         return instance.get_total_price()
 
     def delete_queryset(self, request, queryset):
+        """Вызывается при множественном удалении. В нем мы вызываем метод delete у самой модели.
+        По умолчанию при множественном удалении django не вызывает данный метод у модели"""
         for item in queryset:
             item.delete()
 
     def save_formset(self, request, form, formset, change):
+        """В методе в зависимости от условия уменьшается количество товаров на складе или возвращается количество товара с заказа на склад
+        Условия:
+        1. Если новый status заказа отменен - то quantity с заказа возвращается в quantity позиции в магазине
+        2. Если прошлый status заказа был отменен, а новый не отменен - то quantity с заказа списывается с quantity позиции в магазине
+        3. Если было изменение quantity заказа, то в quantity позиции добавляется разница previous quantity заказа и текущий quantity заказа
+        """
         if change:
             order_instance: OrderModel = form.instance
             if "status" in form.changed_data:
@@ -117,12 +141,16 @@ class OrderModelAdmin(admin.ModelAdmin):
 
 @admin.register(OrderAddressModel)
 class OrderAddressModelAdmin(admin.ModelAdmin):
+    """Model Admin для модели OrderAddressModel"""
+
     list_display = ("id", "postal_code", "country", "region", "city")
     list_display_links = ("id", "postal_code")
 
 
 @admin.register(PasswordResetTokenModel)
 class PasswordResetTokenModelAdmin(admin.ModelAdmin):
+    """Model Admin для модели PasswordResetTokenModel"""
+
     readonly_fields = ("token", "user")
     list_display = ("pk", "user", "expire")
     list_display_links = ("pk", "user")

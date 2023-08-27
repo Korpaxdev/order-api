@@ -4,6 +4,8 @@
     - **POST** - `{domain_name}/api/users/register/` - Регистрация пользователя
     - **POST** - `{domain_name}/api/users/token/` - Получение токена пользователя.
     - **POST** - `{domain_name}/api/users/refresh/` - Обновление токена пользователя.
+    - **POST** - `{domain_name}/api/users/password/reset/` - Отправка email для сброса пароля.
+    - **PATCH** - `{domain_name}/api/users/password/update/{username}/{token}` - Сброс пароля пользователя.
     - **GET** - `{domain_name}/api/users/profile/` - Информация о пользователе. **Требуется**: Аутентификация
     - **GET**, **POST** - `{domain_name}/api/users/profile/orders/` - Заказы пользователя. Создание заказа. **Требуется
       **:

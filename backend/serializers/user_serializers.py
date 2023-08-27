@@ -192,8 +192,8 @@ class UserUpdatePasswordSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = UserModel
-        fields = ("username", "email", "password")
-        read_only_fields = ("username", "email")
+        fields = ("id", "username", "email", "password")
+        read_only_fields = ("id", "username", "email")
 
     def update(self, instance: UserModel, validated_data):
         instance.set_password(validated_data.get("password"))
