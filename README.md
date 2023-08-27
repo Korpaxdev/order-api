@@ -1,4 +1,4 @@
-## Коротко про маршруты:
+## Доступные маршруты:
 
 - **USER:**
     - **POST** - `{domain_name}/api/users/register/` - Регистрация пользователя
@@ -30,7 +30,11 @@
     - **GET** - `{domain_name}/api/products/` - Список доступных для заказа товаров
     - **GET** - `{domain_name}/api/products/{product_slug}/` - Детальная информация по товару
 
-### [Детальная информация по маршрутам](AdditionalRoutes.md)
+## Дополнительная информация:
+
+- ### [Детальная информация по маршрутам](docs/AdditionalRoutesDoc.md)
+- ### [Детальная информация по env файлу](docs/EnvFileDoc.md)
+
 
 
 
