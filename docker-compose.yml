@@ -1,5 +1,6 @@
 services:
   app:
+    restart: always
     build: .
     command: python manage.py runserver 0.0.0.0:8000
     ports:
@@ -10,17 +11,16 @@ services:
     volumes:
       - "./media:/app/media"
   celery:
+    restart: always
     build: .
     command: celery -A main worker -l info
     depends_on:
-      - postgres
       - redis
     volumes:
       - "./media:/app/media"
   postgres:
+    restart: always
     image: postgres:alpine
-    ports:
-      - "5432:5432"
     volumes:
       - "./database:/var/lib/postgresql/data"
     environment:
@@ -28,6 +28,5 @@ services:
       POSTGRES_USER: ${DB_USER}
       POSTGRES_PASSWORD: ${DB_USER_PASSWORD}
   redis:
+    restart: always
     image: redis:alpine
-    ports:
-      - "6379:6379"

@@ -1,0 +1,17 @@
+services:
+  postgres:
+    restart: always
+    image: postgres:alpine
+    ports:
+      - "5432:5432"
+    volumes:
+      - "./database:/var/lib/postgresql/data"
+    environment:
+      POSTGRES_DB: ${DB}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_USER_PASSWORD}
+  redis:
+    restart: always
+    image: redis:alpine
+    ports:
+      - "6379:6379"

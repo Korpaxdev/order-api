@@ -68,6 +68,16 @@
     - **GET** - `{domain_name}/api/products/` - Список доступных для заказа товаров
     - **GET** - `{domain_name}/api/products/{product_slug}/` - Детальная информация по товару
 
+## Запуск проекта
+
+- ### Через `docker-compose.yml`.
+    - Запускаем все сервисы командой `docker-compose up`
+- ### Через `docker-compose-only-bd.yml`
+    - Запускаем базы данных (postgres, redis) через docker-compose
+    - Запускаем **Celery** - `celery -A main worker -l info`
+    - Запускаем **Django** - `python ./manage.py runserver'
+    - Обратите внимание! Доступ к базам данных осуществляется через `localhost`, а не через наименование сервиса
+
 ## Дополнительная информация:
 
 - ### [Детальная информация по маршрутам](docs/routes_advanced.md)
