@@ -1,4 +1,22 @@
 services:
+  app:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+      - celery
+    volumes:
+      - "./media:/app/media"
+  celery:
+    build: .
+    command: celery -A main worker -l info
+    depends_on:
+      - postgres
+      - redis
+    volumes:
+      - "./media:/app/media"
   postgres:
     image: postgres:alpine
     ports:

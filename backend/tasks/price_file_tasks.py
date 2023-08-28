@@ -83,11 +83,11 @@ def update_price_file_task(shop_id: int, price_file: str, user_id: int):
     except PriceFileException as e:
         restore_backup(shop, fixtures)
         send_price_error_update_email.delay(user_id, shop_id, str(e))
-        print(e)
+        print('PriceFileException: ', e)
     except Exception as e:
         restore_backup(shop, fixtures)
         send_price_error_update_email.delay(user_id, shop_id, ErrorMessages.PRICE_FILE_UNKNOWN_ERROR)
-        print(e)
+        print('Exception: ', e)
 
 
 def restore_backup(shop: ShopModel, fixtures: FixturesPathsType):

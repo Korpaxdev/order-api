@@ -3,6 +3,7 @@ from rest_framework import generics, permissions, status
 from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
 
+from backend.filters.order_filters import OrderListFilterSet
 from backend.models import OrderItemModel, OrderModel, PasswordResetTokenModel, UserModel
 from backend.serializers.user_serializers import (
     OrderDetailSerializer,
@@ -39,6 +40,7 @@ class UserOrdersView(generics.ListCreateAPIView):
     Url: users/profile/orders/"""
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class = OrderSerializer
+    filterset_class = OrderListFilterSet
 
     def get_queryset(self):
         return OrderModel.objects.filter(user=self.request.user)

@@ -31,6 +31,12 @@
 
 Поле `orders` - содержит ссылку на страницу заказов пользователя
 
+#### Доступные фильтры:
+
+- `id` - exact по полю id
+- `status` - icontains по полю status
+- `created_at` - (lte, gte, lt, gt) по полю created_at
+
 ### **POST** - `{domain_name}/api/users/token/`
 
 Получение токена пользователя. Необходим json объект формата:
@@ -344,6 +350,11 @@ HEAD Authorization: Bearer "Token"
 - `status` - Строковое поле. Содержит статус магазина
 - `detail` - Строковое поле. Содержит url для детальной информации по магазину
 
+#### Доступные фильтры:
+
+- `name` - icontains по полю name
+- `status` - icontains по полю status
+
 ### **GET** `{domain_name}/api/shops/{shop_slug}/`
 
 Детальная информация по магазину.
@@ -407,6 +418,12 @@ HEAD Authorization: Bearer "Token"
 - `created_at` - Строковое поле. Содержит дату создания заказа
 - `status` - Строковое поле. Статус заказа.
 - `details` - Строковое поле. Содержит ссылку на детальную информацию по заказу
+
+#### Доступные фильтры:
+
+- `id` - exact по полю id
+- `status` - icontains по полю status
+- `created_at` - (lte, gte, lt, gt) по полю created_at
 
 ### **GET** `{domain_name}/api/shops/{shop_slug}/orders/{order_id}/`
 
@@ -538,6 +555,15 @@ HEAD Authorization: Bearer "Token"
 - `price` - Числовое поле. Содержит цену товара
 - `price_rrc` - Числовое поле. Содержит РРЦ
 
+#### Доступные фильтры:
+
+- `product_id` - exact по полю product__pk
+- `product_name` - icontains по полю product__name
+- `category` - icontains по полю product__categories__name
+- `price` - (lte, gte, lt, gt) по полю price
+- `price_rrc` - (lte, gte, lt, gt) по полю price_rrc
+- `quantity` - (lte, gte, lt, gt) по полю quantity
+
 ### **GET** `{domain_name}/media/prices/{price_file_name}/`
 
 Получить последний загруженный price файл с товарами
@@ -627,6 +653,11 @@ HEAD Authorization: Bearer "Token"
 - `categories` - Список со строками. Содержит категории товара
 - `details` - Строковое поле. Содержит url с детальной информацией о товаре
 
+#### Доступные фильтры:
+
+- `cat` - icontains по полю categories__name
+- `name` - icontains по полю name
+
 ### **GET** - `{domain_name}/api/products/{product_slug}/`
 
 Детальная информация по товару
@@ -672,6 +703,19 @@ HEAD Authorization: Bearer "Token"
 - `quantity` - Числовое поле. Содержит количество товара в магазине
 - `price` - Числовое поле. Содержит цену товара
 - `price_rrc` - Числовое поле. Содержит РРЦ
+
+#### Доступные фильтры:
+
+- `product_id` - exact по полю product__pk
+- `product_name` - icontains по полю product__name
+- `shop_id` - exact по полю shop__pk
+- `shop_name` - icontains по полю shop__name
+- `category` - icontains по полю product__categories__name
+- `price` - (lte, gte, lt, gt) по полю price
+- `price_rrc` - (lte, gte, lt, gt) по полю price_rrc
+- `quantity` - (lte, gte, lt, gt) по полю quantity
+
+
 
 
 

@@ -2,8 +2,8 @@ from django.http import HttpRequest
 from rest_framework import exceptions, generics, permissions
 from rest_framework.response import Response
 
-from backend.filters.product_filters import ProductShopFilterSet
-from backend.filters.shop_filters import ShopListFilterSet
+from backend.filters.order_filters import OrderListFilterSet
+from backend.filters.shop_filters import ShopListFilterSet, ShopProductFilterSet
 from backend.models import OrderItemModel, OrderModel, ProductShopModel, ShopModel
 from backend.permissions.shop_permissions import IsManagerOrAdminPermission
 from backend.serializers.product_serializers import ProductShopDetailListSerializer
@@ -41,7 +41,7 @@ class ShopPriceListView(generics.ListAPIView):
     """View класс для представления списка объектов ProductShop
     Url: shops/<slug:shop>/products/"""
     serializer_class = ProductShopDetailListSerializer
-    filterset_class = ProductShopFilterSet
+    filterset_class = ShopProductFilterSet
     lookup_field = "slug"
     lookup_url_kwarg = "shop"
 
@@ -91,6 +91,7 @@ class ShopOrderView(generics.ListAPIView):
     Url: shops/<slug:shop>/orders/"""
     permission_classes = (permissions.IsAuthenticated, IsManagerOrAdminPermission)
     serializer_class = ShopOrderSerializer
+    filterset_class = OrderListFilterSet
     lookup_url_kwarg = "shop"
     lookup_field = "slug"
 

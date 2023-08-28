@@ -17,7 +17,7 @@ class ProductShopFilterSet(django_filters.FilterSet):
     """Django filter set для модели ProductShopModel"""
     product_id = django_filters.NumberFilter(field_name="product__pk", lookup_expr="exact", label="Id товара")
     product_name = django_filters.CharFilter(field_name="product__name", lookup_expr="icontains")
-    shop_id = django_filters.NumberFilter(field_name="shop__name", lookup_expr="exact")
+    shop_id = django_filters.NumberFilter(field_name="shop__pk", lookup_expr="exact")
     shop_name = django_filters.CharFilter(field_name="shop__name", lookup_expr="icontains")
     category = django_filters.CharFilter(field_name="product__categories__name", lookup_expr="icontains")
 

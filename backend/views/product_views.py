@@ -1,6 +1,6 @@
 from rest_framework import generics
 
-from backend.filters.product_filters import ProductListFilterSet
+from backend.filters.product_filters import ProductListFilterSet, ProductShopFilterSet
 from backend.models import ProductModel, ProductShopModel
 from backend.serializers.product_serializers import ProductListSerializer, ProductShopDetailListSerializer
 
@@ -25,6 +25,7 @@ class ProductShopDetailListView(generics.ListAPIView):
      Класс детального представления списка объектов из модели ProductShopModel
      Url: /products/<slug:product>"""
     serializer_class = ProductShopDetailListSerializer
+    filterset_class = ProductShopFilterSet
     lookup_field = "slug"
     lookup_url_kwarg = "product"
 

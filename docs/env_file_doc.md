@@ -6,6 +6,7 @@
 - `DB_USER_PASSWORD` - Пароль для пользователя бд
 - `DB_HOST` - Хост расположения бд
 - `DJANGO_SECRET_KEY` - Секретный ключ django
+- `DJANGO_DEBUG` - Режим работы Django
 - `CELERY_BROKER_URL` - Url для брокера celery
 - `CELERY_RESULT_BACKEND` - Url для backend celery
 - `EMAIL_HOST` - Хост для отправки писем
