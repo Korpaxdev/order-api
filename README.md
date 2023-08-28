@@ -75,7 +75,7 @@
 - ### Через `docker-compose-only-bd.yml`
     - Запускаем базы данных (postgres, redis) через docker-compose
     - Запускаем **Celery** - `celery -A main worker -l info`
-    - Запускаем **Django** - `python ./manage.py runserver'
+    - Запускаем **Django** - `python ./manage.py runserver`
     - Обратите внимание! Доступ к базам данных осуществляется через `localhost`, а не через наименование сервиса
 
 ## Дополнительная информация:
