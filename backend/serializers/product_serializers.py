@@ -5,6 +5,7 @@ from backend.utils.product_utils import get_cats_names
 
 
 class ProductParameterSerializer(serializers.ModelSerializer):
+    """Serializer для модели ProductParameterModel"""
     name = serializers.CharField(read_only=True, source="param.name")
 
     class Meta:
@@ -13,6 +14,7 @@ class ProductParameterSerializer(serializers.ModelSerializer):
 
 
 class ProductListSerializer(serializers.ModelSerializer):
+    """Serializer для списка из модели ProductModel"""
     categories = serializers.SerializerMethodField("get_categories")
     details = serializers.HyperlinkedIdentityField(
         "product_details_list", lookup_field="slug", lookup_url_kwarg="product"
@@ -28,6 +30,7 @@ class ProductListSerializer(serializers.ModelSerializer):
 
 
 class ProductShopDetailListSerializer(serializers.ModelSerializer):
+    """Serializer для списка из модели ProductShopModel"""
     product_id = serializers.IntegerField(read_only=True, source="product.pk")
     product_name = serializers.CharField(read_only=True, source="product.name")
     shop_id = serializers.IntegerField(read_only=True, source="shop.pk")

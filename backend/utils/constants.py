@@ -58,7 +58,7 @@ class ErrorMessages:
     CANT_SET_STATUS = "Невозможно установить статус %s, когда у магазина отсутствует прайс файл"
     PRODUCT_WITH_ID_NOT_FOUND = "Товара с таким id не существует"
     SHOP_WITH_ID_NOT_FOUND = "Магазина с таким id не существует"
-    POSITION_WITH_ID_NOT_FOUND = "Позиции с таким product_id и shop_id не существует"
+    POSITION_WITH_ID_NOT_FOUND = "Позиции с таким product и shop не существует"
     POSITION_IS_OUT_OF_STOCK = "Такой позиции сейчас нет в наличии в магазине"
     LESSER_QUANTITY = "Количество товара в магазине меньше чем указанное количество в заказе"
     USER_EMAIL_IS_EXIST = "Такой email уже используется"

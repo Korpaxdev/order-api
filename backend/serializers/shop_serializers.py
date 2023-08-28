@@ -9,6 +9,7 @@ from backend.utils.constants import ErrorMessages
 
 
 class ShopListSerializer(serializers.ModelSerializer):
+    """Serializer для списка модели ShopModel"""
     status = serializers.CharField(source="get_status_display")
     detail = serializers.HyperlinkedIdentityField("shop_details", lookup_field="slug", lookup_url_kwarg="shop")
 
@@ -18,11 +19,16 @@ class ShopListSerializer(serializers.ModelSerializer):
 
 
 class ShopDetailSerializer(serializers.ModelSerializer):
+    """Serializer для модели ShopModel.
+     Представляет более детальную информацию по магазину"""
     status = serializers.CharField(source="get_status_display")
     price_list = serializers.HyperlinkedIdentityField("shop_price_list", lookup_field="slug", lookup_url_kwarg="shop")
     orders = serializers.HyperlinkedIdentityField("shop_orders", lookup_field="slug", lookup_url_kwarg="shop")
 
     def __init__(self, instance: ShopModel, **kwargs):
+        """Удаляем поля из модели если:
+        1. У магазина статус не готов - удаляем price_file
+        2. Если пользователь не админ или не менеджер магазина - удаляем price_file и orders"""
         super().__init__(instance, **kwargs)
         user: UserModel = self.context["request"].user
         if not instance.status:
@@ -37,12 +43,16 @@ class ShopDetailSerializer(serializers.ModelSerializer):
 
 
 class ShopUpdateStatusSerializer(serializers.ModelSerializer):
+    """Serializer для модели ShopModel. Представляет обновления статуса магазина"""
+
     class Meta:
         model = ShopModel
         fields = ("status",)
         extra_kwargs = {"status": {"required": True, "allow_null": False}}
 
     def validate_status(self, value):
+        """Валидация статуса магазина.
+         Статус невозможно установить готов если у магазина не загружен прайс файл"""
         if value and not self.instance.price_file:
             status_name = dict(ShopModel.SHOP_STATUS_CHOICES).get(value)
             raise serializers.ValidationError(ErrorMessages.CANT_SET_STATUS % status_name)
@@ -50,12 +60,15 @@ class ShopUpdateStatusSerializer(serializers.ModelSerializer):
 
 
 class ShopPriceFileUpdateSerializer(serializers.ModelSerializer):
+    """Serializer для модели ShopModel. Представляет обновление price_file"""
+
     class Meta:
         model = ShopModel
         fields = ("price_file",)
         extra_kwargs = {"price_file": {"required": True, "allow_null": False}}
 
     def validate_price_file(self, value: InMemoryUploadedFile):
+        """Валидация прайс файла на основе доступных расширений"""
         instance: ShopModel = self.instance
         if not instance.is_valid_price_file(value):
             raise serializers.ValidationError(ErrorMessages.PRICE_FILE_INCORRECT_FORMAT)
@@ -63,6 +76,8 @@ class ShopPriceFileUpdateSerializer(serializers.ModelSerializer):
 
 
 class ShopOrderSerializer(OrderSerializer):
+    """Serializer для модели OrderModel.
+     Состоит из обычного OrderSerializer, только изменены ссылки на детальную информацию"""
     details = serializers.SerializerMethodField("get_details_url")
 
     def get_details_url(self, instance: OrderModel):
@@ -75,6 +90,8 @@ class ShopOrderSerializer(OrderSerializer):
 
 
 class ShopOrderDetailsSerializer(OrderDetailSerializer):
+    """Serializer для модели OrderModel.
+    Состоит из обычного OrderDetailSerializer. Только изменены ссылки на items"""
     items = serializers.SerializerMethodField("get_items_url")
 
     class Meta(OrderDetailSerializer.Meta):
@@ -90,11 +107,17 @@ class ShopOrderDetailsSerializer(OrderDetailSerializer):
 
 
 class ShopOrderPositionSerializer(OrderProductShopSerializer):
+    """Serializer для модели ProductShopModel.
+    Состоит на основе OrderProductShopSerializer только с другим количеством полей
+    """
+
     class Meta(OrderProductShopSerializer.Meta):
         fields = ("product_id", "product_name", "description", "params")
 
 
 class ShopOrderItemsSerializer(OrderPositionSerializer):
+    """Serializer для ProductShopModel.
+    Состоит на основе модели OrderPositionSerializer, но с переопределенным position и другим количеством полей"""
     position = ShopOrderPositionSerializer(read_only=True)
 
     class Meta(OrderPositionSerializer.Meta):

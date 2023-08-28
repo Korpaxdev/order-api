@@ -10,11 +10,15 @@ from backend.models import ShopModel
 
 
 class UserModel(AbstractUser):
-    def is_manager(self, shop: ShopModel):
+    """Модель пользователя"""
+
+    def is_manager(self, shop: ShopModel) -> bool:
+        """Валидация является ли UserModel instance менеджером instance ShopModel"""
         return UserManagerModel.objects.filter(user=self, shops=shop).exists()
 
 
 class UserManagerModel(models.Model):
+    """Модель менеджера"""
     user = models.OneToOneField(UserModel, on_delete=models.CASCADE, verbose_name="Пользователь")
     shops = models.ManyToManyField("ShopModel", related_name="managers", verbose_name="Магазины")
 
@@ -27,6 +31,7 @@ class UserManagerModel(models.Model):
 
 
 class OrderAddressModel(models.Model):
+    """Модель адреса для заказа"""
     postal_code = models.IntegerField(verbose_name="Почтовый индекс")
     country = models.CharField(max_length=100, verbose_name="Страна")
     region = models.CharField(max_length=100, verbose_name="Область")
@@ -41,6 +46,7 @@ class OrderAddressModel(models.Model):
 
 
 class OrderModel(models.Model):
+    """Модель заказа"""
     NEW = "new"
     CONFIRMED = "confirmed"
     ASSEMBLED = "assembled"
@@ -67,18 +73,22 @@ class OrderModel(models.Model):
         verbose_name_plural = "Заказы пользователей"
 
     def delete(self, using=None, keep_parents=False):
+        """При удалении заказа возвращает количество товаров в магазине из заказа"""
         self.restore_items_quantity_for_position()
         super().delete(using, keep_parents)
 
     def restore_items_quantity_for_position(self):
+        """Возвращает количество для всех товаров в заказе в магазин"""
         for item in self.items.all():
             item.restore_quantity_for_position()
 
     def remove_items_quantity_from_position(self):
+        """Удаляет количество для всех товаров в магазине на основе заказа"""
         for item in self.items.all():
             item.remove_quantity_from_position()
 
     def get_total_price(self):
+        """Возвращает сумму для всех позиций в заказе"""
         return sum([item.get_sum_price() for item in self.items.all()])
 
     def get_absolute_url(self):
@@ -91,7 +101,8 @@ class OrderModel(models.Model):
         return f"Заказ пользователя {self.user.username}"
 
 
-class OrderItemsModel(models.Model):
+class OrderItemModel(models.Model):
+    """Модель позиции в заказе"""
     order = models.ForeignKey(OrderModel, on_delete=models.CASCADE, related_name="items", verbose_name="Заказ")
     position = models.ForeignKey(
         "ProductShopModel", related_name="order_items", on_delete=models.PROTECT, verbose_name="Позиция"
@@ -106,9 +117,12 @@ class OrderItemsModel(models.Model):
         unique_together = ("order", "position")
 
     def get_sum_price(self) -> int:
+        """Возвращает сумму для позиции"""
         return self.position.price * self.quantity
 
     def save(self, *args, **kwargs):
+        """При сохранении на основе позиции создаем price и price_rrc.
+        Это нужно чтобы если поменяются эти поля у ProductShopModel в заказе они остались не изменными"""
         self.price = self.position.price
         self.price_rrc = self.position.price_rrc
         if not self.pk:
@@ -116,14 +130,17 @@ class OrderItemsModel(models.Model):
         super().save(*args, **kwargs)
 
     def delete(self, *args, **kwargs):
+        """При удалении позиции в заказе возвращаем количество для ProductShopModel"""
         self.restore_quantity_for_position()
         super().delete(*args, **kwargs)
 
     def remove_quantity_from_position(self):
+        """Убавляет количество товара с магазина на основе количества в заказе"""
         self.position.quantity -= self.quantity
         self.position.save()
 
     def restore_quantity_for_position(self):
+        """Возвращает количество товара в магазине из заказа"""
         self.position.quantity += self.quantity
         self.position.save()
 
@@ -132,6 +149,7 @@ class OrderItemsModel(models.Model):
 
 
 class PasswordResetTokenModel(models.Model):
+    """Модель токена сброса пароля"""
     token = models.UUIDField(default=uuid.uuid4, verbose_name="Токен")
     user = models.ForeignKey(UserModel, verbose_name="Пользователь", on_delete=models.CASCADE)
     expire = models.DateTimeField(

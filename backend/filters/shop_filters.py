@@ -4,6 +4,7 @@ from backend.models import ShopModel
 
 
 class ShopListFilterSet(django_filters.FilterSet):
+    """Django filter set для модели ShopModel"""
     name = django_filters.CharFilter(field_name="name", lookup_expr="icontains")
     status = django_filters.CharFilter(field_name="status", lookup_expr="icontains")
 

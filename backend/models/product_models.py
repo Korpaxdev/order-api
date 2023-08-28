@@ -3,6 +3,7 @@ from pytils.translit import slugify
 
 
 class CategoryModel(models.Model):
+    """Модель для Категории продукта"""
     name = models.CharField(max_length=50, unique=True, verbose_name="Название категории")
 
     class Meta:
@@ -14,6 +15,7 @@ class CategoryModel(models.Model):
 
 
 class ProductModel(models.Model):
+    """Модель для продукта"""
     name = models.CharField(max_length=100, unique=True, verbose_name="Название")
     categories = models.ManyToManyField(CategoryModel, related_name="products", verbose_name="Категории")
     shops = models.ManyToManyField("ShopModel", through="ProductShopModel", verbose_name="Магазины")
@@ -32,6 +34,7 @@ class ProductModel(models.Model):
 
 
 class ProductShopModel(models.Model):
+    """Связующая модель продукта и магазина"""
     product = models.ForeignKey(ProductModel, on_delete=models.CASCADE, verbose_name="Товар")
     shop = models.ForeignKey("ShopModel", on_delete=models.CASCADE, related_name="positions", verbose_name="Магазин")
     description = models.TextField(blank=True, null=True, verbose_name="Описание товара")
@@ -49,6 +52,7 @@ class ProductShopModel(models.Model):
 
 
 class ParameterModel(models.Model):
+    """Модель для параметра"""
     name = models.CharField(max_length=50, unique=True, verbose_name="Название параметра")
 
     class Meta:
@@ -60,6 +64,7 @@ class ParameterModel(models.Model):
 
 
 class ProductParameterModel(models.Model):
+    """Связующая модель параметра и самого продукта"""
     product = models.ForeignKey(
         ProductShopModel, on_delete=models.CASCADE, related_name="product_parameters", verbose_name="Товар"
     )

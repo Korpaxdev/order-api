@@ -4,7 +4,7 @@ from django.contrib.auth.admin import UserAdmin
 
 from backend.models import (
     OrderAddressModel,
-    OrderItemsModel,
+    OrderItemModel,
     OrderModel,
     PasswordResetTokenModel,
     ProductShopModel,
@@ -20,7 +20,7 @@ class OrderItemForm(forms.ModelForm):
     """Model Form для модели OrderItemModel"""
 
     class Meta:
-        model = OrderItemsModel
+        model = OrderItemModel
         fields = ("position", "quantity", "price", "price_rrc")
 
     def clean(self):
@@ -51,14 +51,14 @@ class OrderItemInline(admin.TabularInline):
     """Tabular Inline для модели OrderItemModel"""
 
     extra = 1
-    model = OrderItemsModel
+    model = OrderItemModel
     fields = ("position", "quantity", "price", "price_rrc", "get_total_price")
     readonly_fields = ("price", "price_rrc", "get_total_price")
     form = OrderItemForm
     raw_id_fields = ("position",)
 
     @admin.display(description="Итого")
-    def get_total_price(self, instance: OrderItemsModel) -> int:
+    def get_total_price(self, instance: OrderItemModel) -> int:
         return instance.get_sum_price()
 
 
@@ -128,7 +128,7 @@ class OrderModelAdmin(admin.ModelAdmin):
                 elif previous_status == order_instance.CANCELLED and order_instance.status != previous_status:
                     order_instance.remove_items_quantity_from_position()
             for formset_form in formset.forms:
-                instance: OrderItemsModel = formset_form.instance
+                instance: OrderItemModel = formset_form.instance
                 if not instance.pk:
                     continue
                 elif "quantity" in formset_form.changed_data and order_instance.status != order_instance.CANCELLED:

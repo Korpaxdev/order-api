@@ -4,22 +4,25 @@ import yaml
 from celery import shared_task
 
 from backend.models import CategoryModel, ParameterModel, ProductModel, ProductParameterModel, ShopModel
-from backend.tasks.email_tasks import send_price_error_updated_email, send_price_success_updated_email
+from backend.tasks.email_tasks import send_price_error_update_email, send_price_success_updated_email
 from backend.utils.constants import ErrorMessages
 from backend.utils.exceptions import PriceFileException
 from backend.utils.managment_utils import dump_data, load_data
-from backend.utils.price_file_utils import get_fixtures_paths, set_all_position_to_0, validate_price_data
+from backend.utils.price_file_utils import get_fixtures_paths, set_all_position_to_0
 from backend.utils.types import FixturesPathsType
+from backend.utils.validation import price_data_validation
 
 
 @shared_task
 def remove_file_task(filepath: str):
+    """Удаляет файл по пути filepath"""
     print(filepath)
     os.remove(filepath)
 
 
 @shared_task
 def update_price_file_task(shop_id: int, price_file: str, user_id: int):
+    """Обновляет модели товаров на основе price_file"""
     shop = ShopModel.objects.get(pk=shop_id)
     fixtures = get_fixtures_paths(shop.pk)
     try:
@@ -39,7 +42,7 @@ def update_price_file_task(shop_id: int, price_file: str, user_id: int):
 
         with open(price_file, "r") as f:
             price_data = yaml.safe_load(f)
-            product_list = validate_price_data(price_data)
+            product_list = price_data_validation(price_data)
 
             for price_product in product_list:
                 cats = []
@@ -79,15 +82,16 @@ def update_price_file_task(shop_id: int, price_file: str, user_id: int):
         send_price_success_updated_email.delay(user_id, shop_id)
     except PriceFileException as e:
         restore_backup(shop, fixtures)
-        send_price_error_updated_email.delay(user_id, shop_id, str(e))
+        send_price_error_update_email.delay(user_id, shop_id, str(e))
         print(e)
     except Exception as e:
         restore_backup(shop, fixtures)
-        send_price_error_updated_email.delay(user_id, shop_id, ErrorMessages.PRICE_FILE_UNKNOWN_ERROR)
+        send_price_error_update_email.delay(user_id, shop_id, ErrorMessages.PRICE_FILE_UNKNOWN_ERROR)
         print(e)
 
 
 def restore_backup(shop: ShopModel, fixtures: FixturesPathsType):
+    """Восстанавливает backup из fixtures для магазина shop"""
     set_all_position_to_0(shop)
     for fixture in fixtures.values():
         load_data(fixture)

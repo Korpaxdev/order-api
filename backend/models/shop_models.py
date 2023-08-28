@@ -8,15 +8,19 @@ from django.urls import reverse
 from pytils.translit import slugify
 
 
-def update_filename(instance: "ShopModel", filename: str):
+def update_filename(instance: "ShopModel", filename: str) -> str:
+    """Генерирует имя файла на основе названия магазина и текущей даты"""
     new_file_name = f"{instance.name}-{datetime.now().strftime('%d-%m-%Y_%H-%M-%S-%f')}{Path(filename).suffix}"
     return f"prices/{new_file_name}"
 
 
 class ShopModel(models.Model):
+    """Модель магазина"""
+    READY_STATUS = True
+    UNREADY_STATUS = False
     SHOP_STATUS_CHOICES = (
-        (True, "Готов принимать заказы"),
-        (False, "Не готов принимать заказы"),
+        (READY_STATUS, "Готов принимать заказы"),
+        (UNREADY_STATUS, "Не готов принимать заказы"),
     )
 
     name = models.CharField(max_length=51, unique=True, verbose_name="Название магазина")
@@ -31,6 +35,7 @@ class ShopModel(models.Model):
         verbose_name_plural = "Магазины"
 
     def save(self, *args, **kwargs):
+        """При сохранении модели генерируем slug на основе name"""
         self.slug = slugify(self.name)
         super(ShopModel, self).save(*args, **kwargs)
 
@@ -41,7 +46,9 @@ class ShopModel(models.Model):
         return reverse("shop_price_list", kwargs={"shop": self.slug})
 
     @staticmethod
-    def is_valid_price_file(price_file: InMemoryUploadedFile):
+    def is_valid_price_file(price_file: InMemoryUploadedFile) -> bool:
+        """Проверка валидный ли прайс файл, на основе разрешенных расширений файла.
+        Разрешенные расширения settings.PRICE_FILE_FORMATS"""
         extension = Path(price_file.name).suffix
         return extension in settings.PRICE_FILE_FORMATS
 

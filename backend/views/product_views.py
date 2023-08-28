@@ -6,6 +6,9 @@ from backend.serializers.product_serializers import ProductListSerializer, Produ
 
 
 class ProductListView(generics.ListAPIView):
+    """
+    Класс представления списка объектов из модели ProductModel
+    Url: /products"""
     serializer_class = ProductListSerializer
     filterset_class = ProductListFilterSet
 
@@ -18,6 +21,9 @@ class ProductListView(generics.ListAPIView):
 
 
 class ProductShopDetailListView(generics.ListAPIView):
+    """
+     Класс детального представления списка объектов из модели ProductShopModel
+     Url: /products/<slug:product>"""
     serializer_class = ProductShopDetailListSerializer
     lookup_field = "slug"
     lookup_url_kwarg = "product"

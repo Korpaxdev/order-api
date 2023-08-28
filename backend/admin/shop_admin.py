@@ -4,6 +4,8 @@ from django.contrib import admin
 from backend.models import ShopModel
 
 
+# ---------- Form Classes ----------
+
 class ShopForm(forms.ModelForm):
     """Model Form для модели ShopModel"""
 
@@ -23,6 +25,8 @@ class ShopForm(forms.ModelForm):
                 "status", f"Невозможно установить статус {status_name}, когда у магазина отсутствует прайс файл"
             )
 
+
+# ---------- Admin classes ----------
 
 @admin.register(ShopModel)
 class ShopAdmin(admin.ModelAdmin):
