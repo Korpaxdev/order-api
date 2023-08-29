@@ -37,6 +37,12 @@
 - `status` - icontains по полю status
 - `created_at` - (lte, gte, lt, gt) по полю created_at
 
+#### Дополнительно:
+
+- Поле `username` должно быть уникально в бд
+- Поле `email` должно быть уникально в бд
+- На поле `password` стоит стандартный django password validator
+
 ### **POST** - `{domain_name}/api/users/token/`
 
 Получение токена пользователя. Необходим json объект формата:
@@ -601,6 +607,10 @@ HEAD Authorization: Bearer "Token"
   "status": "boolean"
 }
 ```
+
+#### Дополнительно:
+
+- Валидация поля status. Если у магазина пустое поле price_file, то статус невозможно установить в true
 
 ### **PUT**, **PATCH** `{domain_name}/api/shops/{shop_slug}/update/`
 

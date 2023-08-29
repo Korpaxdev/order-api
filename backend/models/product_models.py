@@ -53,7 +53,7 @@ class ProductShopModel(models.Model):
 
 class ParameterModel(models.Model):
     """Модель для параметра"""
-    name = models.CharField(max_length=50, unique=True, verbose_name="Название параметра")
+    name = models.CharField(max_length=100, unique=True, verbose_name="Название параметра")
 
     class Meta:
         verbose_name = "Параметр"
@@ -69,7 +69,7 @@ class ProductParameterModel(models.Model):
         ProductShopModel, on_delete=models.CASCADE, related_name="product_parameters", verbose_name="Товар"
     )
     param = models.ForeignKey(ParameterModel, on_delete=models.PROTECT, verbose_name="Параметр")
-    value = models.CharField(max_length=50, verbose_name="Значение параметра")
+    value = models.TextField(verbose_name="Значение параметра")
 
     class Meta:
         verbose_name = "Параметр товара"

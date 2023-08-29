@@ -20,7 +20,7 @@ class ShopForm(forms.ModelForm):
         cleaned_data = super().clean()
         status = cleaned_data.get("status")
         status_name = dict(ShopModel.SHOP_STATUS_CHOICES).get(status)
-        if status and not cleaned_data.get("price_file"):
+        if status and not self.instance.price_file.name:
             self.add_error(
                 "status", f"Невозможно установить статус {status_name}, когда у магазина отсутствует прайс файл"
             )
@@ -33,7 +33,7 @@ class ShopAdmin(admin.ModelAdmin):
     """Model Admin для модели ShopModel"""
 
     list_display = ("id", "name", "status")
-    readonly_fields = ("slug",)
+    readonly_fields = ("slug", 'price_file')
     search_fields = ("name",)
     form = ShopForm
     list_display_links = ("id", "name")
