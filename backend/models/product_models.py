@@ -19,7 +19,7 @@ class ProductModel(models.Model):
     """Модель для продукта"""
 
     name = models.CharField(max_length=100, unique=True, verbose_name="Название")
-    categories = models.ManyToManyField(CategoryModel, related_name="products", verbose_name="Категории")
+    categories = models.ManyToManyField("CategoryModel", related_name="products", verbose_name="Категории")
     shops = models.ManyToManyField("ShopModel", through="ProductShopModel", verbose_name="Магазины")
     slug = models.SlugField(max_length=100, blank=True, null=True, unique=True)
 

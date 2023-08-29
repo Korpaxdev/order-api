@@ -157,13 +157,15 @@ class PasswordResetTokenModel(models.Model):
 
     token = models.UUIDField(default=uuid.uuid4, verbose_name="Токен")
     user = models.ForeignKey(UserModel, verbose_name="Пользователь", on_delete=models.CASCADE)
-    expire = models.DateTimeField(
-        default=datetime.now() + settings.PASSWORD_TOKEN_RESET_LIFETIME, verbose_name="Истекает"
-    )
+    expire = models.DateTimeField(verbose_name="Истекает", blank=True, null=True)
 
     class Meta:
         verbose_name = "Токен для сброса пароля"
         verbose_name_plural = "Токены для сброса пароля"
+
+    def save(self, *args, **kwargs):
+        self.expire = datetime.now() + settings.PASSWORD_TOKEN_RESET_LIFETIME
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return f"Токен для сброса пароля пользователя {self.user.username}"
