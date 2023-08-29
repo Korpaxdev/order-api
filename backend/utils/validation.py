@@ -4,7 +4,7 @@ from django.contrib.auth.password_validation import (
     NumericPasswordValidator,
 )
 
-from backend.utils.constants import PRODUCT_FIELDS, Validation, ErrorMessages
+from backend.utils.constants import PRODUCT_FIELDS, ErrorMessages, Validation
 from backend.utils.exceptions import PriceFileException
 from backend.utils.types import ProductType
 

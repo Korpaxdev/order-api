@@ -7,15 +7,9 @@ from backend.filters.shop_filters import ShopListFilterSet, ShopProductFilterSet
 from backend.models import OrderItemModel, OrderModel, ProductShopModel, ShopModel
 from backend.permissions.shop_permissions import IsManagerOrAdminPermission
 from backend.serializers.product_serializers import ProductShopDetailListSerializer
-from backend.serializers.shop_serializers import (
-    ShopDetailSerializer,
-    ShopListSerializer,
-    ShopOrderDetailsSerializer,
-    ShopOrderItemsSerializer,
-    ShopOrderSerializer,
-    ShopPriceFileUpdateSerializer,
-    ShopUpdateStatusSerializer,
-)
+from backend.serializers.shop_serializers import (ShopDetailSerializer, ShopListSerializer, ShopOrderDetailsSerializer,
+                                                  ShopOrderItemsSerializer, ShopOrderSerializer,
+                                                  ShopPriceFileUpdateSerializer, ShopUpdateStatusSerializer)
 from backend.tasks import remove_file_task, update_price_file_task
 
 
@@ -23,6 +17,7 @@ class ShopListView(generics.ListAPIView):
     """View класс для представления списка объектов из модели ShopModel
     Url: shops/
     """
+
     serializer_class = ShopListSerializer
     queryset = ShopModel.objects.all()
     filterset_class = ShopListFilterSet
@@ -31,6 +26,7 @@ class ShopListView(generics.ListAPIView):
 class ShopDetailView(generics.RetrieveAPIView):
     """View класс для детального представления объекта из модели ShopModel
     Url: shops/<slug:shop>/"""
+
     serializer_class = ShopDetailSerializer
     queryset = ShopModel.objects.all()
     lookup_field = "slug"
@@ -40,6 +36,7 @@ class ShopDetailView(generics.RetrieveAPIView):
 class ShopPriceListView(generics.ListAPIView):
     """View класс для представления списка объектов ProductShop
     Url: shops/<slug:shop>/products/"""
+
     serializer_class = ProductShopDetailListSerializer
     filterset_class = ShopProductFilterSet
     lookup_field = "slug"
@@ -57,6 +54,7 @@ class ShopPriceListView(generics.ListAPIView):
 class ShopUpdateStatusView(generics.UpdateAPIView):
     """View класс для обновления поля status у модели ShopModel
     Url: shops/<slug:shop>/status/"""
+
     permission_classes = (permissions.IsAuthenticated, IsManagerOrAdminPermission)
     queryset = ShopModel.objects.all()
     serializer_class = ShopUpdateStatusSerializer
@@ -67,6 +65,7 @@ class ShopUpdateStatusView(generics.UpdateAPIView):
 class ShopPriceFileUpdate(generics.GenericAPIView):
     """View класс для обновления поля price_file у модели ShopModel
     Url: shops/<slug:shop>/update/"""
+
     permission_classes = (permissions.IsAuthenticated, IsManagerOrAdminPermission)
     queryset = ShopModel.objects.all()
     serializer_class = ShopPriceFileUpdateSerializer
@@ -89,6 +88,7 @@ class ShopPriceFileUpdate(generics.GenericAPIView):
 class ShopOrderView(generics.ListAPIView):
     """View класс для представления списка объектов модели OrderModel, но с фильтрацией по shop__slug
     Url: shops/<slug:shop>/orders/"""
+
     permission_classes = (permissions.IsAuthenticated, IsManagerOrAdminPermission)
     serializer_class = ShopOrderSerializer
     filterset_class = OrderListFilterSet
@@ -102,6 +102,7 @@ class ShopOrderView(generics.ListAPIView):
 class ShopOrderDetailsView(generics.RetrieveAPIView):
     """View класс для преставления детальной информации объекта модели OrderModel
     Url: shops/<slug:shop>/orders/<int:order>/"""
+
     permission_classes = (permissions.IsAuthenticated, IsManagerOrAdminPermission)
     serializer_class = ShopOrderDetailsSerializer
     lookup_url_kwarg = "order"
@@ -118,6 +119,7 @@ class ShopOrderDetailsView(generics.RetrieveAPIView):
 class ShopOrderItemsView(generics.ListAPIView):
     """View класс для представления списка объектов модели OrderItem
     Url: shops/<slug:shop>/orders/<int:order>/items/"""
+
     permission_classes = (permissions.IsAuthenticated, IsManagerOrAdminPermission)
     serializer_class = ShopOrderItemsSerializer
     lookup_url_kwarg = "order"

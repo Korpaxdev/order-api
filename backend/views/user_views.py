@@ -5,20 +5,16 @@ from rest_framework.response import Response
 
 from backend.filters.order_filters import OrderListFilterSet
 from backend.models import OrderItemModel, OrderModel, PasswordResetTokenModel, UserModel
-from backend.serializers.user_serializers import (
-    OrderDetailSerializer,
-    OrderPositionSerializer,
-    OrderSerializer,
-    UserPasswordResetTokenSerializer,
-    UserSerializer,
-    UserUpdatePasswordSerializer,
-)
+from backend.serializers.user_serializers import (OrderDetailSerializer, OrderPositionSerializer, OrderSerializer,
+                                                  UserPasswordResetTokenSerializer, UserSerializer,
+                                                  UserUpdatePasswordSerializer)
 from backend.tasks.email_tasks import send_password_reset_email
 
 
 class UserProfileView(generics.GenericAPIView):
     """View класс для представления авторизованного пользователя UserModel
     Url: users/profile/"""
+
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class = UserSerializer
 
@@ -31,6 +27,7 @@ class UserProfileView(generics.GenericAPIView):
 class UserRegisterView(generics.CreateAPIView):
     """View класс для создания объекта модели UserModel
     Url: users/register/"""
+
     serializer_class = UserSerializer
     queryset = UserModel.objects.all()
 
@@ -38,6 +35,7 @@ class UserRegisterView(generics.CreateAPIView):
 class UserOrdersView(generics.ListCreateAPIView):
     """View класс для представления списка объектов модели OrderModel
     Url: users/profile/orders/"""
+
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class = OrderSerializer
     filterset_class = OrderListFilterSet
@@ -49,6 +47,7 @@ class UserOrdersView(generics.ListCreateAPIView):
 class UserOrderDetailView(generics.RetrieveAPIView):
     """View класс для представления детальной информации об объекте модели OrderModel
     Url: users/profile/orders/<int:order>/"""
+
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class = OrderDetailSerializer
     lookup_url_kwarg = "order"
@@ -60,6 +59,7 @@ class UserOrderDetailView(generics.RetrieveAPIView):
 class UserOrderPositionsView(generics.ListAPIView):
     """View класс для представления списка объектов из модели OrderItemModel
     Url: users/profile/orders/<int:order>/items/"""
+
     permissions = (permissions.IsAuthenticated,)
     serializer_class = OrderPositionSerializer
     lookup_url_kwarg = "order"
@@ -75,6 +75,7 @@ class UserOrderPositionsView(generics.ListAPIView):
 class CreateUserPasswordResetView(generics.GenericAPIView):
     """View класс для создания объекта модели PasswordResetTokenModel
     Url: users/password/reset"""
+
     serializer_class = UserPasswordResetTokenSerializer
     queryset = PasswordResetTokenModel
 
@@ -94,6 +95,7 @@ class CreateUserPasswordResetView(generics.GenericAPIView):
 class UserPasswordUpdateView(generics.GenericAPIView):
     """View класс для обновления поля password у объекта модели UserModel
     Url: users/password/update/<str:user>/<uuid:token>/"""
+
     serializer_class = UserUpdatePasswordSerializer
     queryset = UserModel.objects.all()
 

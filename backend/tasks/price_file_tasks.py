@@ -48,12 +48,14 @@ def update_price_file_task(shop_id: int, price_file: str, user_id: int):
                 cats = []
 
                 for price_category in price_product["categories"]:
-                    category, _ = CategoryModel.objects.get_or_create(name__iexact=price_category,
-                                                                      defaults={"name": price_category})
+                    category, _ = CategoryModel.objects.get_or_create(
+                        name__iexact=price_category, defaults={"name": price_category}
+                    )
                     cats.append(category)
 
-                product, _ = ProductModel.objects.get_or_create(name__iexact=price_product["name"],
-                                                                defaults={'name': price_product['name']})
+                product, _ = ProductModel.objects.get_or_create(
+                    name__iexact=price_product["name"], defaults={"name": price_product["name"]}
+                )
                 product.categories.add(*cats)
 
                 position, _ = shop.positions.update_or_create(
@@ -71,10 +73,13 @@ def update_price_file_task(shop_id: int, price_file: str, user_id: int):
 
                 for price_param in price_product.get("params", []):
                     for price_param_name, price_param_value in price_param.items():
-                        param, _ = ParameterModel.objects.get_or_create(name__iexact=price_param_name,
-                                                                        defaults={'name': price_param_name})
+                        param, _ = ParameterModel.objects.get_or_create(
+                            name__iexact=price_param_name, defaults={"name": price_param_name}
+                        )
                         product_param, _ = ProductParameterModel.objects.update_or_create(
-                            product=position, param=param, value=price_param_value,
+                            product=position,
+                            param=param,
+                            value=price_param_value,
                         )
 
                 print(f"Updated {product.name}")

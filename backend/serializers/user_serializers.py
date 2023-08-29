@@ -5,16 +5,8 @@ from django.utils.datetime_safe import datetime
 from rest_framework import serializers
 from rest_framework.reverse import reverse
 
-from backend.models import (
-    OrderAddressModel,
-    OrderItemModel,
-    OrderModel,
-    PasswordResetTokenModel,
-    ProductModel,
-    ProductShopModel,
-    ShopModel,
-    UserModel,
-)
+from backend.models import (OrderAddressModel, OrderItemModel, OrderModel, PasswordResetTokenModel, ProductModel,
+                            ProductShopModel, ShopModel, UserModel)
 from backend.serializers.product_serializers import ProductShopDetailListSerializer
 from backend.tasks.email_tasks import send_new_order_email
 from backend.utils.constants import ErrorMessages
@@ -31,6 +23,7 @@ class OrderAddressSerializer(serializers.ModelSerializer):
 
 class OrderItemsCreateSerializer(serializers.ModelSerializer):
     """Serializer для модели OrderItemModel"""
+
     product = serializers.IntegerField(source="position.product")
     shop = serializers.IntegerField(source="position.shop")
     quantity = serializers.IntegerField(required=True, allow_null=False, validators=[MinValueValidator(1)])
@@ -74,6 +67,7 @@ class OrderItemsCreateSerializer(serializers.ModelSerializer):
 
 class OrderSerializer(serializers.ModelSerializer):
     """Serializer для модели OrderModel. Отвечает за создание заказа"""
+
     status = serializers.CharField(source="get_status_display", read_only=True)
     details = serializers.HyperlinkedIdentityField(
         "order_detail", lookup_field="pk", lookup_url_kwarg="order", read_only=True
@@ -131,6 +125,7 @@ class OrderProductShopSerializer(ProductShopDetailListSerializer):
 
 class OrderPositionSerializer(serializers.ModelSerializer):
     """Serializer для модели OrderItemModel"""
+
     position = OrderProductShopSerializer(read_only=True)
     sum = serializers.SerializerMethodField("get_sum", read_only=True)
 
@@ -145,6 +140,7 @@ class OrderPositionSerializer(serializers.ModelSerializer):
 
 class OrderDetailSerializer(serializers.ModelSerializer):
     """Serializer для OrderModel. Представляет детальное описание заказа"""
+
     status = serializers.CharField(source="get_status_display", read_only=True)
     address = OrderAddressSerializer(read_only=True)
     items = serializers.HyperlinkedIdentityField("order_positions", lookup_field="pk", lookup_url_kwarg="order")
@@ -161,6 +157,7 @@ class OrderDetailSerializer(serializers.ModelSerializer):
 
 class UserSerializer(serializers.ModelSerializer):
     """Serializer для модели UserModel. Используется для создания и представления пользователя"""
+
     password = serializers.CharField(validators=[password_validation], write_only=True, required=True)
     email = serializers.EmailField(required=True)
     orders = serializers.SerializerMethodField("get_orders_link", read_only=True)
@@ -185,6 +182,7 @@ class UserSerializer(serializers.ModelSerializer):
 
 class UserPasswordResetTokenSerializer(serializers.ModelSerializer):
     """Serializer для модели PasswordResetTokenModel"""
+
     email = serializers.EmailField(required=True, write_only=True)
 
     class Meta:
@@ -211,6 +209,7 @@ class UserPasswordResetTokenSerializer(serializers.ModelSerializer):
 
 class UserUpdatePasswordSerializer(serializers.ModelSerializer):
     """Serializer для модели UserModel. Представляет собой обновление пароля пользователя"""
+
     password = serializers.CharField(validators=[password_validation], write_only=True, required=True)
 
     class Meta:

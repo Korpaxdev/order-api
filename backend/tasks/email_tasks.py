@@ -5,7 +5,7 @@ from django.template.loader import render_to_string
 from django.urls import reverse
 
 from backend.models import OrderModel, PasswordResetTokenModel, ShopModel, UserModel
-from backend.utils.constants import SITE_DOMAIN, EmailBaseSetup, EmailSendConfig
+from backend.utils.constants import EmailBaseSetup, EmailSendConfig, get_current_domain
 
 
 def send_email(base_setup: EmailBaseSetup, to: list | tuple, context: dict):
@@ -26,7 +26,7 @@ def send_status_change_email(order_id: int):
         "username": user.username,
         "order_id": order.pk,
         "status": order.get_status_display(),
-        "url": f"http://{SITE_DOMAIN}{reverse('profile')}",
+        "url": f"http://{get_current_domain()}{reverse('profile')}",
     }
     send_email(EmailSendConfig.STATUS_CHANGE, to=(user.email,), context=context)
 
@@ -36,7 +36,7 @@ def send_password_reset_email(password_reset_id: int):
     """Создает контекст для password_reset.html и отправляет сообщение пользователю из PasswordResetTokenModel"""
     password_reset = PasswordResetTokenModel.objects.get(id=password_reset_id)
     context = {
-        "url": f"http://{SITE_DOMAIN}{reverse('password_update', kwargs={'user': password_reset.user.username, 'token': password_reset.token})}",
+        "url": f"http://{get_current_domain()}{reverse('password_update', kwargs={'user': password_reset.user.username, 'token': password_reset.token})}",
         "expire": password_reset.expire,
     }
     send_email(EmailSendConfig.PASSWORD_RESET, to=(password_reset.user.email,), context=context)
@@ -48,7 +48,7 @@ def send_price_success_updated_email(user_id: int, shop_id: int):
     user = UserModel.objects.get(pk=user_id)
     shop = ShopModel.objects.get(pk=shop_id)
     context = {
-        "url": f"http://{SITE_DOMAIN}{shop.get_products_url()}",
+        "url": f"http://{get_current_domain()}{shop.get_products_url()}",
         "username": user.username,
         "shop": shop.name,
     }
@@ -72,5 +72,9 @@ def send_price_error_update_email(user_id: int, shop_id: int, error_message: str
 def send_new_order_email(order_id: int):
     """Создает контекст для new_order.html и отправляет сообщение пользователю из UserModel"""
     order = OrderModel.objects.get(pk=order_id)
-    context = {"order_id": order_id, "user": order.user.username, "url": f"http://{SITE_DOMAIN}{order.get_admin_url()}"}
+    context = {
+        "order_id": order_id,
+        "user": order.user.username,
+        "url": f"http://{get_current_domain()}{order.get_admin_url()}",
+    }
     send_email(EmailSendConfig.NEW_ORDER, to=(settings.ADMIN_EMAIL,), context=context)

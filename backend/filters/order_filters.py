@@ -8,8 +8,4 @@ class OrderListFilterSet(django_filters.FilterSet):
 
     class Meta:
         model = OrderModel
-        fields = {
-            "id": ("exact",),
-            "status": ("icontains",),
-            "created_at": ("lte", "gte", "lt", "gt")
-        }
+        fields = {"id": ("exact",), "status": ("icontains",), "created_at": ("lte", "gte", "lt", "gt")}

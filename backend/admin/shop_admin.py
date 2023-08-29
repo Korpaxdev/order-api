@@ -3,8 +3,8 @@ from django.contrib import admin
 
 from backend.models import ShopModel
 
-
 # ---------- Form Classes ----------
+
 
 class ShopForm(forms.ModelForm):
     """Model Form для модели ShopModel"""
@@ -28,12 +28,13 @@ class ShopForm(forms.ModelForm):
 
 # ---------- Admin classes ----------
 
+
 @admin.register(ShopModel)
 class ShopAdmin(admin.ModelAdmin):
     """Model Admin для модели ShopModel"""
 
     list_display = ("id", "name", "status")
-    readonly_fields = ("slug", 'price_file')
+    readonly_fields = ("slug", "price_file")
     search_fields = ("name",)
     form = ShopForm
     list_display_links = ("id", "name")

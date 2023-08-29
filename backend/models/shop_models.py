@@ -16,6 +16,7 @@ def update_filename(instance: "ShopModel", filename: str) -> str:
 
 class ShopModel(models.Model):
     """Модель магазина"""
+
     READY_STATUS = True
     UNREADY_STATUS = False
     SHOP_STATUS_CHOICES = (

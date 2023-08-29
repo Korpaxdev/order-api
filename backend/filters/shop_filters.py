@@ -1,10 +1,11 @@
 import django_filters
 
-from backend.models import ShopModel, ProductShopModel
+from backend.models import ProductShopModel, ShopModel
 
 
 class ShopListFilterSet(django_filters.FilterSet):
     """Django filter set для модели ShopModel"""
+
     name = django_filters.CharFilter(field_name="name", lookup_expr="icontains")
     status = django_filters.CharFilter(field_name="status", lookup_expr="icontains")
 
@@ -15,6 +16,7 @@ class ShopListFilterSet(django_filters.FilterSet):
 
 class ShopProductFilterSet(django_filters.FilterSet):
     """Django filter set для модели ProductShopModel"""
+
     product_id = django_filters.NumberFilter(field_name="product__pk", lookup_expr="exact", label="Id товара")
     product_name = django_filters.CharFilter(field_name="product__name", lookup_expr="icontains")
     category = django_filters.CharFilter(field_name="product__categories__name", lookup_expr="icontains")

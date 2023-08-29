@@ -19,6 +19,7 @@ class UserModel(AbstractUser):
 
 class UserManagerModel(models.Model):
     """Модель менеджера"""
+
     user = models.OneToOneField(UserModel, on_delete=models.CASCADE, verbose_name="Пользователь")
     shops = models.ManyToManyField("ShopModel", related_name="managers", verbose_name="Магазины")
 
@@ -32,6 +33,7 @@ class UserManagerModel(models.Model):
 
 class OrderAddressModel(models.Model):
     """Модель адреса для заказа"""
+
     postal_code = models.IntegerField(verbose_name="Почтовый индекс")
     country = models.CharField(max_length=100, verbose_name="Страна")
     region = models.CharField(max_length=100, verbose_name="Область")
@@ -47,6 +49,7 @@ class OrderAddressModel(models.Model):
 
 class OrderModel(models.Model):
     """Модель заказа"""
+
     NEW = "new"
     CONFIRMED = "confirmed"
     ASSEMBLED = "assembled"
@@ -103,6 +106,7 @@ class OrderModel(models.Model):
 
 class OrderItemModel(models.Model):
     """Модель позиции в заказе"""
+
     order = models.ForeignKey(OrderModel, on_delete=models.CASCADE, related_name="items", verbose_name="Заказ")
     position = models.ForeignKey(
         "ProductShopModel", related_name="order_items", on_delete=models.PROTECT, verbose_name="Позиция"
@@ -150,6 +154,7 @@ class OrderItemModel(models.Model):
 
 class PasswordResetTokenModel(models.Model):
     """Модель токена сброса пароля"""
+
     token = models.UUIDField(default=uuid.uuid4, verbose_name="Токен")
     user = models.ForeignKey(UserModel, verbose_name="Пользователь", on_delete=models.CASCADE)
     expire = models.DateTimeField(

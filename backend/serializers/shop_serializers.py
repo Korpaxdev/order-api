@@ -10,6 +10,7 @@ from backend.utils.constants import ErrorMessages
 
 class ShopListSerializer(serializers.ModelSerializer):
     """Serializer для списка модели ShopModel"""
+
     status = serializers.CharField(source="get_status_display")
     detail = serializers.HyperlinkedIdentityField("shop_details", lookup_field="slug", lookup_url_kwarg="shop")
 
@@ -20,7 +21,8 @@ class ShopListSerializer(serializers.ModelSerializer):
 
 class ShopDetailSerializer(serializers.ModelSerializer):
     """Serializer для модели ShopModel.
-     Представляет более детальную информацию по магазину"""
+    Представляет более детальную информацию по магазину"""
+
     status = serializers.CharField(source="get_status_display")
     price_list = serializers.HyperlinkedIdentityField("shop_price_list", lookup_field="slug", lookup_url_kwarg="shop")
     orders = serializers.HyperlinkedIdentityField("shop_orders", lookup_field="slug", lookup_url_kwarg="shop")
@@ -52,7 +54,7 @@ class ShopUpdateStatusSerializer(serializers.ModelSerializer):
 
     def validate_status(self, value):
         """Валидация статуса магазина.
-         Статус невозможно установить готов если у магазина не загружен прайс файл"""
+        Статус невозможно установить готов если у магазина не загружен прайс файл"""
         if value and not self.instance.price_file:
             status_name = dict(ShopModel.SHOP_STATUS_CHOICES).get(value)
             raise serializers.ValidationError(ErrorMessages.CANT_SET_STATUS % status_name)
@@ -77,7 +79,8 @@ class ShopPriceFileUpdateSerializer(serializers.ModelSerializer):
 
 class ShopOrderSerializer(OrderSerializer):
     """Serializer для модели OrderModel.
-     Состоит из обычного OrderSerializer, только изменены ссылки на детальную информацию"""
+    Состоит из обычного OrderSerializer, только изменены ссылки на детальную информацию"""
+
     details = serializers.SerializerMethodField("get_details_url")
 
     def get_details_url(self, instance: OrderModel):
@@ -92,6 +95,7 @@ class ShopOrderSerializer(OrderSerializer):
 class ShopOrderDetailsSerializer(OrderDetailSerializer):
     """Serializer для модели OrderModel.
     Состоит из обычного OrderDetailSerializer. Только изменены ссылки на items"""
+
     items = serializers.SerializerMethodField("get_items_url")
 
     class Meta(OrderDetailSerializer.Meta):
@@ -118,6 +122,7 @@ class ShopOrderPositionSerializer(OrderProductShopSerializer):
 class ShopOrderItemsSerializer(OrderPositionSerializer):
     """Serializer для ProductShopModel.
     Состоит на основе модели OrderPositionSerializer, но с переопределенным position и другим количеством полей"""
+
     position = ShopOrderPositionSerializer(read_only=True)
 
     class Meta(OrderPositionSerializer.Meta):

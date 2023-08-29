@@ -5,7 +5,9 @@ from django.contrib.sites.models import Site
 
 from backend.utils.types import ProductFieldType
 
-SITE_DOMAIN = Site.objects.get_current().domain
+
+def get_current_domain():
+    return Site.objects.get_current().domain
 
 
 @dataclass(frozen=True)

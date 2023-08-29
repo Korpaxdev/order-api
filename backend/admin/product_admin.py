@@ -2,7 +2,6 @@ from django.contrib import admin
 
 from backend.models import CategoryModel, ParameterModel, ProductModel, ProductParameterModel, ProductShopModel
 
-
 # ---------- Inline classes ----------
 
 
