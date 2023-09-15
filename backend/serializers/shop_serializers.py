@@ -1,10 +1,16 @@
 from django.core.files.uploadedfile import InMemoryUploadedFile
+from drf_spectacular.utils import OpenApiExample, extend_schema_field, extend_schema_serializer
 from rest_framework import serializers
+from rest_framework.fields import empty
 from rest_framework.reverse import reverse
 
 from backend.models import OrderModel, ShopModel, UserModel
-from backend.serializers.user_serializers import (OrderDetailSerializer, OrderPositionSerializer,
-                                                  OrderProductShopSerializer, OrderSerializer)
+from backend.serializers.user_serializers import (
+    OrderDetailSerializer,
+    OrderPositionSerializer,
+    OrderProductShopSerializer,
+    OrderSerializer,
+)
 from backend.utils.constants import ErrorMessages
 
 
@@ -27,13 +33,13 @@ class ShopDetailSerializer(serializers.ModelSerializer):
     price_list = serializers.HyperlinkedIdentityField("shop_price_list", lookup_field="slug", lookup_url_kwarg="shop")
     orders = serializers.HyperlinkedIdentityField("shop_orders", lookup_field="slug", lookup_url_kwarg="shop")
 
-    def __init__(self, instance: ShopModel, **kwargs):
+    def __init__(self, instance: ShopModel = None, data=empty, **kwargs):
         """Удаляем поля из модели если:
         1. У магазина статус не готов - удаляем price_file
         2. Если пользователь не админ или не менеджер магазина - удаляем price_file и orders"""
-        super().__init__(instance, **kwargs)
+        super().__init__(instance, data, **kwargs)
         user: UserModel = self.context["request"].user
-        if not instance.status:
+        if instance and not instance.status:
             del self.fields["price_list"]
         if user.is_anonymous or (not user.is_manager(instance) and not user.is_superuser):
             del self.fields["price_file"]
@@ -83,6 +89,7 @@ class ShopOrderSerializer(OrderSerializer):
 
     details = serializers.SerializerMethodField("get_details_url")
 
+    @extend_schema_field(serializers.CharField)
     def get_details_url(self, instance: OrderModel):
         view = self.context["view"]
         return reverse(
@@ -101,6 +108,7 @@ class ShopOrderDetailsSerializer(OrderDetailSerializer):
     class Meta(OrderDetailSerializer.Meta):
         fields = ("id", "created_at", "status", "address", "items")
 
+    @extend_schema_field(serializers.CharField)
     def get_items_url(self, instance: OrderModel):
         view = self.context["view"]
         return reverse(

@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "debug_toolbar",
     "django_filters",
     "rest_framework_simplejwt",
+    "drf_spectacular",
     # local apps
     "backend",
 ]
@@ -159,6 +160,7 @@ REST_FRAMEWORK = {
         "rest_framework_simplejwt.authentication.JWTAuthentication",
         "rest_framework.authentication.SessionAuthentication",
     ),
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
 }
 
 # ---------- CELERY ----------
@@ -173,3 +175,10 @@ INTERNAL_IPS = ("127.0.0.1",)
 PRICE_FILE_FORMATS = [".yml"]
 PRICE_FILE_BACKUP_FIXTURES = BASE_DIR / "backup_fixtures"
 SIMPLE_JWT = {"ACCESS_TOKEN_LIFETIME": timedelta(days=1)}
+
+SPECTACULAR_SETTINGS = {
+    "COMPONENT_SPLIT_REQUEST": True,
+    "VERSION": "1.0",
+    "TITLE": "Order API",
+    "DESCRIPTION": "API для автоматизации закупок",
+}

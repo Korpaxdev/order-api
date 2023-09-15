@@ -1,3 +1,5 @@
+from drf_spectacular.types import OpenApiTypes
+from drf_spectacular.utils import extend_schema_field
 from rest_framework import serializers
 
 from backend.models import ProductModel, ProductParameterModel, ProductShopModel
@@ -27,6 +29,7 @@ class ProductListSerializer(serializers.ModelSerializer):
         fields = ("id", "name", "categories", "details")
 
     @staticmethod
+    @extend_schema_field(serializers.ListField)
     def get_categories(instance: ProductModel):
         return get_cats_names(instance)
 
@@ -57,5 +60,6 @@ class ProductShopDetailListSerializer(serializers.ModelSerializer):
         )
 
     @staticmethod
+    @extend_schema_field(serializers.ListField)
     def get_categories(instance: ProductShopModel):
         return get_cats_names(instance.product)

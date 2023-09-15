@@ -1,3 +1,4 @@
+from drf_spectacular.utils import extend_schema, extend_schema_view
 from rest_framework import generics
 
 from backend.filters.product_filters import ProductListFilterSet, ProductShopFilterSet
@@ -5,6 +6,7 @@ from backend.models import ProductModel, ProductShopModel
 from backend.serializers.product_serializers import ProductListSerializer, ProductShopDetailListSerializer
 
 
+@extend_schema_view(get=extend_schema(operation_id="products_list"))
 class ProductListView(generics.ListAPIView):
     """
     Класс представления списка объектов из модели ProductModel
@@ -21,6 +23,7 @@ class ProductListView(generics.ListAPIView):
         )
 
 
+@extend_schema_view(get=extend_schema(operation_id="products_shops_detail_list"))
 class ProductShopDetailListView(generics.ListAPIView):
     """
     Класс детального представления списка объектов из модели ProductShopModel

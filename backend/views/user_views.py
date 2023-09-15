@@ -1,13 +1,19 @@
 from django.http import HttpRequest
+from drf_spectacular.utils import extend_schema
 from rest_framework import generics, permissions, status
 from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
 
 from backend.filters.order_filters import OrderListFilterSet
 from backend.models import OrderItemModel, OrderModel, PasswordResetTokenModel, UserModel
-from backend.serializers.user_serializers import (OrderDetailSerializer, OrderPositionSerializer, OrderSerializer,
-                                                  UserPasswordResetTokenSerializer, UserSerializer,
-                                                  UserUpdatePasswordSerializer)
+from backend.serializers.user_serializers import (
+    OrderDetailSerializer,
+    OrderPositionSerializer,
+    OrderSerializer,
+    UserPasswordResetTokenSerializer,
+    UserSerializer,
+    UserUpdatePasswordSerializer,
+)
 from backend.tasks.email_tasks import send_password_reset_email
 
 
@@ -66,7 +72,7 @@ class UserOrderPositionsView(generics.ListAPIView):
 
     def get_queryset(self):
         return (
-            OrderItemModel.objects.filter(order=self.kwargs["order"], order__user=self.request.user)
+            OrderItemModel.objects.filter(order=self.kwargs.get("order"), order__user=self.request.user)
             .select_related("position__product", "position__shop")
             .prefetch_related("position__product__categories", "position__product_parameters__param")
         )
