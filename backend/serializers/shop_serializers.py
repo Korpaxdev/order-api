@@ -5,12 +5,8 @@ from rest_framework.fields import empty
 from rest_framework.reverse import reverse
 
 from backend.models import OrderModel, ShopModel, UserModel
-from backend.serializers.user_serializers import (
-    OrderDetailSerializer,
-    OrderPositionSerializer,
-    OrderProductShopSerializer,
-    OrderSerializer,
-)
+from backend.serializers.user_serializers import (OrderDetailSerializer, OrderPositionSerializer,
+                                                  OrderProductShopSerializer, OrderSerializer)
 from backend.utils.constants import ErrorMessages
 
 

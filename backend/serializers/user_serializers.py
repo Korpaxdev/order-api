@@ -6,16 +6,8 @@ from drf_spectacular.utils import extend_schema_field
 from rest_framework import serializers
 from rest_framework.reverse import reverse
 
-from backend.models import (
-    OrderAddressModel,
-    OrderItemModel,
-    OrderModel,
-    PasswordResetTokenModel,
-    ProductModel,
-    ProductShopModel,
-    ShopModel,
-    UserModel,
-)
+from backend.models import (OrderAddressModel, OrderItemModel, OrderModel, PasswordResetTokenModel, ProductModel,
+                            ProductShopModel, ShopModel, UserModel)
 from backend.serializers.product_serializers import ProductShopDetailListSerializer
 from backend.tasks.email_tasks import send_new_order_email
 from backend.utils.constants import ErrorMessages
