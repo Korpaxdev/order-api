@@ -725,6 +725,24 @@ HEAD Authorization: Bearer "Token"
 - `price_rrc` - (lte, gte, lt, gt) по полю price_rrc
 - `quantity` - (lte, gte, lt, gt) по полю quantity
 
+### **GET** - `{domain_name}/api/schema/`
+
+Получить OpenAPI схему. Количество запросов не ограничено
+
+#### Доступные параметры:
+
+- `format` - `string` - json или yaml
+- `lang`  - `string` - язык схемы
+
+#### Формат ответа
+
+- Файл со схемой
+
+### **GET** - `{domain_name}/api/docs/`
+
+Swagger документация по проекту. Количество запросов не ограничено
+
+
 
 
 

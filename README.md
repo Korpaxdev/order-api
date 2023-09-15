@@ -67,17 +67,20 @@
 - **PRODUCTS:**
     - **GET** - `{domain_name}/api/products/` - Список доступных для заказа товаров
     - **GET** - `{domain_name}/api/products/{product_slug}/` - Детальная информация по товару
+- **DOCS:**
+    - **GET** - `{domain_name}/api/schema` - Получить OpenAPI схему
+    - **GET** - `{domain_name}/api/docs` - Swagger документация на основе OpenAPI схемы
 
 ## Запуск проекта
 
 - ### Через `docker-compose.yml`.
-  - Запускаем все сервисы командой `docker-compose up`
+    - Запускаем все сервисы командой `docker-compose up`
 - ### Через `docker-compose-only-bd.yml`
-  - Запускаем базы данных (postgres, redis) через docker-compose
-  - Делаем миграции **Django** - `python manage.py migrate`
-  - Запускаем **Django** - `python manage.py runserver`
-  - Запускаем **Celery** - `celery -A main worker -l info`
-  - Обратите внимание! Доступ к базам данных осуществляется через `localhost`, а не через наименование сервиса
+    - Запускаем базы данных (postgres, redis) через docker-compose
+    - Делаем миграции **Django** - `python manage.py migrate`
+    - Запускаем **Django** - `python manage.py runserver`
+    - Запускаем **Celery** - `celery -A main worker -l info`
+    - Обратите внимание! Доступ к базам данных осуществляется через `localhost`, а не через наименование сервиса
 
 ## Дополнительная информация:
 
