@@ -20,6 +20,7 @@ class ProductListView(generics.ListAPIView):
             ProductModel.objects.filter(shops__status=True, productshopmodel__quantity__gt=0)
             .prefetch_related("categories", "shops")
             .distinct()
+            .order_by("name")
         )
 
 

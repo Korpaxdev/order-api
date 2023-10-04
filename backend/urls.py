@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import include, path
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 from backend.views.product_views import ProductListView, ProductShopDetailListView
@@ -45,4 +45,6 @@ urlpatterns = [
     # product
     path("products/", ProductListView.as_view(), name="products"),
     path("products/<slug:product>/", ProductShopDetailListView.as_view(), name="product_details_list"),
+    # oauth
+    path("oauth/", include("oauth.urls")),
 ]

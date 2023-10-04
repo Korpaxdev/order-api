@@ -47,8 +47,10 @@ INSTALLED_APPS = [
     "django_filters",
     "rest_framework_simplejwt",
     "drf_spectacular",
+    "social_django",
     # local apps
     "backend",
+    "oauth",
 ]
 
 MIDDLEWARE = [
@@ -187,3 +189,11 @@ SPECTACULAR_SETTINGS = {
     "TITLE": "Order API",
     "DESCRIPTION": "API для автоматизации закупок",
 }
+
+AUTHENTICATION_BACKENDS = (
+    "social_core.backends.vk.VKOAuth2",
+    "django.contrib.auth.backends.ModelBackend",
+)
+
+SOCIAL_AUTH_VK_OAUTH2_KEY = getenv("VK_APP_ID")
+SOCIAL_AUTH_VK_OAUTH2_SECRET = getenv("VK_APP_SECRET")

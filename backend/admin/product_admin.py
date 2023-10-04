@@ -65,7 +65,7 @@ class ProductShopModelAdmin(admin.ModelAdmin):
 
     @admin.display(description="Id товара")
     def get_product_id(self, instance: ProductShopModel) -> int:
-        return instance.product.id
+        return instance.product.pk
 
     @admin.display(description="Товар")
     def get_product_name(self, instance: ProductShopModel) -> str:

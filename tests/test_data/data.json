@@ -1,0 +1,8544 @@
+[
+  {
+    "model": "backend.categorymodel",
+    "pk": 1,
+    "fields": {
+      "name": "Смартфоны"
+    }
+  },
+  {
+    "model": "backend.categorymodel",
+    "pk": 2,
+    "fields": {
+      "name": "Apple Смартфоны"
+    }
+  },
+  {
+    "model": "backend.categorymodel",
+    "pk": 3,
+    "fields": {
+      "name": "Телевизоры"
+    }
+  },
+  {
+    "model": "backend.productmodel",
+    "pk": 1,
+    "fields": {
+      "name": "Смартфон Apple iPhone 13 128Gb, темная ночь",
+      "slug": "smartfon-apple-iphone-13-128gb-temnaya-noch",
+      "categories": [
+        1,
+        2
+      ]
+    }
+  },
+  {
+    "model": "backend.productmodel",
+    "pk": 2,
+    "fields": {
+      "name": "Смартфон Apple iPhone 14 128Gb, темная ночь",
+      "slug": "smartfon-apple-iphone-14-128gb-temnaya-noch",
+      "categories": [
+        1,
+        2
+      ]
+    }
+  },
+  {
+    "model": "backend.productmodel",
+    "pk": 3,
+    "fields": {
+      "name": "Смартфон Apple iPhone 14 Pro 128Gb, темно-фиолетовый",
+      "slug": "smartfon-apple-iphone-14-pro-128gb-temno-fioletovyij",
+      "categories": [
+        1,
+        2
+      ]
+    }
+  },
+  {
+    "model": "backend.productmodel",
+    "pk": 4,
+    "fields": {
+      "name": "Смартфон Apple iPhone 13 128Gb, сияющая звезда",
+      "slug": "smartfon-apple-iphone-13-128gb-siyayuschaya-zvezda",
+      "categories": [
+        1,
+        2
+      ]
+    }
+  },
+  {
+    "model": "backend.productmodel",
+    "pk": 5,
+    "fields": {
+      "name": "Смартфон Apple iPhone 14 128Gb, сияющая звезда",
+      "slug": "smartfon-apple-iphone-14-128gb-siyayuschaya-zvezda",
+      "categories": [
+        1,
+        2
+      ]
+    }
+  },
+  {
+    "model": "backend.productmodel",
+    "pk": 6,
+    "fields": {
+      "name": "Смартфон Apple iPhone 14 Pro 128Gb, черный космос",
+      "slug": "smartfon-apple-iphone-14-pro-128gb-chernyij-kosmos",
+      "categories": [
+        1,
+        2
+      ]
+    }
+  },
+  {
+    "model": "backend.productmodel",
+    "pk": 7,
+    "fields": {
+      "name": "Смартфон Apple iPhone 13 128Gb, розовый",
+      "slug": "smartfon-apple-iphone-13-128gb-rozovyij",
+      "categories": [
+        1,
+        2
+      ]
+    }
+  },
+  {
+    "model": "backend.productmodel",
+    "pk": 8,
+    "fields": {
+      "name": "Смартфон Apple iPhone 13 128Gb, синий",
+      "slug": "smartfon-apple-iphone-13-128gb-sinij",
+      "categories": [
+        1,
+        2
+      ]
+    }
+  },
+  {
+    "model": "backend.productmodel",
+    "pk": 9,
+    "fields": {
+      "name": "Смартфон Apple iPhone 13 альпийский зеленый",
+      "slug": "smartfon-apple-iphone-13-alpijskij-zelenyij",
+      "categories": [
+        1,
+        2
+      ]
+    }
+  },
+  {
+    "model": "backend.productmodel",
+    "pk": 10,
+    "fields": {
+      "name": "Смартфон Apple iPhone 14 128Gb, фиолетовый",
+      "slug": "smartfon-apple-iphone-14-128gb-fioletovyij",
+      "categories": [
+        1,
+        2
+      ]
+    }
+  },
+  {
+    "model": "backend.productmodel",
+    "pk": 11,
+    "fields": {
+      "name": "Телевизор Hisense 55U7HQ",
+      "slug": "televizor-hisense-55u7hq",
+      "categories": [
+        3
+      ]
+    }
+  },
+  {
+    "model": "backend.productmodel",
+    "pk": 12,
+    "fields": {
+      "name": "Телевизор Accesstyle U55EY1500B",
+      "slug": "televizor-accesstyle-u55ey1500b",
+      "categories": [
+        3
+      ]
+    }
+  },
+  {
+    "model": "backend.productmodel",
+    "pk": 13,
+    "fields": {
+      "name": "Телевизор Toshiba 50C350LE",
+      "slug": "televizor-toshiba-50c350le",
+      "categories": [
+        3
+      ]
+    }
+  },
+  {
+    "model": "backend.productmodel",
+    "pk": 14,
+    "fields": {
+      "name": "Телевизор SKYWORTH 32STE6600",
+      "slug": "televizor-skyworth-32ste6600",
+      "categories": [
+        3
+      ]
+    }
+  },
+  {
+    "model": "backend.productmodel",
+    "pk": 15,
+    "fields": {
+      "name": "Телевизор Samsung QE43Q60BAU",
+      "slug": "televizor-samsung-qe43q60bau",
+      "categories": [
+        3
+      ]
+    }
+  },
+  {
+    "model": "backend.productmodel",
+    "pk": 16,
+    "fields": {
+      "name": "Телевизор Toshiba 32V35LE",
+      "slug": "televizor-toshiba-32v35le",
+      "categories": [
+        3
+      ]
+    }
+  },
+  {
+    "model": "backend.productmodel",
+    "pk": 17,
+    "fields": {
+      "name": "Телевизор Toshiba 43C350LE",
+      "slug": "televizor-toshiba-43c350le",
+      "categories": [
+        3
+      ]
+    }
+  },
+  {
+    "model": "backend.productmodel",
+    "pk": 18,
+    "fields": {
+      "name": "Телевизор Samsung QE50Q60BAU",
+      "slug": "televizor-samsung-qe50q60bau",
+      "categories": [
+        3
+      ]
+    }
+  },
+  {
+    "model": "backend.productmodel",
+    "pk": 19,
+    "fields": {
+      "name": "QLED Телевизор Toshiba 65C450KE",
+      "slug": "qled-televizor-toshiba-65c450ke",
+      "categories": [
+        3
+      ]
+    }
+  },
+  {
+    "model": "backend.productmodel",
+    "pk": 20,
+    "fields": {
+      "name": "Телевизор realme 32 RMT101",
+      "slug": "televizor-realme-32-rmt101",
+      "categories": [
+        3
+      ]
+    }
+  },
+  {
+    "model": "backend.productshopmodel",
+    "pk": 1,
+    "fields": {
+      "product": 1,
+      "shop": 1,
+      "description": "",
+      "quantity": 10,
+      "price": 62304,
+      "price_rrc": 77880
+    }
+  },
+  {
+    "model": "backend.productshopmodel",
+    "pk": 2,
+    "fields": {
+      "product": 2,
+      "shop": 1,
+      "description": "",
+      "quantity": 8,
+      "price": 68896,
+      "price_rrc": 86120
+    }
+  },
+  {
+    "model": "backend.productshopmodel",
+    "pk": 3,
+    "fields": {
+      "product": 3,
+      "shop": 1,
+      "description": "",
+      "quantity": 8,
+      "price": 91992,
+      "price_rrc": 114990
+    }
+  },
+  {
+    "model": "backend.productshopmodel",
+    "pk": 4,
+    "fields": {
+      "product": 4,
+      "shop": 1,
+      "description": "",
+      "quantity": 10,
+      "price": 62304,
+      "price_rrc": 77880
+    }
+  },
+  {
+    "model": "backend.productshopmodel",
+    "pk": 5,
+    "fields": {
+      "product": 5,
+      "shop": 1,
+      "description": "",
+      "quantity": 9,
+      "price": 68896,
+      "price_rrc": 86120
+    }
+  },
+  {
+    "model": "backend.productshopmodel",
+    "pk": 6,
+    "fields": {
+      "product": 6,
+      "shop": 1,
+      "description": "",
+      "quantity": 3,
+      "price": 91992,
+      "price_rrc": 114990
+    }
+  },
+  {
+    "model": "backend.productshopmodel",
+    "pk": 7,
+    "fields": {
+      "product": 7,
+      "shop": 1,
+      "description": "",
+      "quantity": 3,
+      "price": 62304,
+      "price_rrc": 77880
+    }
+  },
+  {
+    "model": "backend.productshopmodel",
+    "pk": 8,
+    "fields": {
+      "product": 8,
+      "shop": 1,
+      "description": "",
+      "quantity": 5,
+      "price": 62304,
+      "price_rrc": 77880
+    }
+  },
+  {
+    "model": "backend.productshopmodel",
+    "pk": 9,
+    "fields": {
+      "product": 9,
+      "shop": 1,
+      "description": "",
+      "quantity": 9,
+      "price": 62304,
+      "price_rrc": 77880
+    }
+  },
+  {
+    "model": "backend.productshopmodel",
+    "pk": 10,
+    "fields": {
+      "product": 10,
+      "shop": 1,
+      "description": "",
+      "quantity": 8,
+      "price": 68896,
+      "price_rrc": 86120
+    }
+  },
+  {
+    "model": "backend.productshopmodel",
+    "pk": 11,
+    "fields": {
+      "product": 11,
+      "shop": 2,
+      "description": "Телевизор Hisense 55U7HQ оснащен LED-экраном с диагональю 55 дюймов и разрешением 3840 х 2160 пикселей. Он поддерживает технологию HDR10. Акустика представлена двумя фронтальными динамиками, их суммарная мощность — 20 Вт.",
+      "quantity": 10,
+      "price": 47999,
+      "price_rrc": 59999
+    }
+  },
+  {
+    "model": "backend.productshopmodel",
+    "pk": 12,
+    "fields": {
+      "product": 12,
+      "shop": 2,
+      "description": "Вы можете купить Телевизор Accesstyle U55EY1500B в магазинах М.Видео по доступной цене. Телевизор Accesstyle U55EY1500B: подробное описание, фото и отзывы реальных покупателей, характеристики, возможность скачать инструкции и подобрать аксессуары.",
+      "quantity": 5,
+      "price": 19199,
+      "price_rrc": 23999
+    }
+  },
+  {
+    "model": "backend.productshopmodel",
+    "pk": 13,
+    "fields": {
+      "product": 13,
+      "shop": 2,
+      "description": "Телевизор Toshiba 50C350LE — устройство с безрамочным экраном диагональю 50 дюймов разрешением 3840х2160 пикселей. Высокая детализация и реалистичная цветопередача обеспечивают глубокое погружение в контент. Частота обновления доходит до 60 Гц. Технология Ultra Essential PQ способствует получению четкого изображения. Поддерживается масштабирование до 4K Ultra HD для просмотра кинолент прошлых лет в высоком качестве. nТехнология Smart TV позволяет смотреть фильмы, сериалы и прочий контент на различных онлайн-платформах, читать новости, слушать музыку и многое другое. Продвинутая ОС Vidaa OS5.0 упрощает взаимодействие с телевизором. Операционная система обеспечивает поддержку современных технологий, включая универсальный поиск контента по всем приложениям и голосовое управление.nЯркость экрана достигает 300 нит. Угол обзора по вертикали и горизонтали — 178°. Для управления предусмотрен пульт ДУ (Bluetooth/ИК) — питание осуществляется от двух батареек типа АА (LR6). Подключение к Сети осуществляется через Wi-Fi. Sleep-таймер служит для настройки автоматического отключения телевизора через некоторое время. Чтобы остановить эфир любимой телепередачи и снова вернуться к ней через некоторое время, можно воспользоваться функцией TimeShift.nТелевизор поддерживает воспроизведение с цифровых носителей и запись с ТВ на USB-накопитель. Акустическая система мощностью 2х8 Вт обеспечивает иммерсивный чистый звук — независимо от того, включена трансляция фильма или запущен игровой процесс. Для приема ТВ-сигнала используются цифровой DVB стандартов T/T2/C/S/S2 и аналоговый PAL/SECAM тюнеры. Модель снабжена широким набором интерфейсов, в том числе HDMI, USB 2.0 тип A, LAN, разъемом 3,5 мм для наушников и слотом для модуля DVB CAM. Потребляемая мощность модели — 130 Вт. Для блокировки управления используется защита от детей. Размеры без настольной подставки, которая входит в комплект, составляют 77,7х111,1х13,6 см, вес — 10,2 кг.",
+      "quantity": 4,
+      "price": 25999,
+      "price_rrc": 32499
+    }
+  },
+  {
+    "model": "backend.productshopmodel",
+    "pk": 14,
+    "fields": {
+      "product": 14,
+      "shop": 2,
+      "description": "Телевизор Skyworth 32STE6600 в корпусе серебристой расцветки потребляет 60 Вт электроэнергии. В модель установлена операционная система Android TV. LED-экран диагональю 32 дюйма оснащен светодиодной подсветкой Direct LED. Монитор широкоформатный (16:9), разрешение составляет 1366x768 пикселей (HD-Ready). Частота обновления 60 Гц обеспечивает плавную смену кадров без разрывов.",
+      "quantity": 7,
+      "price": 7599,
+      "price_rrc": 9499
+    }
+  },
+  {
+    "model": "backend.productshopmodel",
+    "pk": 15,
+    "fields": {
+      "product": 15,
+      "shop": 2,
+      "description": "Телевизор Samsung QE43Q60BAU — модель, которая произведена по технологии QLED, что гарантирует вывод насыщенной и яркой картинки. Устройство обладает 43-дюймовым (109,2 см) экраном разрешением 3840х2160 пикселей. Частота обновления составляет 60 Гц. Технология HDR 10+ увеличивает детализацию темных и светлых сцен, благодаря чему можно смотреть разный контент в высоком качестве. Предусмотрена возможность масштабирования до 4К Ultra HD. Телевизор функционирует на базе ОС Tizen OS.  В модель встроена аудиосистема Dolby Digital Plus мощностью 20 Вт, что создает оптимальные условия для прослушивания музыкальных композиций. Телевизор обладает технологией Smart TV, которая дарит доступ к множеству развлекательных программ и приложений. Управление может осуществляться посредством пульта ДУ или смартфона. Синхронизация телевизора с устройствами производится при помощи Bluetooth. Для подключения к Сети можно использовать модуль Wi-Fi. nПредусмотрена возможность записи с ТВ на USB-устройство. Встроенные интерфейсы (HDMI, USB 2.0, RJ45, Toslink) позволяют подключать к модели дополнительные колонки, внешние накопители. Потребляемая мощность телевизора — 69 Вт. Габаритные размеры модели — 96,55х59,98х20,56 см, вес — 8,4 кг.",
+      "quantity": 8,
+      "price": 38399,
+      "price_rrc": 47999
+    }
+  },
+  {
+    "model": "backend.productshopmodel",
+    "pk": 16,
+    "fields": {
+      "product": 16,
+      "shop": 2,
+      "description": "Телевизор Toshiba 32V35LE с операционной системой Android 11 с интуитивно понятным интерфейсом. Благодаря безрамочному экрану просматривать фильмы и сериалы можно в комфортных условиях. Экран с технологией IPS и разрешением 1388x766 Пикс обеспечивает оптимальное соотношение яркости и контрастности.",
+      "quantity": 9,
+      "price": 14399,
+      "price_rrc": 17999
+    }
+  },
+  {
+    "model": "backend.productshopmodel",
+    "pk": 17,
+    "fields": {
+      "product": 17,
+      "shop": 2,
+      "description": "Телевизор Toshiba 43C350LE — устройство с безрамочным экраном диагональю 43 дюйма разрешением 3840х2160 пикселей. Высокая детализация и реалистичная цветопередача обеспечивают глубокое погружение в контент. Частота обновления доходит до 60 Гц. Технология Ultra Essential PQ способствует получению четкого изображения. Поддерживается масштабирование до 4K Ultra HD для просмотра кинолент прошлых лет в высоком качестве.",
+      "quantity": 3,
+      "price": 27999,
+      "price_rrc": 34999
+    }
+  },
+  {
+    "model": "backend.productshopmodel",
+    "pk": 18,
+    "fields": {
+      "product": 18,
+      "shop": 2,
+      "description": "Телевизор Samsung QE50Q60BAUXCE — 50-дюймовая модель разрешением 3840х2160 пикселей и частотой обновления 60 Гц. Формат экрана — 16:9, технология — QLED. nПредусмотрена возможность масштабирования до 4K Ultra HD. Технология HDR10+ подчеркивает контрасты и детали, что делает темные цвета более насыщенными и повышает видимость отдельных объектов. Цветопередача со 100% цветовым охватом обеспечивает комфортный просмотр. Инновационная технология двойной подсветки Dual LED повышает контрастность за счет оптимизации цветового тока в соответствии с отображаемым контентом. nSmart TV позволяет использовать телевизор для интернет-серфинга и просмотра фильмов и сериалов на различных онлайн-сервисах. Операционная система — Tizen OS с интуитивно понятным интерфейсом. Для управления есть пульт ДУ, который питается от трех батареек АА (LR6). Для подключения к интернету используется встроенный модуль Wi-Fi.nАудиосистема формирует объемный 3D-звук, который в сочетании с виртуальным верхним каналом способствует полному погружению в акустику. Технология Q-Symphony обеспечивает синхронную работу ТВ и саундбара Samsung, не отключая динамики первого. Телевизор оснащен цифровым тюнером DVB T2/C2. Возможно воспроизведение контента с USB. Потребляемая мощность — 140 Вт. Набор интерфейсов включает в себя два HDMI и два USB 2.0 тип A. В комплекте — настольная подставка.",
+      "quantity": 15,
+      "price": 44799,
+      "price_rrc": 55999
+    }
+  },
+  {
+    "model": "backend.productshopmodel",
+    "pk": 19,
+    "fields": {
+      "product": 19,
+      "shop": 2,
+      "description": "Toshiba 65C450KE — телевизор с 65-дюймовым QLED-экраном, разрешение которого — 3840 х 2160 пикселей. Поддерживается технология HDR10+. Для улучшения изображения есть масштабирование до формата 4K и цифровое шумоподавление.",
+      "quantity": 3,
+      "price": 71999,
+      "price_rrc": 89999
+    }
+  },
+  {
+    "model": "backend.productshopmodel",
+    "pk": 20,
+    "fields": {
+      "product": 20,
+      "shop": 2,
+      "description": "Телевизор realme 32 RMT101 черного цвета поддерживает ОС Android. Питание осуществляется от электросети, мощность энергопотребления — 55 Вт. Диагональ MVA-экрана — 32 дюйма (81,28 см). Благодаря высокому разрешению (1366х768 пикселей) картинка выводится яркой, с оптимальной контрастностью и цветопередачей. Частота обновления кадров составляет 60 Гц. За счет этого динамические сцены получаются плавными, без разрывов. Есть цифровое шумоподавление.",
+      "quantity": 6,
+      "price": 10399,
+      "price_rrc": 12999
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 1,
+    "fields": {
+      "name": "Тип"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 2,
+    "fields": {
+      "name": "Бренд"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 3,
+    "fields": {
+      "name": "Серия"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 4,
+    "fields": {
+      "name": "Модель"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 5,
+    "fields": {
+      "name": "Год релиза"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 6,
+    "fields": {
+      "name": "Количество физических SIM-карт"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 7,
+    "fields": {
+      "name": "Поддержка eSIM"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 8,
+    "fields": {
+      "name": "Стандарт связи"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 9,
+    "fields": {
+      "name": "Тип лотка SIM"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 10,
+    "fields": {
+      "name": "Количество поддерживаемых eSIM"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 11,
+    "fields": {
+      "name": "Дополнительные виды связи"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 12,
+    "fields": {
+      "name": "Аутентификация"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 13,
+    "fields": {
+      "name": "Стандарт WiFi"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 14,
+    "fields": {
+      "name": "Стандарт Bluetooth"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 15,
+    "fields": {
+      "name": "Беспроводные интерфейсы"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 16,
+    "fields": {
+      "name": "Системы навигации"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 17,
+    "fields": {
+      "name": "Датчики"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 18,
+    "fields": {
+      "name": "Технология экрана"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 19,
+    "fields": {
+      "name": "Экран"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 20,
+    "fields": {
+      "name": "Соотношение сторон экрана"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 21,
+    "fields": {
+      "name": "Число пикселей на дюйм"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 22,
+    "fields": {
+      "name": "Яркость"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 23,
+    "fields": {
+      "name": "Поддержка HDR"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 24,
+    "fields": {
+      "name": "Особенности экрана"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 25,
+    "fields": {
+      "name": "Основная камера"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 26,
+    "fields": {
+      "name": "Диафрагма, основная камера"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 27,
+    "fields": {
+      "name": "Особенности камер"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 28,
+    "fields": {
+      "name": "Тип вспышки"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 29,
+    "fields": {
+      "name": "Тип фронтальной камеры"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 30,
+    "fields": {
+      "name": "Диафрагма, фронтальная камера"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 31,
+    "fields": {
+      "name": "Автофокусировка камеры"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 32,
+    "fields": {
+      "name": "Цифровой зум"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 33,
+    "fields": {
+      "name": "Стереодинамики"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 34,
+    "fields": {
+      "name": "Поддерживаемые аудиоформаты"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 35,
+    "fields": {
+      "name": "Поддерживаемые видеоформаты"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 36,
+    "fields": {
+      "name": "Разъем для подключения наушников"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 37,
+    "fields": {
+      "name": "Операционная система"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 38,
+    "fields": {
+      "name": "Процессор"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 39,
+    "fields": {
+      "name": "Количество ядер процессора"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 40,
+    "fields": {
+      "name": "Техпроцесс"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 41,
+    "fields": {
+      "name": "Графический ускоритель"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 42,
+    "fields": {
+      "name": "Объем оперативной памяти"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 43,
+    "fields": {
+      "name": "Объем встроенной памяти"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 44,
+    "fields": {
+      "name": "Поддержка карт памяти"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 45,
+    "fields": {
+      "name": "Особенности"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 46,
+    "fields": {
+      "name": "Аккумулятор"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 47,
+    "fields": {
+      "name": "Комплектация"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 48,
+    "fields": {
+      "name": "Гарантийное обслуживание"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 49,
+    "fields": {
+      "name": "Локализация"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 50,
+    "fields": {
+      "name": "Особенности защиты"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 51,
+    "fields": {
+      "name": "Гарантия"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 52,
+    "fields": {
+      "name": "Разъем для зарядного устройства"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 53,
+    "fields": {
+      "name": "Время работы при прослушивании музыки"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 54,
+    "fields": {
+      "name": "Время работы при воспроизведении видео"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 55,
+    "fields": {
+      "name": "Поддержка быстрой зарядки"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 56,
+    "fields": {
+      "name": "Поддержка беспроводной зарядки"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 57,
+    "fields": {
+      "name": "Тип корпуса"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 58,
+    "fields": {
+      "name": "Материал экрана"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 59,
+    "fields": {
+      "name": "Материал корпуса"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 60,
+    "fields": {
+      "name": "Цвет"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 61,
+    "fields": {
+      "name": "Степень защиты"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 62,
+    "fields": {
+      "name": "Размеры (ШхВхТ)"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 63,
+    "fields": {
+      "name": "Вес товара"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 64,
+    "fields": {
+      "name": "Габариты упаковки (ед) ДхШхВ"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 65,
+    "fields": {
+      "name": "Вес упаковки (ед)"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 66,
+    "fields": {
+      "name": "Частота обновления"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 67,
+    "fields": {
+      "name": "Страна"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 68,
+    "fields": {
+      "name": "Обратите внимание"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 69,
+    "fields": {
+      "name": "Удачное решение"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 70,
+    "fields": {
+      "name": "Важная особенность"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 71,
+    "fields": {
+      "name": "Пользователи оценят"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 72,
+    "fields": {
+      "name": "Хорошо придумано"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 73,
+    "fields": {
+      "name": "Диагональ"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 74,
+    "fields": {
+      "name": "Диагональ экрана"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 75,
+    "fields": {
+      "name": "Формат экрана"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 76,
+    "fields": {
+      "name": "Технология QLED"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 77,
+    "fields": {
+      "name": "Технология HDR"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 78,
+    "fields": {
+      "name": "Цифровое шумоподавление"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 79,
+    "fields": {
+      "name": "Мощность низкочастотных АС"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 80,
+    "fields": {
+      "name": "Смартфон в качестве пульта ДУ"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 81,
+    "fields": {
+      "name": "Встроенный модуль Bluetooth"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 82,
+    "fields": {
+      "name": "Ultra HD"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 83,
+    "fields": {
+      "name": "Мощность фронтальных АС"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 84,
+    "fields": {
+      "name": "Тип дистанционного управления"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 85,
+    "fields": {
+      "name": "Тип батарей пульта ДУ"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 86,
+    "fields": {
+      "name": "Срок службы"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 87,
+    "fields": {
+      "name": "Звук"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 88,
+    "fields": {
+      "name": "Гарантия предоставляется"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 89,
+    "fields": {
+      "name": "Технология HDMI ARC"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 90,
+    "fields": {
+      "name": "Поддержка Smart TV"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 91,
+    "fields": {
+      "name": "Поддержка Wi-Fi"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 92,
+    "fields": {
+      "name": "Голосовое управление"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 93,
+    "fields": {
+      "name": "Google Assistant"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 94,
+    "fields": {
+      "name": "Воспроизведение с USB"
+    }
+  },
+  {
+    "model": "backend.parametermodel",
+    "pk": 95,
+    "fields": {
+      "name": "Цифровой тюнер DVB"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 1,
+    "fields": {
+      "product": 1,
+      "param": 1,
+      "value": "Смартфон"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 2,
+    "fields": {
+      "product": 1,
+      "param": 2,
+      "value": "APPLE"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 3,
+    "fields": {
+      "product": 1,
+      "param": 3,
+      "value": "iPhone 13"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 4,
+    "fields": {
+      "product": 1,
+      "param": 4,
+      "value": "A2633"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 5,
+    "fields": {
+      "product": 1,
+      "param": 5,
+      "value": "2021"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 6,
+    "fields": {
+      "product": 1,
+      "param": 6,
+      "value": "1, nano SIM"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 7,
+    "fields": {
+      "product": 1,
+      "param": 7,
+      "value": "да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 8,
+    "fields": {
+      "product": 1,
+      "param": 8,
+      "value": "2G/3G/4G (LTE)/5G"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 9,
+    "fields": {
+      "product": 1,
+      "param": 9,
+      "value": "стандартный (только SIM)"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 10,
+    "fields": {
+      "product": 1,
+      "param": 10,
+      "value": "2"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 11,
+    "fields": {
+      "product": 1,
+      "param": 11,
+      "value": "VoLte"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 12,
+    "fields": {
+      "product": 1,
+      "param": 12,
+      "value": "разблокировка по лицу"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 13,
+    "fields": {
+      "product": 1,
+      "param": 13,
+      "value": "802.11 a/b/g/n/ac/ax"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 14,
+    "fields": {
+      "product": 1,
+      "param": 14,
+      "value": "v5.0"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 15,
+    "fields": {
+      "product": 1,
+      "param": 15,
+      "value": "NFC,"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 16,
+    "fields": {
+      "product": 1,
+      "param": 16,
+      "value": "GPS / ГЛОНАСС / BeiDou / Galileo / QZSS"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 17,
+    "fields": {
+      "product": 1,
+      "param": 17,
+      "value": "датчик освещенности, датчик приближения, акселерометр (G-sensor), гироскоп, барометр, Face ID, Барометр, Трёхосевой гироскоп"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 18,
+    "fields": {
+      "product": 1,
+      "param": 18,
+      "value": "OLED Super Retina XDR"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 19,
+    "fields": {
+      "product": 1,
+      "param": 19,
+      "value": "6.1\" (2532x1170)"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 20,
+    "fields": {
+      "product": 1,
+      "param": 20,
+      "value": "19.5:9"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 21,
+    "fields": {
+      "product": 1,
+      "param": 21,
+      "value": "460 PPI"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 22,
+    "fields": {
+      "product": 1,
+      "param": 22,
+      "value": "1200 кд/м2"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 23,
+    "fields": {
+      "product": 1,
+      "param": 23,
+      "value": "есть, HDR10"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 24,
+    "fields": {
+      "product": 1,
+      "param": 24,
+      "value": "Multitouch, вырез на экране"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 25,
+    "fields": {
+      "product": 1,
+      "param": 25,
+      "value": "12 МП"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 26,
+    "fields": {
+      "product": 1,
+      "param": 26,
+      "value": "F/1.6"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 27,
+    "fields": {
+      "product": 1,
+      "param": 27,
+      "value": "Режим «Киноэффект» для съёмки видео 1080p с частотой 30 кадров в секунду, Система двух камер: сверхширокоугольная (F/2.4, угол обзора 120 градусов) и широкоугольная (F/1.6) поддержка Ночного режима; Режим Smart HDR 4 для фото, Оптическая стабилизация изображения, Фотографические стили"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 28,
+    "fields": {
+      "product": 1,
+      "param": 28,
+      "value": "светодиодная"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 29,
+    "fields": {
+      "product": 1,
+      "param": 29,
+      "value": "стандартная"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 30,
+    "fields": {
+      "product": 1,
+      "param": 30,
+      "value": "F/2.2"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 31,
+    "fields": {
+      "product": 1,
+      "param": 31,
+      "value": "есть"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 32,
+    "fields": {
+      "product": 1,
+      "param": 32,
+      "value": "5х"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 33,
+    "fields": {
+      "product": 1,
+      "param": 33,
+      "value": "есть"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 34,
+    "fields": {
+      "product": 1,
+      "param": 34,
+      "value": "AAC-LC, HE-AAC, HE-AAC v2, защищённый AAC, MP3, линейный PCM, Apple Lossless, FLAC, Dolby Digital (AC-3), Dolby Digital Plus (E-AC-3) и Audible (форматы 2, 3, 4, Audible Enhanced Audio, AAX и AAX+)"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 35,
+    "fields": {
+      "product": 1,
+      "param": 35,
+      "value": "HEVC, H.264, MPEG-4 Part 2 и Motion JPEG"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 36,
+    "fields": {
+      "product": 1,
+      "param": 36,
+      "value": "Lightning"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 37,
+    "fields": {
+      "product": 1,
+      "param": 37,
+      "value": "iOS"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 38,
+    "fields": {
+      "product": 1,
+      "param": 38,
+      "value": "Apple A15 Bionic"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 39,
+    "fields": {
+      "product": 1,
+      "param": 39,
+      "value": "6"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 40,
+    "fields": {
+      "product": 1,
+      "param": 40,
+      "value": "5 нм"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 41,
+    "fields": {
+      "product": 1,
+      "param": 41,
+      "value": "Apple GPU"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 42,
+    "fields": {
+      "product": 1,
+      "param": 42,
+      "value": "4 ГБ"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 43,
+    "fields": {
+      "product": 1,
+      "param": 43,
+      "value": "128 ГБ"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 44,
+    "fields": {
+      "product": 1,
+      "param": 44,
+      "value": "НЕТ"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 45,
+    "fields": {
+      "product": 1,
+      "param": 45,
+      "value": "Поддержка аксессуаров и устройств беспроводной зарядки MagSafe, Защита от воды при погружении на глубину до 6 метров длительностью до 30 минут. Поддержка двух eSIM"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 46,
+    "fields": {
+      "product": 1,
+      "param": 46,
+      "value": "Li-Ion,3227,несъемный"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 47,
+    "fields": {
+      "product": 1,
+      "param": 47,
+      "value": "iPhone, Кабель USB-C/Lightning, Документация"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 48,
+    "fields": {
+      "product": 1,
+      "param": 48,
+      "value": "Гарантия продавца"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 49,
+    "fields": {
+      "product": 1,
+      "param": 49,
+      "value": "Индия"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 50,
+    "fields": {
+      "product": 1,
+      "param": 50,
+      "value": "защита от пыли и влаги, можно погружать в воду макс: 6 м, 30 мин"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 51,
+    "fields": {
+      "product": 1,
+      "param": 51,
+      "value": "12 мес."
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 52,
+    "fields": {
+      "product": 1,
+      "param": 52,
+      "value": "Lightning"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 53,
+    "fields": {
+      "product": 1,
+      "param": 53,
+      "value": "75 ч"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 54,
+    "fields": {
+      "product": 1,
+      "param": 54,
+      "value": "19 ч"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 55,
+    "fields": {
+      "product": 1,
+      "param": 55,
+      "value": "есть"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 56,
+    "fields": {
+      "product": 1,
+      "param": 56,
+      "value": "есть, технология Qi"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 57,
+    "fields": {
+      "product": 1,
+      "param": 57,
+      "value": "моноблок"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 58,
+    "fields": {
+      "product": 1,
+      "param": 58,
+      "value": "стекло Ceramic Shield2.5D,"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 59,
+    "fields": {
+      "product": 1,
+      "param": 59,
+      "value": "стекло/алюминий"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 60,
+    "fields": {
+      "product": 1,
+      "param": 60,
+      "value": "темная ночь"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 61,
+    "fields": {
+      "product": 1,
+      "param": 61,
+      "value": "IP68"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 62,
+    "fields": {
+      "product": 1,
+      "param": 62,
+      "value": "71.5 х 146.7 х 7.65 мм"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 63,
+    "fields": {
+      "product": 1,
+      "param": 63,
+      "value": "173 грамм"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 64,
+    "fields": {
+      "product": 1,
+      "param": 64,
+      "value": "0.09x0.025x0.165 м"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 65,
+    "fields": {
+      "product": 1,
+      "param": 65,
+      "value": "0.44 кг"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 66,
+    "fields": {
+      "product": 2,
+      "param": 1,
+      "value": "Смартфон"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 67,
+    "fields": {
+      "product": 2,
+      "param": 2,
+      "value": "APPLE"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 68,
+    "fields": {
+      "product": 2,
+      "param": 3,
+      "value": "iPhone 14"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 69,
+    "fields": {
+      "product": 2,
+      "param": 4,
+      "value": "A2884"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 70,
+    "fields": {
+      "product": 2,
+      "param": 5,
+      "value": "2022"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 71,
+    "fields": {
+      "product": 2,
+      "param": 6,
+      "value": "2, nano SIM"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 72,
+    "fields": {
+      "product": 2,
+      "param": 8,
+      "value": "2G/3G/4G (LTE)/5G"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 73,
+    "fields": {
+      "product": 2,
+      "param": 9,
+      "value": "стандартный (только SIM)"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 74,
+    "fields": {
+      "product": 2,
+      "param": 10,
+      "value": "0"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 75,
+    "fields": {
+      "product": 2,
+      "param": 11,
+      "value": "VoLte"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 76,
+    "fields": {
+      "product": 2,
+      "param": 12,
+      "value": "разблокировка по лицу"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 77,
+    "fields": {
+      "product": 2,
+      "param": 13,
+      "value": "802.11 a/b/g/n/ac/ax"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 78,
+    "fields": {
+      "product": 2,
+      "param": 14,
+      "value": "v5.3"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 79,
+    "fields": {
+      "product": 2,
+      "param": 15,
+      "value": "NFC,"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 80,
+    "fields": {
+      "product": 2,
+      "param": 16,
+      "value": "GPS / ГЛОНАСС / BeiDou / Galileo / QZSS"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 81,
+    "fields": {
+      "product": 2,
+      "param": 17,
+      "value": "датчик освещенности, датчик приближения, акселерометр (G-sensor), гироскоп, барометр, Face ID, Барометр, Трёхосевой гироскоп"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 82,
+    "fields": {
+      "product": 2,
+      "param": 18,
+      "value": "OLED Super Retina XDR"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 83,
+    "fields": {
+      "product": 2,
+      "param": 19,
+      "value": "6.1\" (2532x1170)"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 84,
+    "fields": {
+      "product": 2,
+      "param": 20,
+      "value": "19.5:9"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 85,
+    "fields": {
+      "product": 2,
+      "param": 21,
+      "value": "460 PPI"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 86,
+    "fields": {
+      "product": 2,
+      "param": 22,
+      "value": "1200 кд/м2"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 87,
+    "fields": {
+      "product": 2,
+      "param": 23,
+      "value": "есть, HDR10"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 88,
+    "fields": {
+      "product": 2,
+      "param": 24,
+      "value": "Multitouch, вырез на экране"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 89,
+    "fields": {
+      "product": 2,
+      "param": 25,
+      "value": "12 МП"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 90,
+    "fields": {
+      "product": 2,
+      "param": 26,
+      "value": "F/1.5"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 91,
+    "fields": {
+      "product": 2,
+      "param": 27,
+      "value": "Фронтальная камера TrueDepth с автофокусом, Режим «Киноэффект» для съёмки видео 1080p с частотой 30 кадров в секунду, Система двух камер: сверхширокоугольная (F/2.4, угол обзора 120 градусов) и широкоугольная (F/1.5) поддержка Ночного режима;"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 92,
+    "fields": {
+      "product": 2,
+      "param": 28,
+      "value": "светодиодная"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 93,
+    "fields": {
+      "product": 2,
+      "param": 29,
+      "value": "стандартная"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 94,
+    "fields": {
+      "product": 2,
+      "param": 30,
+      "value": "F/1.9"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 95,
+    "fields": {
+      "product": 2,
+      "param": 31,
+      "value": "есть"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 96,
+    "fields": {
+      "product": 2,
+      "param": 32,
+      "value": "5х"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 97,
+    "fields": {
+      "product": 2,
+      "param": 33,
+      "value": "есть"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 98,
+    "fields": {
+      "product": 2,
+      "param": 34,
+      "value": "AAC-LC, HE-AAC, HE-AAC v2, защищённый AAC, MP3, линейный PCM, Apple Lossless, FLAC, Dolby Digital (AC-3), Dolby Digital Plus (E-AC-3) и Audible (форматы 2, 3, 4, Audible Enhanced Audio, AAX и AAX+)"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 99,
+    "fields": {
+      "product": 2,
+      "param": 35,
+      "value": "HEVC, H.264, MPEG-4 Part 2 и Motion JPEG"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 100,
+    "fields": {
+      "product": 2,
+      "param": 36,
+      "value": "Lightning"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 101,
+    "fields": {
+      "product": 2,
+      "param": 37,
+      "value": "iOS"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 102,
+    "fields": {
+      "product": 2,
+      "param": 38,
+      "value": "Apple A15 Bionic"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 103,
+    "fields": {
+      "product": 2,
+      "param": 39,
+      "value": "6"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 104,
+    "fields": {
+      "product": 2,
+      "param": 40,
+      "value": "5 нм"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 105,
+    "fields": {
+      "product": 2,
+      "param": 42,
+      "value": "6 ГБ"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 106,
+    "fields": {
+      "product": 2,
+      "param": 43,
+      "value": "128 ГБ"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 107,
+    "fields": {
+      "product": 2,
+      "param": 44,
+      "value": "НЕТ"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 108,
+    "fields": {
+      "product": 2,
+      "param": 45,
+      "value": "Экстренный SOS через спутник, Поддержка аксессуаров и устройств беспроводной зарядки MagSafe, отсутствует Facetime Audio"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 109,
+    "fields": {
+      "product": 2,
+      "param": 46,
+      "value": "Li-Ion,3279,несъемный"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 110,
+    "fields": {
+      "product": 2,
+      "param": 47,
+      "value": "iPhone, Кабель USB-C/Lightning, Документация"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 111,
+    "fields": {
+      "product": 2,
+      "param": 48,
+      "value": "Гарантия продавца"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 112,
+    "fields": {
+      "product": 2,
+      "param": 49,
+      "value": "Китай"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 113,
+    "fields": {
+      "product": 2,
+      "param": 50,
+      "value": "защита от пыли и влаги, можно погружать в воду макс: 6 м, 30 мин"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 114,
+    "fields": {
+      "product": 2,
+      "param": 51,
+      "value": "12 мес."
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 115,
+    "fields": {
+      "product": 2,
+      "param": 52,
+      "value": "Lightning"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 116,
+    "fields": {
+      "product": 2,
+      "param": 53,
+      "value": "80 ч"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 117,
+    "fields": {
+      "product": 2,
+      "param": 54,
+      "value": "20 ч"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 118,
+    "fields": {
+      "product": 2,
+      "param": 55,
+      "value": "есть"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 119,
+    "fields": {
+      "product": 2,
+      "param": 56,
+      "value": "есть, технология Qi"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 120,
+    "fields": {
+      "product": 2,
+      "param": 57,
+      "value": "моноблок"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 121,
+    "fields": {
+      "product": 2,
+      "param": 58,
+      "value": "стекло Ceramic Shield2.5D, с олеофобным покрытием,"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 122,
+    "fields": {
+      "product": 2,
+      "param": 59,
+      "value": "стекло/алюминий"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 123,
+    "fields": {
+      "product": 2,
+      "param": 60,
+      "value": "темная ночь"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 124,
+    "fields": {
+      "product": 2,
+      "param": 61,
+      "value": "IP68"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 125,
+    "fields": {
+      "product": 2,
+      "param": 62,
+      "value": "71.5 х 146.7 х 7.8 мм"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 126,
+    "fields": {
+      "product": 2,
+      "param": 63,
+      "value": "172 грамм"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 127,
+    "fields": {
+      "product": 2,
+      "param": 64,
+      "value": "0.18x0.095x0.03 м"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 128,
+    "fields": {
+      "product": 2,
+      "param": 65,
+      "value": "0.52 кг"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 129,
+    "fields": {
+      "product": 3,
+      "param": 1,
+      "value": "Смартфон"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 130,
+    "fields": {
+      "product": 3,
+      "param": 2,
+      "value": "APPLE"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 131,
+    "fields": {
+      "product": 3,
+      "param": 3,
+      "value": "iPhone 14 Pro"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 132,
+    "fields": {
+      "product": 3,
+      "param": 4,
+      "value": "A2889"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 133,
+    "fields": {
+      "product": 3,
+      "param": 5,
+      "value": "2022"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 134,
+    "fields": {
+      "product": 3,
+      "param": 6,
+      "value": "1, nano SIM"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 135,
+    "fields": {
+      "product": 3,
+      "param": 7,
+      "value": "да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 136,
+    "fields": {
+      "product": 3,
+      "param": 8,
+      "value": "2G/3G/4G (LTE)/5G"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 137,
+    "fields": {
+      "product": 3,
+      "param": 9,
+      "value": "стандартный (только SIM)"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 138,
+    "fields": {
+      "product": 3,
+      "param": 11,
+      "value": "VoLte"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 139,
+    "fields": {
+      "product": 3,
+      "param": 12,
+      "value": "разблокировка по лицу"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 140,
+    "fields": {
+      "product": 3,
+      "param": 13,
+      "value": "802.11 a/b/g/n/ac/ax"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 141,
+    "fields": {
+      "product": 3,
+      "param": 14,
+      "value": "v5.3"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 142,
+    "fields": {
+      "product": 3,
+      "param": 15,
+      "value": "NFC,"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 143,
+    "fields": {
+      "product": 3,
+      "param": 16,
+      "value": "GPS / ГЛОНАСС / BeiDou / Galileo / QZSS"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 144,
+    "fields": {
+      "product": 3,
+      "param": 17,
+      "value": "LiDAR, датчик освещенности, датчик приближения, акселерометр (G-sensor), гироскоп, барометр, Face ID, Барометр, Трёхосевой гироскоп"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 145,
+    "fields": {
+      "product": 3,
+      "param": 18,
+      "value": "OLED Super Retina XDR"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 146,
+    "fields": {
+      "product": 3,
+      "param": 19,
+      "value": "6.1\" (2556x1179)"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 147,
+    "fields": {
+      "product": 3,
+      "param": 20,
+      "value": "19.5:9"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 148,
+    "fields": {
+      "product": 3,
+      "param": 21,
+      "value": "460 PPI"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 149,
+    "fields": {
+      "product": 3,
+      "param": 22,
+      "value": "2000 кд/м2"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 150,
+    "fields": {
+      "product": 3,
+      "param": 23,
+      "value": "есть, HDR10"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 151,
+    "fields": {
+      "product": 3,
+      "param": 24,
+      "value": "Multitouch"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 152,
+    "fields": {
+      "product": 3,
+      "param": 66,
+      "value": "120 Гц"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 153,
+    "fields": {
+      "product": 3,
+      "param": 25,
+      "value": "48 МП"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 154,
+    "fields": {
+      "product": 3,
+      "param": 26,
+      "value": "F/1.78"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 155,
+    "fields": {
+      "product": 3,
+      "param": 27,
+      "value": "Фронтальная камера TrueDepth с автофокусом, Система профессиональных камер: 48 Мп, оптическая стабилизация изображения со сдвигом сенсора второго поколения, семиэлементный объектив 12 Мп Сверхширокоугольная поле зрения 120°, шестилинзовый объектив; 12 Мп Телефото"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 156,
+    "fields": {
+      "product": 3,
+      "param": 28,
+      "value": "светодиодная"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 157,
+    "fields": {
+      "product": 3,
+      "param": 29,
+      "value": "стандартная"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 158,
+    "fields": {
+      "product": 3,
+      "param": 30,
+      "value": "F/1.9"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 159,
+    "fields": {
+      "product": 3,
+      "param": 31,
+      "value": "есть"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 160,
+    "fields": {
+      "product": 3,
+      "param": 32,
+      "value": "15х"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 161,
+    "fields": {
+      "product": 3,
+      "param": 33,
+      "value": "есть"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 162,
+    "fields": {
+      "product": 3,
+      "param": 34,
+      "value": "AAC-LC, HE-AAC, HE-AAC v2, защищённый AAC, MP3, линейный PCM, Apple Lossless, FLAC, Dolby Digital (AC-3), Dolby Digital Plus (E-AC-3) и Audible (форматы 2, 3, 4, Audible Enhanced Audio, AAX и AAX+)"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 163,
+    "fields": {
+      "product": 3,
+      "param": 35,
+      "value": "HEVC, H.264, MPEG-4 Part 2 и Motion JPEG"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 164,
+    "fields": {
+      "product": 3,
+      "param": 36,
+      "value": "Lightning"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 165,
+    "fields": {
+      "product": 3,
+      "param": 37,
+      "value": "iOS"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 166,
+    "fields": {
+      "product": 3,
+      "param": 38,
+      "value": "Apple A16 Bionic"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 167,
+    "fields": {
+      "product": 3,
+      "param": 39,
+      "value": "6"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 168,
+    "fields": {
+      "product": 3,
+      "param": 40,
+      "value": "4 нм"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 169,
+    "fields": {
+      "product": 3,
+      "param": 42,
+      "value": "6 ГБ"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 170,
+    "fields": {
+      "product": 3,
+      "param": 43,
+      "value": "128 ГБ"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 171,
+    "fields": {
+      "product": 3,
+      "param": 44,
+      "value": "НЕТ"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 172,
+    "fields": {
+      "product": 3,
+      "param": 45,
+      "value": "Dynamic Island, Экстренный SOS через спутник, Поддержка аксессуаров и устройств беспроводной зарядки MagSafe, Защита от воды при погружении на глубину до 6 метров длительностью до 30 минут."
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 173,
+    "fields": {
+      "product": 3,
+      "param": 46,
+      "value": "Li-Ion,3200,несъемный"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 174,
+    "fields": {
+      "product": 3,
+      "param": 47,
+      "value": "iPhone, Кабель USB-C/Lightning, Документация"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 175,
+    "fields": {
+      "product": 3,
+      "param": 48,
+      "value": "Гарантия продавца"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 176,
+    "fields": {
+      "product": 3,
+      "param": 49,
+      "value": "Япония"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 177,
+    "fields": {
+      "product": 3,
+      "param": 50,
+      "value": "защита от пыли и влаги, можно погружать в воду макс: 6 м, 30 мин"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 178,
+    "fields": {
+      "product": 3,
+      "param": 51,
+      "value": "12 мес."
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 179,
+    "fields": {
+      "product": 3,
+      "param": 52,
+      "value": "Lightning"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 180,
+    "fields": {
+      "product": 3,
+      "param": 53,
+      "value": "75 ч"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 181,
+    "fields": {
+      "product": 3,
+      "param": 54,
+      "value": "23 ч"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 182,
+    "fields": {
+      "product": 3,
+      "param": 55,
+      "value": "есть"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 183,
+    "fields": {
+      "product": 3,
+      "param": 56,
+      "value": "есть, технология Qi"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 184,
+    "fields": {
+      "product": 3,
+      "param": 57,
+      "value": "моноблок"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 185,
+    "fields": {
+      "product": 3,
+      "param": 58,
+      "value": "стекло Ceramic Shield2.5D, с олеофобным покрытием,"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 186,
+    "fields": {
+      "product": 3,
+      "param": 59,
+      "value": "стекло/нержавеющая сталь"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 187,
+    "fields": {
+      "product": 3,
+      "param": 60,
+      "value": "темно-фиолетовый"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 188,
+    "fields": {
+      "product": 3,
+      "param": 61,
+      "value": "IP68"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 189,
+    "fields": {
+      "product": 3,
+      "param": 62,
+      "value": "71.5 х 147.5 х 7.85 мм"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 190,
+    "fields": {
+      "product": 3,
+      "param": 63,
+      "value": "206 грамм"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 191,
+    "fields": {
+      "product": 3,
+      "param": 64,
+      "value": "0.09x0.165x0.03 м"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 192,
+    "fields": {
+      "product": 3,
+      "param": 65,
+      "value": "0.52 кг"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 193,
+    "fields": {
+      "product": 4,
+      "param": 1,
+      "value": "Смартфон"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 194,
+    "fields": {
+      "product": 4,
+      "param": 2,
+      "value": "APPLE"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 195,
+    "fields": {
+      "product": 4,
+      "param": 3,
+      "value": "iPhone 13"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 196,
+    "fields": {
+      "product": 4,
+      "param": 4,
+      "value": "A2633"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 197,
+    "fields": {
+      "product": 4,
+      "param": 5,
+      "value": "2021"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 198,
+    "fields": {
+      "product": 4,
+      "param": 6,
+      "value": "1, nano SIM"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 199,
+    "fields": {
+      "product": 4,
+      "param": 7,
+      "value": "да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 200,
+    "fields": {
+      "product": 4,
+      "param": 8,
+      "value": "2G/3G/4G (LTE)/5G"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 201,
+    "fields": {
+      "product": 4,
+      "param": 9,
+      "value": "стандартный (только SIM)"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 202,
+    "fields": {
+      "product": 4,
+      "param": 10,
+      "value": "2"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 203,
+    "fields": {
+      "product": 4,
+      "param": 11,
+      "value": "VoLte"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 204,
+    "fields": {
+      "product": 4,
+      "param": 12,
+      "value": "разблокировка по лицу"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 205,
+    "fields": {
+      "product": 4,
+      "param": 13,
+      "value": "802.11 a/b/g/n/ac/ax"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 206,
+    "fields": {
+      "product": 4,
+      "param": 14,
+      "value": "v5.0"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 207,
+    "fields": {
+      "product": 4,
+      "param": 15,
+      "value": "NFC,"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 208,
+    "fields": {
+      "product": 4,
+      "param": 16,
+      "value": "GPS / ГЛОНАСС / BeiDou / Galileo / QZSS"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 209,
+    "fields": {
+      "product": 4,
+      "param": 17,
+      "value": "датчик освещенности, датчик приближения, акселерометр (G-sensor), гироскоп, барометр, Face ID, Барометр, Трёхосевой гироскоп"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 210,
+    "fields": {
+      "product": 4,
+      "param": 18,
+      "value": "OLED Super Retina XDR"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 211,
+    "fields": {
+      "product": 4,
+      "param": 19,
+      "value": "6.1\" (2532x1170)"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 212,
+    "fields": {
+      "product": 4,
+      "param": 20,
+      "value": "19.5:9"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 213,
+    "fields": {
+      "product": 4,
+      "param": 21,
+      "value": "460 PPI"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 214,
+    "fields": {
+      "product": 4,
+      "param": 22,
+      "value": "1200 кд/м2"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 215,
+    "fields": {
+      "product": 4,
+      "param": 23,
+      "value": "есть, HDR10"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 216,
+    "fields": {
+      "product": 4,
+      "param": 24,
+      "value": "Multitouch, вырез на экране"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 217,
+    "fields": {
+      "product": 4,
+      "param": 25,
+      "value": "12 МП"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 218,
+    "fields": {
+      "product": 4,
+      "param": 26,
+      "value": "F/1.6"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 219,
+    "fields": {
+      "product": 4,
+      "param": 27,
+      "value": "Режим «Киноэффект» для съёмки видео 1080p с частотой 30 кадров в секунду, Система двух камер: сверхширокоугольная (F/2.4, угол обзора 120 градусов) и широкоугольная (F/1.6) поддержка Ночного режима; Режим Smart HDR 4 для фото, Оптическая стабилизация изображения, Фотографические стили"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 220,
+    "fields": {
+      "product": 4,
+      "param": 28,
+      "value": "светодиодная"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 221,
+    "fields": {
+      "product": 4,
+      "param": 29,
+      "value": "стандартная"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 222,
+    "fields": {
+      "product": 4,
+      "param": 30,
+      "value": "F/2.2"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 223,
+    "fields": {
+      "product": 4,
+      "param": 31,
+      "value": "есть"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 224,
+    "fields": {
+      "product": 4,
+      "param": 32,
+      "value": "5х"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 225,
+    "fields": {
+      "product": 4,
+      "param": 33,
+      "value": "есть"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 226,
+    "fields": {
+      "product": 4,
+      "param": 34,
+      "value": "AAC-LC, HE-AAC, HE-AAC v2, защищённый AAC, MP3, линейный PCM, Apple Lossless, FLAC, Dolby Digital (AC-3), Dolby Digital Plus (E-AC-3) и Audible (форматы 2, 3, 4, Audible Enhanced Audio, AAX и AAX+)"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 227,
+    "fields": {
+      "product": 4,
+      "param": 35,
+      "value": "HEVC, H.264, MPEG-4 Part 2 и Motion JPEG"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 228,
+    "fields": {
+      "product": 4,
+      "param": 36,
+      "value": "Lightning"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 229,
+    "fields": {
+      "product": 4,
+      "param": 37,
+      "value": "iOS"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 230,
+    "fields": {
+      "product": 4,
+      "param": 38,
+      "value": "Apple A15 Bionic"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 231,
+    "fields": {
+      "product": 4,
+      "param": 39,
+      "value": "6"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 232,
+    "fields": {
+      "product": 4,
+      "param": 40,
+      "value": "5 нм"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 233,
+    "fields": {
+      "product": 4,
+      "param": 42,
+      "value": "4 ГБ"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 234,
+    "fields": {
+      "product": 4,
+      "param": 43,
+      "value": "128 ГБ"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 235,
+    "fields": {
+      "product": 4,
+      "param": 44,
+      "value": "НЕТ"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 236,
+    "fields": {
+      "product": 4,
+      "param": 45,
+      "value": "Поддержка аксессуаров и устройств беспроводной зарядки MagSafe, Защита от воды при погружении на глубину до 6 метров длительностью до 30 минут. Поддержка двух eSIM"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 237,
+    "fields": {
+      "product": 4,
+      "param": 46,
+      "value": "Li-Ion,3227,несъемный"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 238,
+    "fields": {
+      "product": 4,
+      "param": 47,
+      "value": "iPhone, Кабель USB-C/Lightning, Документация"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 239,
+    "fields": {
+      "product": 4,
+      "param": 48,
+      "value": "Гарантия продавца"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 240,
+    "fields": {
+      "product": 4,
+      "param": 49,
+      "value": "Индия"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 241,
+    "fields": {
+      "product": 4,
+      "param": 50,
+      "value": "защита от пыли и влаги, можно погружать в воду макс: 6 м, 30 мин"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 242,
+    "fields": {
+      "product": 4,
+      "param": 51,
+      "value": "12 мес."
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 243,
+    "fields": {
+      "product": 4,
+      "param": 52,
+      "value": "Lightning"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 244,
+    "fields": {
+      "product": 4,
+      "param": 53,
+      "value": "75 ч"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 245,
+    "fields": {
+      "product": 4,
+      "param": 54,
+      "value": "19 ч"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 246,
+    "fields": {
+      "product": 4,
+      "param": 55,
+      "value": "есть"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 247,
+    "fields": {
+      "product": 4,
+      "param": 56,
+      "value": "есть, технология Qi"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 248,
+    "fields": {
+      "product": 4,
+      "param": 57,
+      "value": "моноблок"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 249,
+    "fields": {
+      "product": 4,
+      "param": 58,
+      "value": "стекло 2.5D,"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 250,
+    "fields": {
+      "product": 4,
+      "param": 59,
+      "value": "стекло/алюминий"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 251,
+    "fields": {
+      "product": 4,
+      "param": 60,
+      "value": "сияющая звезда"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 252,
+    "fields": {
+      "product": 4,
+      "param": 61,
+      "value": "IP68"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 253,
+    "fields": {
+      "product": 4,
+      "param": 62,
+      "value": "71.5 х 146.7 х 7.65 мм"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 254,
+    "fields": {
+      "product": 4,
+      "param": 63,
+      "value": "173 грамм"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 255,
+    "fields": {
+      "product": 4,
+      "param": 64,
+      "value": "0.17x0.09x0.03 м"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 256,
+    "fields": {
+      "product": 4,
+      "param": 65,
+      "value": "0.4 кг"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 257,
+    "fields": {
+      "product": 5,
+      "param": 1,
+      "value": "Смартфон"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 258,
+    "fields": {
+      "product": 5,
+      "param": 2,
+      "value": "APPLE"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 259,
+    "fields": {
+      "product": 5,
+      "param": 3,
+      "value": "iPhone 14"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 260,
+    "fields": {
+      "product": 5,
+      "param": 4,
+      "value": "A2884"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 261,
+    "fields": {
+      "product": 5,
+      "param": 5,
+      "value": "2022"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 262,
+    "fields": {
+      "product": 5,
+      "param": 6,
+      "value": "2, nano SIM"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 263,
+    "fields": {
+      "product": 5,
+      "param": 8,
+      "value": "2G/3G/4G (LTE)/5G"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 264,
+    "fields": {
+      "product": 5,
+      "param": 9,
+      "value": "стандартный (только SIM)"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 265,
+    "fields": {
+      "product": 5,
+      "param": 10,
+      "value": "0"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 266,
+    "fields": {
+      "product": 5,
+      "param": 11,
+      "value": "VoLte"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 267,
+    "fields": {
+      "product": 5,
+      "param": 12,
+      "value": "разблокировка по лицу"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 268,
+    "fields": {
+      "product": 5,
+      "param": 13,
+      "value": "802.11 a/b/g/n/ac/ax"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 269,
+    "fields": {
+      "product": 5,
+      "param": 14,
+      "value": "v5.3"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 270,
+    "fields": {
+      "product": 5,
+      "param": 15,
+      "value": "NFC,"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 271,
+    "fields": {
+      "product": 5,
+      "param": 16,
+      "value": "GPS / ГЛОНАСС / BeiDou / Galileo / QZSS"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 272,
+    "fields": {
+      "product": 5,
+      "param": 17,
+      "value": "датчик освещенности, датчик приближения, акселерометр (G-sensor), гироскоп, барометр, Face ID, Барометр, Трёхосевой гироскоп"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 273,
+    "fields": {
+      "product": 5,
+      "param": 18,
+      "value": "OLED Super Retina XDR"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 274,
+    "fields": {
+      "product": 5,
+      "param": 19,
+      "value": "6.1\" (2532x1170)"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 275,
+    "fields": {
+      "product": 5,
+      "param": 20,
+      "value": "19.5:9"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 276,
+    "fields": {
+      "product": 5,
+      "param": 21,
+      "value": "460 PPI"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 277,
+    "fields": {
+      "product": 5,
+      "param": 22,
+      "value": "1200 кд/м2"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 278,
+    "fields": {
+      "product": 5,
+      "param": 23,
+      "value": "есть, HDR10"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 279,
+    "fields": {
+      "product": 5,
+      "param": 24,
+      "value": "Multitouch, вырез на экране"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 280,
+    "fields": {
+      "product": 5,
+      "param": 25,
+      "value": "12 МП"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 281,
+    "fields": {
+      "product": 5,
+      "param": 26,
+      "value": "F/1.5"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 282,
+    "fields": {
+      "product": 5,
+      "param": 27,
+      "value": "Фронтальная камера TrueDepth с автофокусом, Режим «Киноэффект» для съёмки видео 1080p с частотой 30 кадров в секунду, Система двух камер: сверхширокоугольная (F/2.4, угол обзора 120 градусов) и широкоугольная (F/1.5) поддержка Ночного режима;"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 283,
+    "fields": {
+      "product": 5,
+      "param": 28,
+      "value": "светодиодная"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 284,
+    "fields": {
+      "product": 5,
+      "param": 29,
+      "value": "стандартная"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 285,
+    "fields": {
+      "product": 5,
+      "param": 30,
+      "value": "F/1.9"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 286,
+    "fields": {
+      "product": 5,
+      "param": 31,
+      "value": "есть"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 287,
+    "fields": {
+      "product": 5,
+      "param": 32,
+      "value": "5х"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 288,
+    "fields": {
+      "product": 5,
+      "param": 33,
+      "value": "есть"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 289,
+    "fields": {
+      "product": 5,
+      "param": 34,
+      "value": "AAC-LC, HE-AAC, HE-AAC v2, защищённый AAC, MP3, линейный PCM, Apple Lossless, FLAC, Dolby Digital (AC-3), Dolby Digital Plus (E-AC-3) и Audible (форматы 2, 3, 4, Audible Enhanced Audio, AAX и AAX+)"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 290,
+    "fields": {
+      "product": 5,
+      "param": 35,
+      "value": "HEVC, H.264, MPEG-4 Part 2 и Motion JPEG"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 291,
+    "fields": {
+      "product": 5,
+      "param": 36,
+      "value": "Lightning"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 292,
+    "fields": {
+      "product": 5,
+      "param": 37,
+      "value": "iOS"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 293,
+    "fields": {
+      "product": 5,
+      "param": 38,
+      "value": "Apple A15 Bionic"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 294,
+    "fields": {
+      "product": 5,
+      "param": 39,
+      "value": "6"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 295,
+    "fields": {
+      "product": 5,
+      "param": 40,
+      "value": "5 нм"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 296,
+    "fields": {
+      "product": 5,
+      "param": 42,
+      "value": "6 ГБ"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 297,
+    "fields": {
+      "product": 5,
+      "param": 43,
+      "value": "128 ГБ"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 298,
+    "fields": {
+      "product": 5,
+      "param": 44,
+      "value": "НЕТ"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 299,
+    "fields": {
+      "product": 5,
+      "param": 45,
+      "value": "Экстренный SOS через спутник, Поддержка аксессуаров и устройств беспроводной зарядки MagSafe, отсутствует Facetime Audio"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 300,
+    "fields": {
+      "product": 5,
+      "param": 46,
+      "value": "Li-Ion,3279,несъемный"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 301,
+    "fields": {
+      "product": 5,
+      "param": 47,
+      "value": "iPhone, Кабель USB-C/Lightning, Документация"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 302,
+    "fields": {
+      "product": 5,
+      "param": 48,
+      "value": "Гарантия продавца"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 303,
+    "fields": {
+      "product": 5,
+      "param": 49,
+      "value": "Китай"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 304,
+    "fields": {
+      "product": 5,
+      "param": 50,
+      "value": "защита от пыли и влаги, можно погружать в воду макс: 6 м, 30 мин"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 305,
+    "fields": {
+      "product": 5,
+      "param": 51,
+      "value": "12 мес."
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 306,
+    "fields": {
+      "product": 5,
+      "param": 52,
+      "value": "Lightning"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 307,
+    "fields": {
+      "product": 5,
+      "param": 53,
+      "value": "80 ч"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 308,
+    "fields": {
+      "product": 5,
+      "param": 54,
+      "value": "20 ч"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 309,
+    "fields": {
+      "product": 5,
+      "param": 55,
+      "value": "есть"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 310,
+    "fields": {
+      "product": 5,
+      "param": 56,
+      "value": "есть, технология Qi"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 311,
+    "fields": {
+      "product": 5,
+      "param": 57,
+      "value": "моноблок"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 312,
+    "fields": {
+      "product": 5,
+      "param": 58,
+      "value": "стекло Ceramic Shield2.5D, с олеофобным покрытием,"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 313,
+    "fields": {
+      "product": 5,
+      "param": 59,
+      "value": "стекло/алюминий"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 314,
+    "fields": {
+      "product": 5,
+      "param": 60,
+      "value": "сияющая звезда"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 315,
+    "fields": {
+      "product": 5,
+      "param": 61,
+      "value": "IP68"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 316,
+    "fields": {
+      "product": 5,
+      "param": 62,
+      "value": "71.5 х 146.7 х 7.8 мм"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 317,
+    "fields": {
+      "product": 5,
+      "param": 63,
+      "value": "172 грамм"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 318,
+    "fields": {
+      "product": 5,
+      "param": 64,
+      "value": "0.165x0.09x0.03 м"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 319,
+    "fields": {
+      "product": 5,
+      "param": 65,
+      "value": "0.51 кг"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 320,
+    "fields": {
+      "product": 6,
+      "param": 1,
+      "value": "Смартфон"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 321,
+    "fields": {
+      "product": 6,
+      "param": 2,
+      "value": "APPLE"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 322,
+    "fields": {
+      "product": 6,
+      "param": 3,
+      "value": "iPhone 14 Pro"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 323,
+    "fields": {
+      "product": 6,
+      "param": 4,
+      "value": "A2892"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 324,
+    "fields": {
+      "product": 6,
+      "param": 5,
+      "value": "2022"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 325,
+    "fields": {
+      "product": 6,
+      "param": 6,
+      "value": "2, nano SIM"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 326,
+    "fields": {
+      "product": 6,
+      "param": 8,
+      "value": "2G/3G/4G (LTE)/5G"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 327,
+    "fields": {
+      "product": 6,
+      "param": 9,
+      "value": "стандартный (только SIM)"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 328,
+    "fields": {
+      "product": 6,
+      "param": 10,
+      "value": "0"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 329,
+    "fields": {
+      "product": 6,
+      "param": 11,
+      "value": "VoLte"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 330,
+    "fields": {
+      "product": 6,
+      "param": 12,
+      "value": "разблокировка по лицу"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 331,
+    "fields": {
+      "product": 6,
+      "param": 13,
+      "value": "802.11 a/b/g/n/ac/ax"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 332,
+    "fields": {
+      "product": 6,
+      "param": 14,
+      "value": "v5.3"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 333,
+    "fields": {
+      "product": 6,
+      "param": 15,
+      "value": "NFC,"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 334,
+    "fields": {
+      "product": 6,
+      "param": 16,
+      "value": "GPS / ГЛОНАСС / BeiDou / Galileo / QZSS"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 335,
+    "fields": {
+      "product": 6,
+      "param": 17,
+      "value": "LiDAR, датчик освещенности, датчик приближения, акселерометр (G-sensor), гироскоп, барометр, Face ID, Барометр, Трёхосевой гироскоп"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 336,
+    "fields": {
+      "product": 6,
+      "param": 18,
+      "value": "OLED Super Retina XDR"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 337,
+    "fields": {
+      "product": 6,
+      "param": 19,
+      "value": "6.1\" (2556x1179)"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 338,
+    "fields": {
+      "product": 6,
+      "param": 20,
+      "value": "19.5:9"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 339,
+    "fields": {
+      "product": 6,
+      "param": 21,
+      "value": "460 PPI"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 340,
+    "fields": {
+      "product": 6,
+      "param": 22,
+      "value": "2000 кд/м2"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 341,
+    "fields": {
+      "product": 6,
+      "param": 23,
+      "value": "есть, HDR10"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 342,
+    "fields": {
+      "product": 6,
+      "param": 24,
+      "value": "Multitouch"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 343,
+    "fields": {
+      "product": 6,
+      "param": 66,
+      "value": "120 Гц"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 344,
+    "fields": {
+      "product": 6,
+      "param": 25,
+      "value": "48 МП"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 345,
+    "fields": {
+      "product": 6,
+      "param": 26,
+      "value": "F/1.78"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 346,
+    "fields": {
+      "product": 6,
+      "param": 27,
+      "value": "Фронтальная камера TrueDepth с автофокусом, Система профессиональных камер: 48 Мп, оптическая стабилизация изображения со сдвигом сенсора второго поколения, семиэлементный объектив 12 Мп Сверхширокоугольная поле зрения 120°, шестилинзовый объектив; 12 Мп Телефото"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 347,
+    "fields": {
+      "product": 6,
+      "param": 28,
+      "value": "светодиодная"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 348,
+    "fields": {
+      "product": 6,
+      "param": 29,
+      "value": "стандартная"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 349,
+    "fields": {
+      "product": 6,
+      "param": 30,
+      "value": "F/1.9"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 350,
+    "fields": {
+      "product": 6,
+      "param": 31,
+      "value": "есть"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 351,
+    "fields": {
+      "product": 6,
+      "param": 32,
+      "value": "15х"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 352,
+    "fields": {
+      "product": 6,
+      "param": 33,
+      "value": "есть"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 353,
+    "fields": {
+      "product": 6,
+      "param": 34,
+      "value": "AAC-LC, HE-AAC, HE-AAC v2, защищённый AAC, MP3, линейный PCM, Apple Lossless, FLAC, Dolby Digital (AC-3), Dolby Digital Plus (E-AC-3) и Audible (форматы 2, 3, 4, Audible Enhanced Audio, AAX и AAX+)"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 354,
+    "fields": {
+      "product": 6,
+      "param": 35,
+      "value": "HEVC, H.264, MPEG-4 Part 2 и Motion JPEG"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 355,
+    "fields": {
+      "product": 6,
+      "param": 36,
+      "value": "Lightning"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 356,
+    "fields": {
+      "product": 6,
+      "param": 37,
+      "value": "iOS"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 357,
+    "fields": {
+      "product": 6,
+      "param": 38,
+      "value": "Apple A16 Bionic"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 358,
+    "fields": {
+      "product": 6,
+      "param": 39,
+      "value": "6"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 359,
+    "fields": {
+      "product": 6,
+      "param": 40,
+      "value": "4 нм"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 360,
+    "fields": {
+      "product": 6,
+      "param": 42,
+      "value": "6 ГБ"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 361,
+    "fields": {
+      "product": 6,
+      "param": 43,
+      "value": "128 ГБ"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 362,
+    "fields": {
+      "product": 6,
+      "param": 44,
+      "value": "НЕТ"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 363,
+    "fields": {
+      "product": 6,
+      "param": 45,
+      "value": "Dynamic Island, Экстренный SOS через спутник, Поддержка аксессуаров и устройств беспроводной зарядки MagSafe, отсутствует Facetime Audio"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 364,
+    "fields": {
+      "product": 6,
+      "param": 46,
+      "value": "Li-Ion,3200,несъемный"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 365,
+    "fields": {
+      "product": 6,
+      "param": 47,
+      "value": "iPhone, Кабель USB-C/Lightning, Документация"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 366,
+    "fields": {
+      "product": 6,
+      "param": 48,
+      "value": "Гарантия продавца"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 367,
+    "fields": {
+      "product": 6,
+      "param": 49,
+      "value": "Китай"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 368,
+    "fields": {
+      "product": 6,
+      "param": 50,
+      "value": "защита от пыли и влаги, можно погружать в воду макс: 6 м, 30 мин"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 369,
+    "fields": {
+      "product": 6,
+      "param": 51,
+      "value": "12 мес."
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 370,
+    "fields": {
+      "product": 6,
+      "param": 52,
+      "value": "Lightning"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 371,
+    "fields": {
+      "product": 6,
+      "param": 53,
+      "value": "75 ч"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 372,
+    "fields": {
+      "product": 6,
+      "param": 54,
+      "value": "23 ч"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 373,
+    "fields": {
+      "product": 6,
+      "param": 55,
+      "value": "есть"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 374,
+    "fields": {
+      "product": 6,
+      "param": 56,
+      "value": "есть, технология Qi"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 375,
+    "fields": {
+      "product": 6,
+      "param": 57,
+      "value": "моноблок"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 376,
+    "fields": {
+      "product": 6,
+      "param": 58,
+      "value": "стекло Ceramic Shield2.5D, с олеофобным покрытием,"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 377,
+    "fields": {
+      "product": 6,
+      "param": 59,
+      "value": "стекло/нержавеющая сталь"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 378,
+    "fields": {
+      "product": 6,
+      "param": 60,
+      "value": "черный космос"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 379,
+    "fields": {
+      "product": 6,
+      "param": 61,
+      "value": "IP68"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 380,
+    "fields": {
+      "product": 6,
+      "param": 62,
+      "value": "71.5 х 147.5 х 7.85 мм"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 381,
+    "fields": {
+      "product": 6,
+      "param": 63,
+      "value": "206 грамм"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 382,
+    "fields": {
+      "product": 6,
+      "param": 64,
+      "value": "0.165x0.09x0.03 м"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 383,
+    "fields": {
+      "product": 6,
+      "param": 65,
+      "value": "0.52 кг"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 384,
+    "fields": {
+      "product": 7,
+      "param": 1,
+      "value": "Смартфон"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 385,
+    "fields": {
+      "product": 7,
+      "param": 2,
+      "value": "APPLE"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 386,
+    "fields": {
+      "product": 7,
+      "param": 3,
+      "value": "iPhone 13"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 387,
+    "fields": {
+      "product": 7,
+      "param": 4,
+      "value": "A2633"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 388,
+    "fields": {
+      "product": 7,
+      "param": 5,
+      "value": "2021"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 389,
+    "fields": {
+      "product": 7,
+      "param": 6,
+      "value": "1, nano SIM"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 390,
+    "fields": {
+      "product": 7,
+      "param": 7,
+      "value": "да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 391,
+    "fields": {
+      "product": 7,
+      "param": 8,
+      "value": "2G/3G/4G (LTE)/5G"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 392,
+    "fields": {
+      "product": 7,
+      "param": 9,
+      "value": "стандартный (только SIM)"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 393,
+    "fields": {
+      "product": 7,
+      "param": 10,
+      "value": "2"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 394,
+    "fields": {
+      "product": 7,
+      "param": 11,
+      "value": "VoLte"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 395,
+    "fields": {
+      "product": 7,
+      "param": 12,
+      "value": "разблокировка по лицу"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 396,
+    "fields": {
+      "product": 7,
+      "param": 13,
+      "value": "802.11 a/b/g/n/ac/ax"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 397,
+    "fields": {
+      "product": 7,
+      "param": 14,
+      "value": "v5.0"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 398,
+    "fields": {
+      "product": 7,
+      "param": 15,
+      "value": "NFC,"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 399,
+    "fields": {
+      "product": 7,
+      "param": 16,
+      "value": "GPS / ГЛОНАСС / BeiDou / Galileo / QZSS"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 400,
+    "fields": {
+      "product": 7,
+      "param": 17,
+      "value": "датчик освещенности, датчик приближения, акселерометр (G-sensor), гироскоп, барометр, Face ID, Барометр, Трёхосевой гироскоп"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 401,
+    "fields": {
+      "product": 7,
+      "param": 18,
+      "value": "OLED Super Retina XDR"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 402,
+    "fields": {
+      "product": 7,
+      "param": 19,
+      "value": "6.1\" (2532x1170)"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 403,
+    "fields": {
+      "product": 7,
+      "param": 20,
+      "value": "19.5:9"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 404,
+    "fields": {
+      "product": 7,
+      "param": 21,
+      "value": "460 PPI"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 405,
+    "fields": {
+      "product": 7,
+      "param": 22,
+      "value": "1200 кд/м2"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 406,
+    "fields": {
+      "product": 7,
+      "param": 23,
+      "value": "есть, HDR10"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 407,
+    "fields": {
+      "product": 7,
+      "param": 24,
+      "value": "Multitouch, вырез на экране"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 408,
+    "fields": {
+      "product": 7,
+      "param": 25,
+      "value": "12 МП"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 409,
+    "fields": {
+      "product": 7,
+      "param": 26,
+      "value": "F/1.6"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 410,
+    "fields": {
+      "product": 7,
+      "param": 27,
+      "value": "Режим «Киноэффект» для съёмки видео 1080p с частотой 30 кадров в секунду, Система двух камер: сверхширокоугольная (F/2.4, угол обзора 120 градусов) и широкоугольная (F/1.6) поддержка Ночного режима; Режим Smart HDR 4 для фото, Оптическая стабилизация изображения, Фотографические стили"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 411,
+    "fields": {
+      "product": 7,
+      "param": 28,
+      "value": "светодиодная"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 412,
+    "fields": {
+      "product": 7,
+      "param": 29,
+      "value": "стандартная"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 413,
+    "fields": {
+      "product": 7,
+      "param": 30,
+      "value": "F/2.2"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 414,
+    "fields": {
+      "product": 7,
+      "param": 31,
+      "value": "есть"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 415,
+    "fields": {
+      "product": 7,
+      "param": 32,
+      "value": "5х"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 416,
+    "fields": {
+      "product": 7,
+      "param": 33,
+      "value": "есть"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 417,
+    "fields": {
+      "product": 7,
+      "param": 34,
+      "value": "AAC-LC, HE-AAC, HE-AAC v2, защищённый AAC, MP3, линейный PCM, Apple Lossless, FLAC, Dolby Digital (AC-3), Dolby Digital Plus (E-AC-3) и Audible (форматы 2, 3, 4, Audible Enhanced Audio, AAX и AAX+)"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 418,
+    "fields": {
+      "product": 7,
+      "param": 35,
+      "value": "HEVC, H.264, MPEG-4 Part 2 и Motion JPEG"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 419,
+    "fields": {
+      "product": 7,
+      "param": 36,
+      "value": "Lightning"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 420,
+    "fields": {
+      "product": 7,
+      "param": 37,
+      "value": "iOS"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 421,
+    "fields": {
+      "product": 7,
+      "param": 38,
+      "value": "Apple A15 Bionic"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 422,
+    "fields": {
+      "product": 7,
+      "param": 39,
+      "value": "6"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 423,
+    "fields": {
+      "product": 7,
+      "param": 40,
+      "value": "5 нм"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 424,
+    "fields": {
+      "product": 7,
+      "param": 42,
+      "value": "4 ГБ"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 425,
+    "fields": {
+      "product": 7,
+      "param": 43,
+      "value": "128 ГБ"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 426,
+    "fields": {
+      "product": 7,
+      "param": 44,
+      "value": "НЕТ"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 427,
+    "fields": {
+      "product": 7,
+      "param": 45,
+      "value": "Поддержка аксессуаров и устройств беспроводной зарядки MagSafe, Защита от воды при погружении на глубину до 6 метров длительностью до 30 минут. Поддержка двух eSIM"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 428,
+    "fields": {
+      "product": 7,
+      "param": 46,
+      "value": "Li-Ion,3227,несъемный"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 429,
+    "fields": {
+      "product": 7,
+      "param": 47,
+      "value": "iPhone, Кабель USB-C/Lightning, Документация"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 430,
+    "fields": {
+      "product": 7,
+      "param": 48,
+      "value": "Гарантия продавца"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 431,
+    "fields": {
+      "product": 7,
+      "param": 49,
+      "value": "Индия"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 432,
+    "fields": {
+      "product": 7,
+      "param": 50,
+      "value": "защита от пыли и влаги, можно погружать в воду макс: 6 м, 30 мин"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 433,
+    "fields": {
+      "product": 7,
+      "param": 51,
+      "value": "12 мес."
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 434,
+    "fields": {
+      "product": 7,
+      "param": 52,
+      "value": "Lightning"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 435,
+    "fields": {
+      "product": 7,
+      "param": 53,
+      "value": "75 ч"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 436,
+    "fields": {
+      "product": 7,
+      "param": 54,
+      "value": "19 ч"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 437,
+    "fields": {
+      "product": 7,
+      "param": 55,
+      "value": "есть"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 438,
+    "fields": {
+      "product": 7,
+      "param": 56,
+      "value": "есть, технология Qi"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 439,
+    "fields": {
+      "product": 7,
+      "param": 57,
+      "value": "моноблок"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 440,
+    "fields": {
+      "product": 7,
+      "param": 58,
+      "value": "стекло 2.5D,"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 441,
+    "fields": {
+      "product": 7,
+      "param": 59,
+      "value": "стекло/алюминий"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 442,
+    "fields": {
+      "product": 7,
+      "param": 60,
+      "value": "розовый"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 443,
+    "fields": {
+      "product": 7,
+      "param": 61,
+      "value": "IP68"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 444,
+    "fields": {
+      "product": 7,
+      "param": 62,
+      "value": "71.5 х 146.7 х 7.65 мм"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 445,
+    "fields": {
+      "product": 7,
+      "param": 63,
+      "value": "173 грамм"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 446,
+    "fields": {
+      "product": 7,
+      "param": 64,
+      "value": "0.17x0.09x0.03 м"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 447,
+    "fields": {
+      "product": 7,
+      "param": 65,
+      "value": "0.44 кг"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 448,
+    "fields": {
+      "product": 8,
+      "param": 1,
+      "value": "Смартфон"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 449,
+    "fields": {
+      "product": 8,
+      "param": 2,
+      "value": "APPLE"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 450,
+    "fields": {
+      "product": 8,
+      "param": 3,
+      "value": "iPhone 13"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 451,
+    "fields": {
+      "product": 8,
+      "param": 4,
+      "value": "A2633"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 452,
+    "fields": {
+      "product": 8,
+      "param": 5,
+      "value": "2021"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 453,
+    "fields": {
+      "product": 8,
+      "param": 6,
+      "value": "1, nano SIM"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 454,
+    "fields": {
+      "product": 8,
+      "param": 7,
+      "value": "да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 455,
+    "fields": {
+      "product": 8,
+      "param": 8,
+      "value": "2G/3G/4G (LTE)/5G"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 456,
+    "fields": {
+      "product": 8,
+      "param": 9,
+      "value": "стандартный (только SIM)"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 457,
+    "fields": {
+      "product": 8,
+      "param": 10,
+      "value": "2"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 458,
+    "fields": {
+      "product": 8,
+      "param": 11,
+      "value": "VoLte"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 459,
+    "fields": {
+      "product": 8,
+      "param": 12,
+      "value": "разблокировка по лицу"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 460,
+    "fields": {
+      "product": 8,
+      "param": 13,
+      "value": "802.11 a/b/g/n/ac/ax"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 461,
+    "fields": {
+      "product": 8,
+      "param": 14,
+      "value": "v5.0"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 462,
+    "fields": {
+      "product": 8,
+      "param": 15,
+      "value": "NFC,"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 463,
+    "fields": {
+      "product": 8,
+      "param": 16,
+      "value": "GPS / ГЛОНАСС / BeiDou / Galileo / QZSS"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 464,
+    "fields": {
+      "product": 8,
+      "param": 17,
+      "value": "датчик освещенности, датчик приближения, акселерометр (G-sensor), гироскоп, барометр, Face ID, Барометр, Трёхосевой гироскоп"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 465,
+    "fields": {
+      "product": 8,
+      "param": 18,
+      "value": "OLED Super Retina XDR"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 466,
+    "fields": {
+      "product": 8,
+      "param": 19,
+      "value": "6.1\" (2532x1170)"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 467,
+    "fields": {
+      "product": 8,
+      "param": 20,
+      "value": "19.5:9"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 468,
+    "fields": {
+      "product": 8,
+      "param": 21,
+      "value": "460 PPI"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 469,
+    "fields": {
+      "product": 8,
+      "param": 22,
+      "value": "1200 кд/м2"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 470,
+    "fields": {
+      "product": 8,
+      "param": 23,
+      "value": "есть, HDR10"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 471,
+    "fields": {
+      "product": 8,
+      "param": 24,
+      "value": "Multitouch, вырез на экране"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 472,
+    "fields": {
+      "product": 8,
+      "param": 25,
+      "value": "12 МП"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 473,
+    "fields": {
+      "product": 8,
+      "param": 26,
+      "value": "F/1.6"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 474,
+    "fields": {
+      "product": 8,
+      "param": 27,
+      "value": "Режим «Киноэффект» для съёмки видео 1080p с частотой 30 кадров в секунду, Система двух камер: сверхширокоугольная (F/2.4, угол обзора 120 градусов) и широкоугольная (F/1.6) поддержка Ночного режима; Режим Smart HDR 4 для фото, Оптическая стабилизация изображения, Фотографические стили"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 475,
+    "fields": {
+      "product": 8,
+      "param": 28,
+      "value": "светодиодная"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 476,
+    "fields": {
+      "product": 8,
+      "param": 29,
+      "value": "стандартная"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 477,
+    "fields": {
+      "product": 8,
+      "param": 30,
+      "value": "F/2.2"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 478,
+    "fields": {
+      "product": 8,
+      "param": 31,
+      "value": "есть"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 479,
+    "fields": {
+      "product": 8,
+      "param": 32,
+      "value": "5х"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 480,
+    "fields": {
+      "product": 8,
+      "param": 33,
+      "value": "есть"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 481,
+    "fields": {
+      "product": 8,
+      "param": 34,
+      "value": "AAC-LC, HE-AAC, HE-AAC v2, защищённый AAC, MP3, линейный PCM, Apple Lossless, FLAC, Dolby Digital (AC-3), Dolby Digital Plus (E-AC-3) и Audible (форматы 2, 3, 4, Audible Enhanced Audio, AAX и AAX+)"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 482,
+    "fields": {
+      "product": 8,
+      "param": 35,
+      "value": "HEVC, H.264, MPEG-4 Part 2 и Motion JPEG"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 483,
+    "fields": {
+      "product": 8,
+      "param": 36,
+      "value": "Lightning"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 484,
+    "fields": {
+      "product": 8,
+      "param": 37,
+      "value": "iOS"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 485,
+    "fields": {
+      "product": 8,
+      "param": 38,
+      "value": "Apple A15 Bionic"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 486,
+    "fields": {
+      "product": 8,
+      "param": 39,
+      "value": "6"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 487,
+    "fields": {
+      "product": 8,
+      "param": 40,
+      "value": "5 нм"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 488,
+    "fields": {
+      "product": 8,
+      "param": 42,
+      "value": "4 ГБ"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 489,
+    "fields": {
+      "product": 8,
+      "param": 43,
+      "value": "128 ГБ"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 490,
+    "fields": {
+      "product": 8,
+      "param": 44,
+      "value": "НЕТ"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 491,
+    "fields": {
+      "product": 8,
+      "param": 45,
+      "value": "Поддержка аксессуаров и устройств беспроводной зарядки MagSafe, Защита от воды при погружении на глубину до 6 метров длительностью до 30 минут. Поддержка двух eSIM"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 492,
+    "fields": {
+      "product": 8,
+      "param": 46,
+      "value": "Li-Ion,3227,несъемный"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 493,
+    "fields": {
+      "product": 8,
+      "param": 47,
+      "value": "iPhone, Кабель USB-C/Lightning, Документация"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 494,
+    "fields": {
+      "product": 8,
+      "param": 48,
+      "value": "Гарантия продавца"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 495,
+    "fields": {
+      "product": 8,
+      "param": 49,
+      "value": "Индия"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 496,
+    "fields": {
+      "product": 8,
+      "param": 50,
+      "value": "защита от пыли и влаги, можно погружать в воду макс: 6 м, 30 мин"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 497,
+    "fields": {
+      "product": 8,
+      "param": 51,
+      "value": "12 мес."
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 498,
+    "fields": {
+      "product": 8,
+      "param": 52,
+      "value": "Lightning"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 499,
+    "fields": {
+      "product": 8,
+      "param": 53,
+      "value": "75 ч"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 500,
+    "fields": {
+      "product": 8,
+      "param": 54,
+      "value": "19 ч"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 501,
+    "fields": {
+      "product": 8,
+      "param": 55,
+      "value": "есть"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 502,
+    "fields": {
+      "product": 8,
+      "param": 56,
+      "value": "есть, технология Qi"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 503,
+    "fields": {
+      "product": 8,
+      "param": 57,
+      "value": "моноблок"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 504,
+    "fields": {
+      "product": 8,
+      "param": 58,
+      "value": "стекло 2.5D,"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 505,
+    "fields": {
+      "product": 8,
+      "param": 59,
+      "value": "стекло/алюминий"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 506,
+    "fields": {
+      "product": 8,
+      "param": 60,
+      "value": "синий"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 507,
+    "fields": {
+      "product": 8,
+      "param": 61,
+      "value": "IP68"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 508,
+    "fields": {
+      "product": 8,
+      "param": 62,
+      "value": "71.5 х 146.7 х 7.65 мм"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 509,
+    "fields": {
+      "product": 8,
+      "param": 63,
+      "value": "173 грамм"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 510,
+    "fields": {
+      "product": 8,
+      "param": 64,
+      "value": "0.17x0.09x0.03 м"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 511,
+    "fields": {
+      "product": 8,
+      "param": 65,
+      "value": "0.44 кг"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 512,
+    "fields": {
+      "product": 9,
+      "param": 1,
+      "value": "Смартфон"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 513,
+    "fields": {
+      "product": 9,
+      "param": 2,
+      "value": "APPLE"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 514,
+    "fields": {
+      "product": 9,
+      "param": 3,
+      "value": "iPhone 13"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 515,
+    "fields": {
+      "product": 9,
+      "param": 4,
+      "value": "A2633"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 516,
+    "fields": {
+      "product": 9,
+      "param": 5,
+      "value": "2021"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 517,
+    "fields": {
+      "product": 9,
+      "param": 6,
+      "value": "1, nano SIM"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 518,
+    "fields": {
+      "product": 9,
+      "param": 7,
+      "value": "да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 519,
+    "fields": {
+      "product": 9,
+      "param": 8,
+      "value": "2G/3G/4G (LTE)/5G"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 520,
+    "fields": {
+      "product": 9,
+      "param": 9,
+      "value": "стандартный (только SIM)"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 521,
+    "fields": {
+      "product": 9,
+      "param": 10,
+      "value": "2"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 522,
+    "fields": {
+      "product": 9,
+      "param": 11,
+      "value": "VoLte"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 523,
+    "fields": {
+      "product": 9,
+      "param": 12,
+      "value": "разблокировка по лицу"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 524,
+    "fields": {
+      "product": 9,
+      "param": 13,
+      "value": "802.11 a/b/g/n/ac/ax"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 525,
+    "fields": {
+      "product": 9,
+      "param": 14,
+      "value": "v5.0"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 526,
+    "fields": {
+      "product": 9,
+      "param": 15,
+      "value": "NFC,"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 527,
+    "fields": {
+      "product": 9,
+      "param": 16,
+      "value": "GPS / ГЛОНАСС / BeiDou / Galileo / QZSS"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 528,
+    "fields": {
+      "product": 9,
+      "param": 17,
+      "value": "датчик освещенности, датчик приближения, акселерометр (G-sensor), гироскоп, барометр, Face ID, Барометр, Трёхосевой гироскоп"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 529,
+    "fields": {
+      "product": 9,
+      "param": 18,
+      "value": "OLED Super Retina XDR"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 530,
+    "fields": {
+      "product": 9,
+      "param": 19,
+      "value": "6.1\" (2532x1170)"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 531,
+    "fields": {
+      "product": 9,
+      "param": 20,
+      "value": "19.5:9"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 532,
+    "fields": {
+      "product": 9,
+      "param": 21,
+      "value": "460 PPI"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 533,
+    "fields": {
+      "product": 9,
+      "param": 22,
+      "value": "1200 кд/м2"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 534,
+    "fields": {
+      "product": 9,
+      "param": 23,
+      "value": "есть, HDR10"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 535,
+    "fields": {
+      "product": 9,
+      "param": 24,
+      "value": "Multitouch, вырез на экране"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 536,
+    "fields": {
+      "product": 9,
+      "param": 25,
+      "value": "12 МП"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 537,
+    "fields": {
+      "product": 9,
+      "param": 26,
+      "value": "F/1.6"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 538,
+    "fields": {
+      "product": 9,
+      "param": 27,
+      "value": "Режим «Киноэффект» для съёмки видео 1080p с частотой 30 кадров в секунду, Система двух камер: сверхширокоугольная (F/2.4, угол обзора 120 градусов) и широкоугольная (F/1.6) поддержка Ночного режима; Режим Smart HDR 4 для фото, Оптическая стабилизация изображения, Фотографические стили"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 539,
+    "fields": {
+      "product": 9,
+      "param": 28,
+      "value": "светодиодная"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 540,
+    "fields": {
+      "product": 9,
+      "param": 29,
+      "value": "стандартная"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 541,
+    "fields": {
+      "product": 9,
+      "param": 30,
+      "value": "F/2.2"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 542,
+    "fields": {
+      "product": 9,
+      "param": 31,
+      "value": "есть"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 543,
+    "fields": {
+      "product": 9,
+      "param": 32,
+      "value": "5х"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 544,
+    "fields": {
+      "product": 9,
+      "param": 33,
+      "value": "есть"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 545,
+    "fields": {
+      "product": 9,
+      "param": 34,
+      "value": "AAC-LC, HE-AAC, HE-AAC v2, защищённый AAC, MP3, линейный PCM, Apple Lossless, FLAC, Dolby Digital (AC-3), Dolby Digital Plus (E-AC-3) и Audible (форматы 2, 3, 4, Audible Enhanced Audio, AAX и AAX+)"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 546,
+    "fields": {
+      "product": 9,
+      "param": 35,
+      "value": "HEVC, H.264, MPEG-4 Part 2 и Motion JPEG"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 547,
+    "fields": {
+      "product": 9,
+      "param": 36,
+      "value": "Lightning"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 548,
+    "fields": {
+      "product": 9,
+      "param": 37,
+      "value": "iOS"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 549,
+    "fields": {
+      "product": 9,
+      "param": 38,
+      "value": "Apple A15 Bionic"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 550,
+    "fields": {
+      "product": 9,
+      "param": 39,
+      "value": "6"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 551,
+    "fields": {
+      "product": 9,
+      "param": 40,
+      "value": "5 нм"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 552,
+    "fields": {
+      "product": 9,
+      "param": 42,
+      "value": "4 ГБ"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 553,
+    "fields": {
+      "product": 9,
+      "param": 43,
+      "value": "128 ГБ"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 554,
+    "fields": {
+      "product": 9,
+      "param": 44,
+      "value": "НЕТ"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 555,
+    "fields": {
+      "product": 9,
+      "param": 45,
+      "value": "Поддержка аксессуаров и устройств беспроводной зарядки MagSafe, Защита от воды при погружении на глубину до 6 метров длительностью до 30 минут. Поддержка двух eSIM"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 556,
+    "fields": {
+      "product": 9,
+      "param": 46,
+      "value": "Li-Ion,3227,несъемный"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 557,
+    "fields": {
+      "product": 9,
+      "param": 47,
+      "value": "iPhone, Кабель USB-C/Lightning, Документация"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 558,
+    "fields": {
+      "product": 9,
+      "param": 48,
+      "value": "Гарантия продавца"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 559,
+    "fields": {
+      "product": 9,
+      "param": 49,
+      "value": "Индия"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 560,
+    "fields": {
+      "product": 9,
+      "param": 50,
+      "value": "защита от пыли и влаги, можно погружать в воду макс: 6 м, 30 мин"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 561,
+    "fields": {
+      "product": 9,
+      "param": 51,
+      "value": "12 мес."
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 562,
+    "fields": {
+      "product": 9,
+      "param": 52,
+      "value": "Lightning"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 563,
+    "fields": {
+      "product": 9,
+      "param": 53,
+      "value": "75 ч"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 564,
+    "fields": {
+      "product": 9,
+      "param": 54,
+      "value": "19 ч"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 565,
+    "fields": {
+      "product": 9,
+      "param": 55,
+      "value": "есть"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 566,
+    "fields": {
+      "product": 9,
+      "param": 56,
+      "value": "есть, технология Qi"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 567,
+    "fields": {
+      "product": 9,
+      "param": 57,
+      "value": "моноблок"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 568,
+    "fields": {
+      "product": 9,
+      "param": 58,
+      "value": "стекло 2.5D,"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 569,
+    "fields": {
+      "product": 9,
+      "param": 59,
+      "value": "стекло/алюминий"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 570,
+    "fields": {
+      "product": 9,
+      "param": 60,
+      "value": "альпийский зеленый"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 571,
+    "fields": {
+      "product": 9,
+      "param": 61,
+      "value": "IP68"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 572,
+    "fields": {
+      "product": 9,
+      "param": 62,
+      "value": "71.5 х 146.7 х 7.65 мм"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 573,
+    "fields": {
+      "product": 9,
+      "param": 63,
+      "value": "173 грамм"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 574,
+    "fields": {
+      "product": 9,
+      "param": 64,
+      "value": "0.09x0.025x0.165 м"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 575,
+    "fields": {
+      "product": 9,
+      "param": 65,
+      "value": "0.44 кг"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 576,
+    "fields": {
+      "product": 10,
+      "param": 1,
+      "value": "Смартфон"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 577,
+    "fields": {
+      "product": 10,
+      "param": 2,
+      "value": "APPLE"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 578,
+    "fields": {
+      "product": 10,
+      "param": 3,
+      "value": "iPhone 14"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 579,
+    "fields": {
+      "product": 10,
+      "param": 4,
+      "value": "A2884"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 580,
+    "fields": {
+      "product": 10,
+      "param": 5,
+      "value": "2022"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 581,
+    "fields": {
+      "product": 10,
+      "param": 6,
+      "value": "2, nano SIM"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 582,
+    "fields": {
+      "product": 10,
+      "param": 8,
+      "value": "2G/3G/4G (LTE)/5G"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 583,
+    "fields": {
+      "product": 10,
+      "param": 9,
+      "value": "стандартный (только SIM)"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 584,
+    "fields": {
+      "product": 10,
+      "param": 10,
+      "value": "0"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 585,
+    "fields": {
+      "product": 10,
+      "param": 11,
+      "value": "VoLte"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 586,
+    "fields": {
+      "product": 10,
+      "param": 12,
+      "value": "разблокировка по лицу"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 587,
+    "fields": {
+      "product": 10,
+      "param": 13,
+      "value": "802.11 a/b/g/n/ac/ax"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 588,
+    "fields": {
+      "product": 10,
+      "param": 14,
+      "value": "v5.3"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 589,
+    "fields": {
+      "product": 10,
+      "param": 15,
+      "value": "NFC,"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 590,
+    "fields": {
+      "product": 10,
+      "param": 16,
+      "value": "GPS / ГЛОНАСС / BeiDou / Galileo / QZSS"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 591,
+    "fields": {
+      "product": 10,
+      "param": 17,
+      "value": "датчик освещенности, датчик приближения, акселерометр (G-sensor), гироскоп, барометр, Face ID, Барометр, Трёхосевой гироскоп"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 592,
+    "fields": {
+      "product": 10,
+      "param": 18,
+      "value": "OLED Super Retina XDR"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 593,
+    "fields": {
+      "product": 10,
+      "param": 19,
+      "value": "6.1\" (2532x1170)"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 594,
+    "fields": {
+      "product": 10,
+      "param": 20,
+      "value": "19.5:9"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 595,
+    "fields": {
+      "product": 10,
+      "param": 21,
+      "value": "460 PPI"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 596,
+    "fields": {
+      "product": 10,
+      "param": 22,
+      "value": "1200 кд/м2"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 597,
+    "fields": {
+      "product": 10,
+      "param": 23,
+      "value": "есть, HDR10"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 598,
+    "fields": {
+      "product": 10,
+      "param": 24,
+      "value": "Multitouch, вырез на экране"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 599,
+    "fields": {
+      "product": 10,
+      "param": 25,
+      "value": "12 МП"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 600,
+    "fields": {
+      "product": 10,
+      "param": 26,
+      "value": "F/1.5"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 601,
+    "fields": {
+      "product": 10,
+      "param": 27,
+      "value": "Фронтальная камера TrueDepth с автофокусом, Режим «Киноэффект» для съёмки видео 1080p с частотой 30 кадров в секунду, Система двух камер: сверхширокоугольная (F/2.4, угол обзора 120 градусов) и широкоугольная (F/1.5) поддержка Ночного режима;"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 602,
+    "fields": {
+      "product": 10,
+      "param": 28,
+      "value": "светодиодная"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 603,
+    "fields": {
+      "product": 10,
+      "param": 29,
+      "value": "стандартная"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 604,
+    "fields": {
+      "product": 10,
+      "param": 30,
+      "value": "F/1.9"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 605,
+    "fields": {
+      "product": 10,
+      "param": 31,
+      "value": "есть"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 606,
+    "fields": {
+      "product": 10,
+      "param": 32,
+      "value": "5х"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 607,
+    "fields": {
+      "product": 10,
+      "param": 33,
+      "value": "есть"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 608,
+    "fields": {
+      "product": 10,
+      "param": 34,
+      "value": "AAC-LC, HE-AAC, HE-AAC v2, защищённый AAC, MP3, линейный PCM, Apple Lossless, FLAC, Dolby Digital (AC-3), Dolby Digital Plus (E-AC-3) и Audible (форматы 2, 3, 4, Audible Enhanced Audio, AAX и AAX+)"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 609,
+    "fields": {
+      "product": 10,
+      "param": 35,
+      "value": "HEVC, H.264, MPEG-4 Part 2 и Motion JPEG"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 610,
+    "fields": {
+      "product": 10,
+      "param": 36,
+      "value": "Lightning"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 611,
+    "fields": {
+      "product": 10,
+      "param": 37,
+      "value": "iOS"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 612,
+    "fields": {
+      "product": 10,
+      "param": 38,
+      "value": "Apple A15 Bionic"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 613,
+    "fields": {
+      "product": 10,
+      "param": 39,
+      "value": "6"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 614,
+    "fields": {
+      "product": 10,
+      "param": 40,
+      "value": "5 нм"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 615,
+    "fields": {
+      "product": 10,
+      "param": 42,
+      "value": "6 ГБ"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 616,
+    "fields": {
+      "product": 10,
+      "param": 43,
+      "value": "128 ГБ"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 617,
+    "fields": {
+      "product": 10,
+      "param": 44,
+      "value": "НЕТ"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 618,
+    "fields": {
+      "product": 10,
+      "param": 45,
+      "value": "Экстренный SOS через спутник, Поддержка аксессуаров и устройств беспроводной зарядки MagSafe, отсутствует Facetime Audio"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 619,
+    "fields": {
+      "product": 10,
+      "param": 46,
+      "value": "Li-Ion,3279,несъемный"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 620,
+    "fields": {
+      "product": 10,
+      "param": 47,
+      "value": "iPhone, Кабель USB-C/Lightning, Документация"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 621,
+    "fields": {
+      "product": 10,
+      "param": 48,
+      "value": "Гарантия продавца"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 622,
+    "fields": {
+      "product": 10,
+      "param": 49,
+      "value": "Китай"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 623,
+    "fields": {
+      "product": 10,
+      "param": 50,
+      "value": "защита от пыли и влаги, можно погружать в воду макс: 6 м, 30 мин"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 624,
+    "fields": {
+      "product": 10,
+      "param": 51,
+      "value": "12 мес."
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 625,
+    "fields": {
+      "product": 10,
+      "param": 52,
+      "value": "Lightning"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 626,
+    "fields": {
+      "product": 10,
+      "param": 53,
+      "value": "80 ч"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 627,
+    "fields": {
+      "product": 10,
+      "param": 54,
+      "value": "20 ч"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 628,
+    "fields": {
+      "product": 10,
+      "param": 55,
+      "value": "есть"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 629,
+    "fields": {
+      "product": 10,
+      "param": 56,
+      "value": "есть, технология Qi"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 630,
+    "fields": {
+      "product": 10,
+      "param": 57,
+      "value": "моноблок"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 631,
+    "fields": {
+      "product": 10,
+      "param": 58,
+      "value": "стекло Ceramic Shield2.5D, с олеофобным покрытием,"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 632,
+    "fields": {
+      "product": 10,
+      "param": 59,
+      "value": "стекло/алюминий"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 633,
+    "fields": {
+      "product": 10,
+      "param": 60,
+      "value": "фиолетовый"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 634,
+    "fields": {
+      "product": 10,
+      "param": 61,
+      "value": "IP68"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 635,
+    "fields": {
+      "product": 10,
+      "param": 62,
+      "value": "71.5 х 146.7 х 7.8 мм"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 636,
+    "fields": {
+      "product": 10,
+      "param": 63,
+      "value": "172 грамм"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 637,
+    "fields": {
+      "product": 10,
+      "param": 64,
+      "value": "0.163x0.087x0.029 м"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 638,
+    "fields": {
+      "product": 10,
+      "param": 65,
+      "value": "0.52 кг"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 639,
+    "fields": {
+      "product": 11,
+      "param": 51,
+      "value": "1 год"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 640,
+    "fields": {
+      "product": 11,
+      "param": 67,
+      "value": "Китай"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 641,
+    "fields": {
+      "product": 11,
+      "param": 3,
+      "value": "U7HQ"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 642,
+    "fields": {
+      "product": 11,
+      "param": 68,
+      "value": "120 герц"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 643,
+    "fields": {
+      "product": 11,
+      "param": 69,
+      "value": "Двух диапазонный Wi-FI"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 644,
+    "fields": {
+      "product": 11,
+      "param": 70,
+      "value": "QLED, Dolby Atmos&Vision, HDR10+"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 645,
+    "fields": {
+      "product": 11,
+      "param": 71,
+      "value": "Операционная система VIDAA U6"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 646,
+    "fields": {
+      "product": 11,
+      "param": 72,
+      "value": "Direct Full Array"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 647,
+    "fields": {
+      "product": 11,
+      "param": 73,
+      "value": "55 \""
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 648,
+    "fields": {
+      "product": 11,
+      "param": 74,
+      "value": "139.7 см"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 649,
+    "fields": {
+      "product": 11,
+      "param": 19,
+      "value": "55\"/3840x2160 Пикс"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 650,
+    "fields": {
+      "product": 11,
+      "param": 75,
+      "value": "16:9"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 651,
+    "fields": {
+      "product": 11,
+      "param": 66,
+      "value": "120 Гц"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 652,
+    "fields": {
+      "product": 11,
+      "param": 76,
+      "value": "Да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 653,
+    "fields": {
+      "product": 11,
+      "param": 77,
+      "value": "Да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 654,
+    "fields": {
+      "product": 11,
+      "param": 78,
+      "value": "Да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 655,
+    "fields": {
+      "product": 11,
+      "param": 37,
+      "value": "Vidaa"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 656,
+    "fields": {
+      "product": 11,
+      "param": 79,
+      "value": "20 Вт"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 657,
+    "fields": {
+      "product": 11,
+      "param": 80,
+      "value": "Да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 658,
+    "fields": {
+      "product": 11,
+      "param": 81,
+      "value": "Да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 659,
+    "fields": {
+      "product": 12,
+      "param": 51,
+      "value": "1 год"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 660,
+    "fields": {
+      "product": 12,
+      "param": 67,
+      "value": "Россия"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 661,
+    "fields": {
+      "product": 12,
+      "param": 3,
+      "value": "U55EY1500B"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 662,
+    "fields": {
+      "product": 12,
+      "param": 68,
+      "value": "Лаконичный дизайн"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 663,
+    "fields": {
+      "product": 12,
+      "param": 69,
+      "value": "Голосовое управление"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 664,
+    "fields": {
+      "product": 12,
+      "param": 70,
+      "value": "Смарт ТВ"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 665,
+    "fields": {
+      "product": 12,
+      "param": 71,
+      "value": "Разрешение UHD"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 666,
+    "fields": {
+      "product": 12,
+      "param": 72,
+      "value": "Простой интерфейс"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 667,
+    "fields": {
+      "product": 12,
+      "param": 73,
+      "value": "55 \""
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 668,
+    "fields": {
+      "product": 12,
+      "param": 74,
+      "value": "140 см"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 669,
+    "fields": {
+      "product": 12,
+      "param": 82,
+      "value": "Да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 670,
+    "fields": {
+      "product": 12,
+      "param": 19,
+      "value": "55\"/3840x2160 Пикс"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 671,
+    "fields": {
+      "product": 12,
+      "param": 75,
+      "value": "16:9"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 672,
+    "fields": {
+      "product": 12,
+      "param": 66,
+      "value": "60 Гц"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 673,
+    "fields": {
+      "product": 12,
+      "param": 18,
+      "value": "MVA"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 674,
+    "fields": {
+      "product": 12,
+      "param": 37,
+      "value": "Яндекс.ТВ"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 675,
+    "fields": {
+      "product": 12,
+      "param": 83,
+      "value": "2 x 10 Вт"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 676,
+    "fields": {
+      "product": 12,
+      "param": 84,
+      "value": "полное"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 677,
+    "fields": {
+      "product": 12,
+      "param": 85,
+      "value": "2 х AAA"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 678,
+    "fields": {
+      "product": 12,
+      "param": 81,
+      "value": "Да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 679,
+    "fields": {
+      "product": 13,
+      "param": 51,
+      "value": "1 год"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 680,
+    "fields": {
+      "product": 13,
+      "param": 67,
+      "value": "Китай"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 681,
+    "fields": {
+      "product": 13,
+      "param": 86,
+      "value": "7 лет"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 682,
+    "fields": {
+      "product": 13,
+      "param": 3,
+      "value": "C350LE"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 683,
+    "fields": {
+      "product": 13,
+      "param": 71,
+      "value": "Безрамочный дисплей"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 684,
+    "fields": {
+      "product": 13,
+      "param": 73,
+      "value": "50 \""
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 685,
+    "fields": {
+      "product": 13,
+      "param": 74,
+      "value": "126 см"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 686,
+    "fields": {
+      "product": 13,
+      "param": 82,
+      "value": "Да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 687,
+    "fields": {
+      "product": 13,
+      "param": 19,
+      "value": "50\"/3840x2160 Пикс"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 688,
+    "fields": {
+      "product": 13,
+      "param": 75,
+      "value": "16:9"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 689,
+    "fields": {
+      "product": 13,
+      "param": 66,
+      "value": "60 Гц"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 690,
+    "fields": {
+      "product": 13,
+      "param": 18,
+      "value": "VA"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 691,
+    "fields": {
+      "product": 13,
+      "param": 77,
+      "value": "Да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 692,
+    "fields": {
+      "product": 13,
+      "param": 78,
+      "value": "Да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 693,
+    "fields": {
+      "product": 13,
+      "param": 37,
+      "value": "Vidaa"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 694,
+    "fields": {
+      "product": 13,
+      "param": 87,
+      "value": "DTS Virtual:X"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 695,
+    "fields": {
+      "product": 13,
+      "param": 83,
+      "value": "2 x 8 Вт"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 696,
+    "fields": {
+      "product": 13,
+      "param": 79,
+      "value": "16 Вт"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 697,
+    "fields": {
+      "product": 13,
+      "param": 84,
+      "value": "Bluetooth/ИК"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 698,
+    "fields": {
+      "product": 13,
+      "param": 85,
+      "value": "2 x AA (LR6)"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 699,
+    "fields": {
+      "product": 15,
+      "param": 51,
+      "value": "1 год"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 700,
+    "fields": {
+      "product": 15,
+      "param": 88,
+      "value": "продавцом"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 701,
+    "fields": {
+      "product": 15,
+      "param": 67,
+      "value": "Узбекистан"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 702,
+    "fields": {
+      "product": 15,
+      "param": 86,
+      "value": "5 лет"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 703,
+    "fields": {
+      "product": 15,
+      "param": 3,
+      "value": "QLED Q60"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 704,
+    "fields": {
+      "product": 15,
+      "param": 68,
+      "value": "Масштабирование контента до 4К"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 705,
+    "fields": {
+      "product": 15,
+      "param": 69,
+      "value": "Звук с технологией OTS Lite"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 706,
+    "fields": {
+      "product": 15,
+      "param": 70,
+      "value": "QLED cо 100%-ым цветовым объёмом"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 707,
+    "fields": {
+      "product": 15,
+      "param": 71,
+      "value": "Двойная подсветка Dual LED"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 708,
+    "fields": {
+      "product": 15,
+      "param": 72,
+      "value": "Quantum HDR"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 709,
+    "fields": {
+      "product": 15,
+      "param": 73,
+      "value": "43 \""
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 710,
+    "fields": {
+      "product": 15,
+      "param": 74,
+      "value": "109.2 см"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 711,
+    "fields": {
+      "product": 15,
+      "param": 82,
+      "value": "Да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 712,
+    "fields": {
+      "product": 15,
+      "param": 19,
+      "value": "43\"/3840x2160 Пикс"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 713,
+    "fields": {
+      "product": 15,
+      "param": 75,
+      "value": "16:9"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 714,
+    "fields": {
+      "product": 15,
+      "param": 66,
+      "value": "60 Гц"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 715,
+    "fields": {
+      "product": 15,
+      "param": 18,
+      "value": "QLED"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 716,
+    "fields": {
+      "product": 15,
+      "param": 76,
+      "value": "Да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 717,
+    "fields": {
+      "product": 15,
+      "param": 77,
+      "value": "Да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 718,
+    "fields": {
+      "product": 15,
+      "param": 89,
+      "value": "Да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 719,
+    "fields": {
+      "product": 16,
+      "param": 51,
+      "value": "1 год"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 720,
+    "fields": {
+      "product": 16,
+      "param": 67,
+      "value": "Россия"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 721,
+    "fields": {
+      "product": 16,
+      "param": 86,
+      "value": "7 лет"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 722,
+    "fields": {
+      "product": 16,
+      "param": 3,
+      "value": "V35LE"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 723,
+    "fields": {
+      "product": 16,
+      "param": 71,
+      "value": "Безрамочный экран"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 724,
+    "fields": {
+      "product": 16,
+      "param": 19,
+      "value": "32\"/1368x768 Пикс"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 725,
+    "fields": {
+      "product": 16,
+      "param": 74,
+      "value": "81.2 см"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 726,
+    "fields": {
+      "product": 16,
+      "param": 66,
+      "value": "60 Гц"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 727,
+    "fields": {
+      "product": 16,
+      "param": 75,
+      "value": "16:9"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 728,
+    "fields": {
+      "product": 16,
+      "param": 18,
+      "value": "IPS"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 729,
+    "fields": {
+      "product": 16,
+      "param": 89,
+      "value": "Да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 730,
+    "fields": {
+      "product": 16,
+      "param": 78,
+      "value": "Да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 731,
+    "fields": {
+      "product": 16,
+      "param": 37,
+      "value": "Android"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 732,
+    "fields": {
+      "product": 16,
+      "param": 83,
+      "value": "2 x 6 Вт"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 733,
+    "fields": {
+      "product": 16,
+      "param": 79,
+      "value": "12 Вт"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 734,
+    "fields": {
+      "product": 16,
+      "param": 84,
+      "value": "Bluetooth/ИК"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 735,
+    "fields": {
+      "product": 16,
+      "param": 80,
+      "value": "Да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 736,
+    "fields": {
+      "product": 16,
+      "param": 85,
+      "value": "2 х AAA"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 737,
+    "fields": {
+      "product": 16,
+      "param": 81,
+      "value": "Да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 738,
+    "fields": {
+      "product": 16,
+      "param": 90,
+      "value": "Да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 739,
+    "fields": {
+      "product": 17,
+      "param": 51,
+      "value": "1 год"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 740,
+    "fields": {
+      "product": 17,
+      "param": 67,
+      "value": "Китай"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 741,
+    "fields": {
+      "product": 17,
+      "param": 86,
+      "value": "7 лет"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 742,
+    "fields": {
+      "product": 17,
+      "param": 3,
+      "value": "C350LE"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 743,
+    "fields": {
+      "product": 17,
+      "param": 71,
+      "value": "Безрамочный дисплей"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 744,
+    "fields": {
+      "product": 17,
+      "param": 73,
+      "value": "43 \""
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 745,
+    "fields": {
+      "product": 17,
+      "param": 74,
+      "value": "109.2 см"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 746,
+    "fields": {
+      "product": 17,
+      "param": 82,
+      "value": "Да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 747,
+    "fields": {
+      "product": 17,
+      "param": 19,
+      "value": "43\"/3840x2160 Пикс"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 748,
+    "fields": {
+      "product": 17,
+      "param": 75,
+      "value": "16:9"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 749,
+    "fields": {
+      "product": 17,
+      "param": 66,
+      "value": "60 Гц"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 750,
+    "fields": {
+      "product": 17,
+      "param": 18,
+      "value": "VA"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 751,
+    "fields": {
+      "product": 17,
+      "param": 77,
+      "value": "Да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 752,
+    "fields": {
+      "product": 17,
+      "param": 89,
+      "value": "Да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 753,
+    "fields": {
+      "product": 17,
+      "param": 78,
+      "value": "Да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 754,
+    "fields": {
+      "product": 17,
+      "param": 37,
+      "value": "Vidaa"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 755,
+    "fields": {
+      "product": 17,
+      "param": 87,
+      "value": "DTS Virtual X"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 756,
+    "fields": {
+      "product": 17,
+      "param": 83,
+      "value": "2 x 7 Вт"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 757,
+    "fields": {
+      "product": 17,
+      "param": 79,
+      "value": "14 Вт"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 758,
+    "fields": {
+      "product": 17,
+      "param": 84,
+      "value": "Bluetooth/ИК"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 759,
+    "fields": {
+      "product": 18,
+      "param": 51,
+      "value": "1 год"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 760,
+    "fields": {
+      "product": 18,
+      "param": 88,
+      "value": "продавцом"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 761,
+    "fields": {
+      "product": 18,
+      "param": 67,
+      "value": "Россия"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 762,
+    "fields": {
+      "product": 18,
+      "param": 86,
+      "value": "5 лет"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 763,
+    "fields": {
+      "product": 18,
+      "param": 3,
+      "value": "Series 6"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 764,
+    "fields": {
+      "product": 18,
+      "param": 73,
+      "value": "50 \""
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 765,
+    "fields": {
+      "product": 18,
+      "param": 74,
+      "value": "127 см"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 766,
+    "fields": {
+      "product": 18,
+      "param": 82,
+      "value": "Да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 767,
+    "fields": {
+      "product": 18,
+      "param": 19,
+      "value": "50\"/3840x2160 Пикс"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 768,
+    "fields": {
+      "product": 18,
+      "param": 75,
+      "value": "16:9"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 769,
+    "fields": {
+      "product": 18,
+      "param": 66,
+      "value": "60 Гц"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 770,
+    "fields": {
+      "product": 18,
+      "param": 18,
+      "value": "QLED"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 771,
+    "fields": {
+      "product": 18,
+      "param": 76,
+      "value": "Да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 772,
+    "fields": {
+      "product": 18,
+      "param": 77,
+      "value": "Да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 773,
+    "fields": {
+      "product": 18,
+      "param": 37,
+      "value": "Tizen"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 774,
+    "fields": {
+      "product": 18,
+      "param": 87,
+      "value": "Dolby Digital Plus"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 775,
+    "fields": {
+      "product": 18,
+      "param": 85,
+      "value": "3 х AA (LR6) доп. опция"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 776,
+    "fields": {
+      "product": 18,
+      "param": 80,
+      "value": "Да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 777,
+    "fields": {
+      "product": 18,
+      "param": 81,
+      "value": "Да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 778,
+    "fields": {
+      "product": 18,
+      "param": 91,
+      "value": "Да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 779,
+    "fields": {
+      "product": 19,
+      "param": 51,
+      "value": "1 год"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 780,
+    "fields": {
+      "product": 19,
+      "param": 67,
+      "value": "Китай"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 781,
+    "fields": {
+      "product": 19,
+      "param": 86,
+      "value": "5 лет"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 782,
+    "fields": {
+      "product": 19,
+      "param": 3,
+      "value": "C450KE"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 783,
+    "fields": {
+      "product": 19,
+      "param": 68,
+      "value": "БЕНЕФИТ - максимальное количество  36 символов!"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 784,
+    "fields": {
+      "product": 19,
+      "param": 69,
+      "value": "Двух диапазонный Wi-FI"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 785,
+    "fields": {
+      "product": 19,
+      "param": 70,
+      "value": "QLED, Dolby Atmos&Vision, HDR10+"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 786,
+    "fields": {
+      "product": 19,
+      "param": 71,
+      "value": "Операционная система VIDAA 5.0"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 787,
+    "fields": {
+      "product": 19,
+      "param": 72,
+      "value": "Direct Full Array"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 788,
+    "fields": {
+      "product": 19,
+      "param": 73,
+      "value": "65 \""
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 789,
+    "fields": {
+      "product": 19,
+      "param": 74,
+      "value": "165.1 см"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 790,
+    "fields": {
+      "product": 19,
+      "param": 82,
+      "value": "Да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 791,
+    "fields": {
+      "product": 19,
+      "param": 19,
+      "value": "65\"/3840x2160 Пикс"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 792,
+    "fields": {
+      "product": 19,
+      "param": 75,
+      "value": "16:9"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 793,
+    "fields": {
+      "product": 19,
+      "param": 66,
+      "value": "60 Гц"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 794,
+    "fields": {
+      "product": 19,
+      "param": 76,
+      "value": "Да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 795,
+    "fields": {
+      "product": 19,
+      "param": 77,
+      "value": "Да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 796,
+    "fields": {
+      "product": 19,
+      "param": 78,
+      "value": "Да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 797,
+    "fields": {
+      "product": 19,
+      "param": 37,
+      "value": "Vidaa"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 798,
+    "fields": {
+      "product": 19,
+      "param": 87,
+      "value": "Dolby Atmos"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 799,
+    "fields": {
+      "product": 20,
+      "param": 51,
+      "value": "1 год"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 800,
+    "fields": {
+      "product": 20,
+      "param": 67,
+      "value": "Китай"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 801,
+    "fields": {
+      "product": 20,
+      "param": 86,
+      "value": "5 лет"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 802,
+    "fields": {
+      "product": 20,
+      "param": 19,
+      "value": "32\"/1366x768 Пикс"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 803,
+    "fields": {
+      "product": 20,
+      "param": 74,
+      "value": "81.2 см"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 804,
+    "fields": {
+      "product": 20,
+      "param": 66,
+      "value": "60 Гц"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 805,
+    "fields": {
+      "product": 20,
+      "param": 75,
+      "value": "16:9"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 806,
+    "fields": {
+      "product": 20,
+      "param": 18,
+      "value": "MVA"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 807,
+    "fields": {
+      "product": 20,
+      "param": 77,
+      "value": "Да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 808,
+    "fields": {
+      "product": 20,
+      "param": 78,
+      "value": "Да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 809,
+    "fields": {
+      "product": 20,
+      "param": 37,
+      "value": "Android"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 810,
+    "fields": {
+      "product": 20,
+      "param": 87,
+      "value": "Dolby Digital; Dolby Digital Plus"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 811,
+    "fields": {
+      "product": 20,
+      "param": 79,
+      "value": "12 Вт"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 812,
+    "fields": {
+      "product": 20,
+      "param": 81,
+      "value": "Да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 813,
+    "fields": {
+      "product": 20,
+      "param": 90,
+      "value": "Да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 814,
+    "fields": {
+      "product": 20,
+      "param": 91,
+      "value": "Да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 815,
+    "fields": {
+      "product": 20,
+      "param": 92,
+      "value": "Да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 816,
+    "fields": {
+      "product": 20,
+      "param": 93,
+      "value": "Да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 817,
+    "fields": {
+      "product": 20,
+      "param": 94,
+      "value": "Да"
+    }
+  },
+  {
+    "model": "backend.productparametermodel",
+    "pk": 818,
+    "fields": {
+      "product": 20,
+      "param": 95,
+      "value": "T/T2/C/C2/S/S2"
+    }
+  },
+  {
+    "model": "backend.shopmodel",
+    "pk": 1,
+    "fields": {
+      "name": "shop1",
+      "price_file": "prices/shop1-26-09-2023_17-25-35-286614.yml",
+      "status": true,
+      "email": "shop1@gmail.com",
+      "phone": "+76666666666",
+      "slug": "shop1"
+    }
+  },
+  {
+    "model": "backend.shopmodel",
+    "pk": 2,
+    "fields": {
+      "name": "shop2",
+      "price_file": "prices/shop2-26-09-2023_17-25-55-832750.yml",
+      "status": true,
+      "email": "shop2@gmail.com",
+      "phone": "+75555555555",
+      "slug": "shop2"
+    }
+  }
+]

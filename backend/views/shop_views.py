@@ -8,9 +8,15 @@ from backend.filters.shop_filters import ShopListFilterSet, ShopProductFilterSet
 from backend.models import OrderItemModel, OrderModel, ProductShopModel, ShopModel
 from backend.permissions.shop_permissions import IsManagerOrAdminPermission
 from backend.serializers.product_serializers import ProductShopDetailListSerializer
-from backend.serializers.shop_serializers import (ShopDetailSerializer, ShopListSerializer, ShopOrderDetailsSerializer,
-                                                  ShopOrderItemsSerializer, ShopOrderSerializer,
-                                                  ShopPriceFileUpdateSerializer, ShopUpdateStatusSerializer)
+from backend.serializers.shop_serializers import (
+    ShopDetailSerializer,
+    ShopListSerializer,
+    ShopOrderDetailsSerializer,
+    ShopOrderItemsSerializer,
+    ShopOrderSerializer,
+    ShopPriceFileUpdateSerializer,
+    ShopUpdateStatusSerializer,
+)
 from backend.tasks import remove_file_task, update_price_file_task
 
 
@@ -20,7 +26,7 @@ class ShopListView(generics.ListAPIView):
     """
 
     serializer_class = ShopListSerializer
-    queryset = ShopModel.objects.all()
+    queryset = ShopModel.objects.all().order_by("name")
     filterset_class = ShopListFilterSet
 
 
@@ -49,6 +55,7 @@ class ShopPriceListView(generics.ListAPIView):
             ProductShopModel.objects.filter(shop__slug=slug, shop__status=True, quantity__gt=0)
             .select_related("product", "shop")
             .prefetch_related("product_parameters__param", "product__categories")
+            .order_by("product__name")
         )
 
 
@@ -97,7 +104,11 @@ class ShopOrderView(generics.ListAPIView):
     lookup_field = "slug"
 
     def get_queryset(self):
-        return OrderModel.objects.filter(items__position__shop__slug=self.kwargs.get(self.lookup_url_kwarg)).distinct()
+        return (
+            OrderModel.objects.filter(items__position__shop__slug=self.kwargs.get(self.lookup_url_kwarg))
+            .distinct()
+            .order_by("id")
+        )
 
 
 class ShopOrderDetailsView(generics.RetrieveAPIView):
