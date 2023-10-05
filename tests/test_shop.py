@@ -4,8 +4,8 @@ import pytest
 from django.test.client import Client
 from django.urls import reverse
 
-from backend.models import ShopModel, OrderModel
-from tests.utils import assert_equal_data, assert_status_code, assert_exist
+from backend.models import OrderModel, ShopModel
+from tests.utils import assert_equal_data, assert_exist, assert_status_code
 
 
 class TestShop:

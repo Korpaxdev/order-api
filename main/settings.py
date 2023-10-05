@@ -190,10 +190,36 @@ SPECTACULAR_SETTINGS = {
     "DESCRIPTION": "API для автоматизации закупок",
 }
 
+# SOCIAL AUTH CONFIG
+
+SOCIAL_AUTH_PIPELINE = (
+    "social_core.pipeline.social_auth.social_details",
+    "social_core.pipeline.social_auth.social_uid",
+    "social_core.pipeline.social_auth.auth_allowed",
+    "social_core.pipeline.social_auth.social_user",
+    "social_core.pipeline.user.get_username",
+    "social_core.pipeline.user.create_user",
+    "social_core.pipeline.social_auth.associate_user",
+    "social_core.pipeline.social_auth.load_extra_data",
+    "social_core.pipeline.user.user_details",
+    "oauth.pipeline.generate_token",
+)
+
+
 AUTHENTICATION_BACKENDS = (
     "social_core.backends.vk.VKOAuth2",
+    "social_core.backends.github.GithubOAuth2",
     "django.contrib.auth.backends.ModelBackend",
 )
 
 SOCIAL_AUTH_VK_OAUTH2_KEY = getenv("VK_APP_ID")
 SOCIAL_AUTH_VK_OAUTH2_SECRET = getenv("VK_APP_SECRET")
+SOCIAL_AUTH_VK_OAUTH2_SCOPE = ["email"]
+
+SOCIAL_AUTH_GITHUB_KEY = getenv("GITHUB_APP_ID")
+SOCIAL_AUTH_GITHUB_SECRET = getenv("GITHUB_APP_SECRET")
+SOCIAL_AUTH_GITHUB_SCOPE = ["user:email"]
+
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = "/api/users/profile/"
+SOCIAL_AUTH_SANITIZE_REDIRECTS = True
+SOCIAL_AUTH_ALLOWED_REDIRECT_HOSTS = ["localhost:5173"]
