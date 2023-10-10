@@ -5,7 +5,7 @@ from django.test.client import Client
 from django.urls import reverse
 
 from backend.models import ProductModel, ProductShopModel
-from tests.utils import assert_equal_data, assert_exist, assert_status_code
+from tests.utils.helpers import assert_db_exists, assert_equal_data, assert_status_code
 
 
 class TestProduct:
@@ -17,7 +17,7 @@ class TestProduct:
             .values_list("name", flat=True)
             .order_by("name")[:page_size]
         )
-        assert_exist(expected_products)
+        assert_db_exists(expected_products)
         response = client.get(reverse("products"))
         assert_status_code(HTTPStatus.OK, response.status_code)
         data = response.json()
@@ -27,7 +27,7 @@ class TestProduct:
     @pytest.mark.django_db
     def test_product_detail_page(self, client: Client):
         first_product = ProductModel.objects.first()
-        assert_exist(first_product)
+        assert_db_exists(first_product)
         response = client.get(reverse("product_details_list", args=[first_product.slug]))
         assert_status_code(HTTPStatus.OK, response.status_code)
         data = response.json().get("results")

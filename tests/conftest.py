@@ -1,9 +1,7 @@
 import pytest
-from django.urls import reverse
 
-from backend.models import UserModel
 from backend.utils.managment_utils import load_data
-from tests.constants import TEST_DATA_PATH
+from tests.utils.constants import TEST_DATA_PATH
 
 
 @pytest.fixture(scope="session", autouse=True)

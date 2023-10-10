@@ -6,14 +6,9 @@ from rest_framework.response import Response
 
 from backend.filters.order_filters import OrderListFilterSet
 from backend.models import OrderItemModel, OrderModel, PasswordResetTokenModel, UserModel
-from backend.serializers.user_serializers import (
-    OrderDetailSerializer,
-    OrderPositionSerializer,
-    OrderSerializer,
-    UserPasswordResetTokenSerializer,
-    UserSerializer,
-    UserUpdatePasswordSerializer,
-)
+from backend.serializers.user_serializers import (OrderDetailSerializer, OrderPositionSerializer, OrderSerializer,
+                                                  UserPasswordResetTokenSerializer, UserSerializer,
+                                                  UserUpdatePasswordSerializer)
 from backend.tasks.email_tasks import send_password_reset_email
 
 

@@ -5,14 +5,14 @@ from django.test.client import Client
 from django.urls import reverse
 
 from backend.models import OrderModel, ShopModel
-from tests.utils import assert_equal_data, assert_exist, assert_status_code
+from tests.utils.helpers import assert_db_exists, assert_equal_data, assert_status_code
 
 
 class TestShop:
     @pytest.mark.django_db
     def test_shops_page(self, client: Client, page_size):
         expected_shops = ShopModel.objects.all().order_by("name").values_list("name", flat=True)[:page_size]
-        assert_exist(expected_shops)
+        assert_db_exists(expected_shops)
         response = client.get(reverse("shops"))
         assert_status_code(HTTPStatus.OK, response.status_code)
         data = response.json()
@@ -22,7 +22,7 @@ class TestShop:
     @pytest.mark.django_db
     def test_shop_detail_page(self, client: Client):
         first_shop: ShopModel = ShopModel.objects.first()
-        assert_exist(first_shop)
+        assert_db_exists(first_shop)
         response = client.get(reverse("shop_details", args=[first_shop.slug]))
         assert_status_code(HTTPStatus.OK, response.status_code)
         data = response.json()
@@ -31,7 +31,7 @@ class TestShop:
     @pytest.mark.django_db
     def test_shop_price_list_page(self, client: Client, page_size):
         first_shop: ShopModel = ShopModel.objects.first()
-        assert_exist(first_shop)
+        assert_db_exists(first_shop)
         response = client.get(reverse("shop_price_list", args=[first_shop.slug]))
         assert_status_code(HTTPStatus.OK, response.status_code)
         data = response.json()
@@ -44,7 +44,7 @@ class TestShop:
     @pytest.mark.django_db
     def test_shop_order_page(self, admin_client: Client):
         first_shop: ShopModel = ShopModel.objects.first()
-        assert_exist(first_shop)
+        assert_db_exists(first_shop)
         response = admin_client.get(reverse("shop_orders", args=[first_shop.slug]))
         assert_status_code(HTTPStatus.OK, response.status_code)
         expected_orders = list(
@@ -60,7 +60,7 @@ class TestShop:
     @pytest.mark.django_db
     def test_change_shop_status(self, admin_client: Client):
         first_shop: ShopModel = ShopModel.objects.first()
-        assert_exist(first_shop)
+        assert_db_exists(first_shop)
         prev_status = first_shop.status
         response = admin_client.put(
             reverse("shop_update_status", args=[first_shop.slug]), {"status": False}, content_type="application/json"
