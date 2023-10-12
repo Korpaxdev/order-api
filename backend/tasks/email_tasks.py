@@ -9,7 +9,10 @@ from backend.utils.constants import EmailBaseSetup, EmailSendConfig, get_current
 
 
 def send_email(base_setup: EmailBaseSetup, to: list | tuple, context: dict):
-    """Отправляет html email пользователям из списка to"""
+    """Отправляет html email пользователям из списка to. Отправка email будет осуществляется в случае SEND_EMAIL в True"""
+    if not settings.SEND_EMAIL:
+        print("Message cant be send. Check your settings.SEND_EMAIL")
+        return
     message = EmailMultiAlternatives(subject=base_setup.subject, from_email=settings.EMAIL_HOST_USER, to=to)
     html_body = render_to_string(template_name=base_setup.template, context=context)
     message.attach_alternative(html_body, "text/html")

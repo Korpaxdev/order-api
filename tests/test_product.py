@@ -11,6 +11,7 @@ from tests.utils.helpers import assert_db_exists, assert_equal_data, assert_stat
 class TestProduct:
     @pytest.mark.django_db
     def test_products_page(self, client: Client, page_size):
+        """Тестирование страницы с товарами. Проверяется соответствие ответа с бд"""
         expected_products = (
             ProductModel.objects.filter(shops__status=True, productshopmodel__quantity__gt=0)
             .distinct()
@@ -26,6 +27,7 @@ class TestProduct:
 
     @pytest.mark.django_db
     def test_product_detail_page(self, client: Client):
+        """Тестирование детальной информации о товаре. Так же проверяется соответствие такого товара в магазинах в бд"""
         first_product = ProductModel.objects.first()
         assert_db_exists(first_product)
         response = client.get(reverse("product_details_list", args=[first_product.slug]))

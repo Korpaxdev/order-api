@@ -11,6 +11,7 @@ from tests.utils.helpers import assert_db_exists, assert_equal_data, assert_stat
 class TestShop:
     @pytest.mark.django_db
     def test_shops_page(self, client: Client, page_size):
+        """Тестирование страницы с магазинами. Проверяется соответствие результата с бд"""
         expected_shops = ShopModel.objects.all().order_by("name").values_list("name", flat=True)[:page_size]
         assert_db_exists(expected_shops)
         response = client.get(reverse("shops"))
@@ -21,6 +22,7 @@ class TestShop:
 
     @pytest.mark.django_db
     def test_shop_detail_page(self, client: Client):
+        """Тестирование страницы с детальной информацией по магазину. Проверяется соответствие результата с бд"""
         first_shop: ShopModel = ShopModel.objects.first()
         assert_db_exists(first_shop)
         response = client.get(reverse("shop_details", args=[first_shop.slug]))
@@ -30,6 +32,7 @@ class TestShop:
 
     @pytest.mark.django_db
     def test_shop_price_list_page(self, client: Client, page_size):
+        """Тестирование страницы с товарами в магазине. Проверяется соответствие результата с бд"""
         first_shop: ShopModel = ShopModel.objects.first()
         assert_db_exists(first_shop)
         response = client.get(reverse("shop_price_list", args=[first_shop.slug]))
@@ -43,6 +46,7 @@ class TestShop:
 
     @pytest.mark.django_db
     def test_shop_order_page(self, admin_client: Client):
+        """Тестирование страницы с заказами магазина. Проверяется соответствие результата с бд"""
         first_shop: ShopModel = ShopModel.objects.first()
         assert_db_exists(first_shop)
         response = admin_client.get(reverse("shop_orders", args=[first_shop.slug]))
@@ -59,6 +63,7 @@ class TestShop:
 
     @pytest.mark.django_db
     def test_change_shop_status(self, admin_client: Client):
+        """Тестирование страницы по смене статуса магазина. Проверяется соответствие чтобы предыдущий статус не равен был новому"""
         first_shop: ShopModel = ShopModel.objects.first()
         assert_db_exists(first_shop)
         prev_status = first_shop.status

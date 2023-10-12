@@ -6,14 +6,20 @@ from django.urls import reverse
 
 from backend.models import OrderModel, UserModel
 from tests.utils.constants import CONTENT_TYPE, ErrorMessages
-from tests.utils.helpers import (assert_equal_data, assert_status_code, create_test_order, create_test_user,
-                                 generate_fake_user)
+from tests.utils.helpers import (
+    assert_equal_data,
+    assert_status_code,
+    create_test_order,
+    create_test_user,
+    generate_fake_user,
+)
 from tests.utils.types import UserType
 
 
 class TestUser:
     @pytest.mark.django_db
     def test_profile_page(self, admin_client: Client, client: Client):
+        """Тестирование страницы с профилем. Проверяется соответствие результата с бд"""
         admin: UserModel = UserModel.objects.filter(is_superuser=True, username="admin").first()
         assert admin, "Не создан суперпользователь"
         profile_url = reverse("profile")
@@ -27,16 +33,18 @@ class TestUser:
 
     @pytest.mark.django_db
     def test_create_order_page(self, admin_client: Client, admin_user, client: Client):
+        """Тестирование страницы с созданием заказа. Проверяется наличие созданного заказа в бд"""
         admin_response = create_test_order(admin_client)
         assert_status_code(HTTPStatus.CREATED, admin_response.status_code)
         data = admin_response.json()
         order = OrderModel.objects.filter(user=admin_user, id=data.get("id")).first()
-        assert order, f"Не был создан заказ в базе данных\n" f"Expected: {data}\n" f"Actual: {order}"
+        assert order, f"Заказ не был создан в базе данных\n" f"Expected: {data}\n" f"Actual: {order}"
         unauthorized_response = create_test_order(client)
         assert_status_code(HTTPStatus.UNAUTHORIZED, unauthorized_response.status_code)
 
     @pytest.mark.django_db
     def test_create_user(self, client: Client):
+        """Тестирование страницы с регистрацией пользователя. Проверяется наличие созданного пользователя в бд"""
         response = create_test_user(client)
         assert_status_code(HTTPStatus.CREATED, response.status_code)
         data = response.json()
@@ -46,6 +54,7 @@ class TestUser:
 
     @pytest.mark.django_db
     def test_get_user_token(self, client: Client):
+        """Тестирование страницы с получением токена. Проверяется чтобы в ответе был access и refresh токены"""
         fake_user: UserType = generate_fake_user()
         create_user_response = create_test_user(client, fake_user)
         assert_status_code(HTTPStatus.CREATED, create_user_response.status_code)

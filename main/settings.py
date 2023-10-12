@@ -144,6 +144,9 @@ SITE_ID = 1
 PASSWORD_TOKEN_RESET_LIFETIME = timedelta(days=5)
 
 # ---------- EMAIL ----------
+# Включает отправку email писем
+SEND_EMAIL = True
+
 ADMIN_EMAIL = getenv("ADMIN_EMAIL")
 
 EMAIL_USE_TLS = True
