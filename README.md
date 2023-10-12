@@ -67,6 +67,9 @@
 - **PRODUCTS:**
     - **GET** - `{domain_name}/api/products/` - Список доступных для заказа товаров
     - **GET** - `{domain_name}/api/products/{product_slug}/` - Детальная информация по товару
+- **OAUTH:**
+    - **GET** - `{domain_name}/api/oauth/login/{backend}` - Авторизация через backend. Доступные backend - github,
+      vk-oauth2
 - **DOCS:**
     - **GET** - `{domain_name}/api/schema` - Получить OpenAPI схему
     - **GET** - `{domain_name}/api/docs` - Swagger документация на основе OpenAPI схемы
@@ -82,9 +85,17 @@
     - Запускаем **Celery** - `celery -A main worker -l info`
     - Обратите внимание! Доступ к базам данных осуществляется через `localhost`, а не через наименование сервиса
 
+## Запуск тестов
+
+**Важно!** Для запуска тестов необходим запуск `celery`, его можно запустить посредством `docker-compose.yml`, либо
+вручную `celery -A main worker -l info`
+
+- Для запуска тестов используется
+  команда `pytest` [Документация по pytest](https://docs.pytest.org/en/latest/contents.html)
+
 ## Дополнительная информация:
 
-- ### [Детальная информация по маршрутам](docs/routes_advanced.md)
+- ### [Детальная информация по маршрутам](docs/routes_doc.md)
 - ### [Детальная информация по env файлу](docs/env_file_doc.md)
 - ### [Детальная информация по проекту](docs/project_doc.md)
 

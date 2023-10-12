@@ -742,6 +742,39 @@ HEAD Authorization: Bearer "Token"
 
 Swagger документация по проекту. Количество запросов не ограничено
 
+### **GET** - `{domain_name}/api/oauth/login/{backend}`
+
+Авторизация в проекте через сторонний backend
+
+**ВАЖНО!** Для работы с данными backend, у вас должны быть настроены приложения в этих
+провайдерах.
+Документация по настройке - [Как настроить oauth](oauth_doc.md)
+
+#### Список доступных backend:
+
+- `github` - Авторизация через github
+- `vk` - Авторизация через vk
+
+#### Доступные параметры:
+
+- `next` - Url страницы, на которую произойдет redirect после успешной авторизации
+
+#### Формат ответа:
+
+- Если у запроса не был заполен параметр `next` - то будет осуществлен redirect на
+  страницу `{domain_name}/api/users/profile`
+- Если у запроса был заполнен параметр `next`, то происходит проверка:
+    - Если `next` ведет на сторонний url и включен `SOCIAL_AUTH_SANITIZE_REDIRECTS` и `next` есть
+      в `SOCIAL_AUTH_ALLOWED_REDIRECT_HOSTS` - то произойдет
+      redirect на этот url + дополнительно в качестве параметров будет сгенерирован `refresh` и `access` токены, т.е.
+      redirect - `next?refresh=token&access=token`
+    - Если `next` ведет на сторонний url и параметры `SOCIAL_AUTH_SANITIZE_REDIRECTS`
+      и `SOCIAL_AUTH_ALLOWED_REDIRECT_HOSTS` не заполнены, то redirect будет осуществлен
+      на `{domain_name}/api/users/profile`
+    - Если `next` не ведет на сторонний url, то redirect - `next?refresh=token&access=token`
+
+
+
 
 
 

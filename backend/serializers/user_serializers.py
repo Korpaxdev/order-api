@@ -1,7 +1,7 @@
 from collections import defaultdict
+from datetime import datetime
 
 from django.core.validators import MinValueValidator
-from django.utils.datetime_safe import datetime
 from drf_spectacular.utils import extend_schema_field
 from rest_framework import serializers
 from rest_framework.reverse import reverse
