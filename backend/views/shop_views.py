@@ -17,26 +17,21 @@ from backend.serializers.shop_serializers import (
     ShopUpdateStatusSerializer,
 )
 from backend.tasks import remove_file_task, update_price_file_task
+from rest_framework import viewsets
 
 
-class ShopListView(generics.ListAPIView):
-    """View класс для представления списка объектов из модели ShopModel
-    Url: shops/
-    """
+class ShopViewSet(viewsets.ReadOnlyModelViewSet):
+    """Получение списка магазинов или детальной информации по магазину"""
 
-    serializer_class = ShopListSerializer
     queryset = ShopModel.objects.all().order_by("name")
-    filterset_class = ShopListFilterSet
-
-
-class ShopDetailView(generics.RetrieveAPIView):
-    """View класс для детального представления объекта из модели ShopModel
-    Url: shops/<slug:shop>/"""
-
-    serializer_class = ShopDetailSerializer
-    queryset = ShopModel.objects.all()
     lookup_field = "slug"
     lookup_url_kwarg = "shop"
+    filterset_class = ShopListFilterSet
+
+    def get_serializer_class(self):
+        if self.action == "retrieve":
+            return ShopDetailSerializer
+        return ShopListSerializer
 
 
 class ShopPriceListView(generics.ListAPIView):

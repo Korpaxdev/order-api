@@ -1,16 +1,16 @@
 from django.urls import include, path
+from rest_framework.routers import SimpleRouter
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 from backend.views.product_views import ProductListView, ProductShopDetailListView
 from backend.views.shop_views import (
-    ShopDetailView,
-    ShopListView,
     ShopOrderDetailsView,
     ShopOrderItemsView,
     ShopOrderView,
     ShopPriceFileUpdate,
     ShopPriceListView,
     ShopUpdateStatusView,
+    ShopViewSet,
 )
 from backend.views.user_views import (
     CreateUserPasswordResetView,
@@ -21,6 +21,9 @@ from backend.views.user_views import (
     UserProfileView,
     UserRegisterView,
 )
+
+router = SimpleRouter()
+router.register("shops", ShopViewSet, "shops")
 
 urlpatterns = [
     # user
@@ -34,8 +37,6 @@ urlpatterns = [
     path("users/password/reset", CreateUserPasswordResetView.as_view(), name="create_password_reset_token"),
     path("users/password/update/<str:user>/<uuid:token>/", UserPasswordUpdateView.as_view(), name="password_update"),
     # shop
-    path("shops/", ShopListView.as_view(), name="shops"),
-    path("shops/<slug:shop>/", ShopDetailView.as_view(), name="shop_details"),
     path("shops/<slug:shop>/orders/", ShopOrderView.as_view(), name="shop_orders"),
     path("shops/<slug:shop>/orders/<int:order>/", ShopOrderDetailsView.as_view(), name="shop_order_details"),
     path("shops/<slug:shop>/orders/<int:order>/items/", ShopOrderItemsView.as_view(), name="shop_order_items"),
@@ -47,4 +48,4 @@ urlpatterns = [
     path("products/<slug:product>/", ProductShopDetailListView.as_view(), name="product_details_list"),
     # oauth
     path("oauth/", include("oauth.urls")),
-]
+] + router.urls

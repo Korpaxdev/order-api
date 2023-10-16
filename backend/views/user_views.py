@@ -1,5 +1,4 @@
 from django.http import HttpRequest
-from drf_spectacular.utils import extend_schema
 from rest_framework import generics, permissions, status
 from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response

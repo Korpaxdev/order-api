@@ -1,5 +1,5 @@
 from django.core.files.uploadedfile import InMemoryUploadedFile
-from drf_spectacular.utils import OpenApiExample, extend_schema_field, extend_schema_serializer
+from drf_spectacular.utils import extend_schema_field
 from rest_framework import serializers
 from rest_framework.fields import empty
 from rest_framework.reverse import reverse
@@ -18,7 +18,7 @@ class ShopListSerializer(serializers.ModelSerializer):
     """Serializer для списка модели ShopModel"""
 
     status = serializers.CharField(source="get_status_display")
-    detail = serializers.HyperlinkedIdentityField("shop_details", lookup_field="slug", lookup_url_kwarg="shop")
+    detail = serializers.HyperlinkedIdentityField("shops-detail", lookup_field="slug", lookup_url_kwarg="shop")
 
     class Meta:
         model = ShopModel
