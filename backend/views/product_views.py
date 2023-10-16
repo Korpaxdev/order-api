@@ -9,8 +9,8 @@ from backend.serializers.product_serializers import ProductListSerializer, Produ
 @extend_schema_view(get=extend_schema(operation_id="products_list"))
 class ProductListView(generics.ListAPIView):
     """
-    Класс представления списка объектов из модели ProductModel
-    Url: /products"""
+    Получение списка товаров
+    """
 
     serializer_class = ProductListSerializer
     filterset_class = ProductListFilterSet
@@ -27,8 +27,8 @@ class ProductListView(generics.ListAPIView):
 @extend_schema_view(get=extend_schema(operation_id="products_shops_detail_list"))
 class ProductShopDetailListView(generics.ListAPIView):
     """
-    Класс детального представления списка объектов из модели ProductShopModel
-    Url: /products/<slug:product>"""
+    Получение списка с информацией по товару {product} в магазинах
+    """
 
     serializer_class = ProductShopDetailListSerializer
     filterset_class = ProductShopFilterSet

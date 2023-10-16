@@ -35,8 +35,7 @@ class ShopViewSet(viewsets.ReadOnlyModelViewSet):
 
 
 class ShopPriceListView(generics.ListAPIView):
-    """View класс для представления списка объектов ProductShop
-    Url: shops/<slug:shop>/products/"""
+    """Получение списка товаров в магазине {shop}"""
 
     serializer_class = ProductShopDetailListSerializer
     filterset_class = ShopProductFilterSet
@@ -54,8 +53,7 @@ class ShopPriceListView(generics.ListAPIView):
 
 
 class ShopUpdateStatusView(generics.UpdateAPIView):
-    """View класс для обновления поля status у модели ShopModel
-    Url: shops/<slug:shop>/status/"""
+    """Обновление статуса в магазине {shop}"""
 
     permission_classes = (permissions.IsAuthenticated, IsManagerOrAdminPermission)
     queryset = ShopModel.objects.all()
@@ -65,8 +63,7 @@ class ShopUpdateStatusView(generics.UpdateAPIView):
 
 
 class ShopPriceFileUpdate(generics.GenericAPIView):
-    """View класс для обновления поля price_file у модели ShopModel
-    Url: shops/<slug:shop>/update/"""
+    """Загрузка и обновление товаров в магазине {shop}"""
 
     permission_classes = (permissions.IsAuthenticated, IsManagerOrAdminPermission)
     queryset = ShopModel.objects.all()
@@ -88,8 +85,7 @@ class ShopPriceFileUpdate(generics.GenericAPIView):
 
 
 class ShopOrderView(generics.ListAPIView):
-    """View класс для представления списка объектов модели OrderModel, но с фильтрацией по shop__slug
-    Url: shops/<slug:shop>/orders/"""
+    """Получение списка заказов по магазину {shop}"""
 
     permission_classes = (permissions.IsAuthenticated, IsManagerOrAdminPermission)
     serializer_class = ShopOrderSerializer
@@ -106,8 +102,7 @@ class ShopOrderView(generics.ListAPIView):
 
 
 class ShopOrderDetailsView(generics.RetrieveAPIView):
-    """View класс для преставления детальной информации объекта модели OrderModel
-    Url: shops/<slug:shop>/orders/<int:order>/"""
+    """Получение детальной информации по заказу {order} магазина {shop}"""
 
     permission_classes = (permissions.IsAuthenticated, IsManagerOrAdminPermission)
     serializer_class = ShopOrderDetailsSerializer
@@ -123,8 +118,7 @@ class ShopOrderDetailsView(generics.RetrieveAPIView):
 
 
 class ShopOrderItemsView(generics.ListAPIView):
-    """View класс для представления списка объектов модели OrderItem
-    Url: shops/<slug:shop>/orders/<int:order>/items/"""
+    """Получение списка товаров в заказе {order} магазина {shop}"""
 
     permission_classes = (permissions.IsAuthenticated, IsManagerOrAdminPermission)
     serializer_class = ShopOrderItemsSerializer
