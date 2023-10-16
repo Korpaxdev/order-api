@@ -7,7 +7,8 @@ from tests.utils.constants import TEST_DATA_PATH
 
 @pytest.fixture(scope="session", autouse=True)
 def configure_project(django_db_setup, django_db_blocker):
-    """Фикстура для загрузки тестовых данных в бд. Дополнительно устанавливаем SEND_EMAIL в окружении celery в False"""
+    """Фикстура для загрузки тестовых данных в бд. Дополнительно устанавливаем SEND_EMAIL в окружении celery в False
+    (Чтобы письма не отправлялись в случае запуска тестов)"""
     disable_send_email.delay().get()
     with django_db_blocker.unblock():
         load_data(TEST_DATA_PATH)

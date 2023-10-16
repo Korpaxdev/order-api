@@ -14,4 +14,9 @@
 - `EMAIL_HOST_USER` - Email пользователя с которого будут слаться письма
 - `EMAIL_HOST_PASSWORD` - Пароль от пользователя с которого будут слаться письма
 - `ADMIN_EMAIL` - Почта администратора, на нее будут приходить письма о новом заказе
+- `VK_APP_ID` - ID приложения VK (для oauth)
+- `VK_APP_SECRET` - Защищённый ключ	приложения VK (для oauth)
+- `GITHUB_APP_ID` - ID приложения GITHUB (для oauth)
+- `GITHUB_APP_SECRET` - Секретный ключ приложения GITHUB (для oauth)
+
 
