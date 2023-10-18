@@ -14,7 +14,7 @@ class TestShop:
         """Тестирование страницы с магазинами. Проверяется соответствие результата с бд"""
         expected_shops = ShopModel.objects.all().order_by("name").values_list("name", flat=True)[:page_size]
         assert_db_exists(expected_shops)
-        response = client.get(reverse("shops"))
+        response = client.get(reverse("shops-list"))
         assert_status_code(HTTPStatus.OK, response.status_code)
         data = response.json()
         actual_shops = [res.get("name") for res in data.get("results")]
@@ -25,7 +25,7 @@ class TestShop:
         """Тестирование страницы с детальной информацией по магазину. Проверяется соответствие результата с бд"""
         first_shop: ShopModel = ShopModel.objects.first()
         assert_db_exists(first_shop)
-        response = client.get(reverse("shop_details", args=[first_shop.slug]))
+        response = client.get(reverse("shops-detail", args=[first_shop.slug]))
         assert_status_code(HTTPStatus.OK, response.status_code)
         data = response.json()
         assert_equal_data(first_shop.name, data.get("name"))
