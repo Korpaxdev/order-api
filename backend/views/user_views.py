@@ -17,8 +17,7 @@ from backend.tasks.email_tasks import send_password_reset_email
 
 
 class UserProfileView(generics.GenericAPIView):
-    """View класс для представления авторизованного пользователя UserModel
-    Url: users/profile/"""
+    """Получение информации о текущем авторизованном пользователе."""
 
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class = UserSerializer
@@ -30,16 +29,14 @@ class UserProfileView(generics.GenericAPIView):
 
 
 class UserRegisterView(generics.CreateAPIView):
-    """View класс для создания объекта модели UserModel
-    Url: users/register/"""
+    """Регистрация пользователя"""
 
     serializer_class = UserSerializer
     queryset = UserModel.objects.all()
 
 
 class UserOrdersView(generics.ListCreateAPIView):
-    """View класс для представления списка объектов модели OrderModel
-    Url: users/profile/orders/"""
+    """Получение и создание списка заказов авторизованного пользователя"""
 
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class = OrderSerializer
@@ -50,8 +47,7 @@ class UserOrdersView(generics.ListCreateAPIView):
 
 
 class UserOrderDetailView(generics.RetrieveAPIView):
-    """View класс для представления детальной информации об объекте модели OrderModel
-    Url: users/profile/orders/<int:order>/"""
+    """Получение детальной информации о заказе"""
 
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class = OrderDetailSerializer
@@ -62,8 +58,7 @@ class UserOrderDetailView(generics.RetrieveAPIView):
 
 
 class UserOrderPositionsView(generics.ListAPIView):
-    """View класс для представления списка объектов из модели OrderItemModel
-    Url: users/profile/orders/<int:order>/items/"""
+    """Получение списка товаров в заказе {order}"""
 
     permissions = (permissions.IsAuthenticated,)
     serializer_class = OrderPositionSerializer
@@ -78,8 +73,7 @@ class UserOrderPositionsView(generics.ListAPIView):
 
 
 class CreateUserPasswordResetView(generics.GenericAPIView):
-    """View класс для создания объекта модели PasswordResetTokenModel
-    Url: users/password/reset"""
+    """Сброс пароля пользователя по email"""
 
     serializer_class = UserPasswordResetTokenSerializer
     queryset = PasswordResetTokenModel
@@ -91,15 +85,15 @@ class CreateUserPasswordResetView(generics.GenericAPIView):
         send_password_reset_email.delay(instance.pk)
         return Response(
             {
-                "detail": f"Email со ссылкой для сброса пароля было отправлено на указанный email адрес. Ссылка будет активна до: {instance.expire}"
+                "detail": f"Email со ссылкой для сброса пароля было отправлено на указанный email адрес. "
+                f"Ссылка будет активна до: {instance.expire}"
             },
             status=status.HTTP_204_NO_CONTENT,
         )
 
 
 class UserPasswordUpdateView(generics.GenericAPIView):
-    """View класс для обновления поля password у объекта модели UserModel
-    Url: users/password/update/<str:user>/<uuid:token>/"""
+    """Обновление пароля для пользователя {user} по токену {token}"""
 
     serializer_class = UserUpdatePasswordSerializer
     queryset = UserModel.objects.all()
