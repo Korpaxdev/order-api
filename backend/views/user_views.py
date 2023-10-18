@@ -1,4 +1,5 @@
 from django.http import HttpRequest
+from django.utils import timezone
 from rest_framework import generics, permissions, status
 from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
@@ -88,7 +89,7 @@ class CreateUserPasswordResetView(generics.GenericAPIView):
                 "detail": f"Email со ссылкой для сброса пароля было отправлено на указанный email адрес. "
                 f"Ссылка будет активна до: {instance.expire}"
             },
-            status=status.HTTP_204_NO_CONTENT,
+            status=status.HTTP_200_OK,
         )
 
 
@@ -101,6 +102,8 @@ class UserPasswordUpdateView(generics.GenericAPIView):
     def patch(self, request, *args, **kwargs):
         user = get_object_or_404(UserModel, username=kwargs.get("user"))
         token = get_object_or_404(PasswordResetTokenModel, token=kwargs.get("token"), user=user)
+        if token.expire < timezone.localtime():
+            return Response({"detail": "Токен истек"}, status.HTTP_400_BAD_REQUEST)
         serializer = UserUpdatePasswordSerializer(data=self.request.data, instance=user)
         serializer.is_valid(raise_exception=True)
         serializer.save()

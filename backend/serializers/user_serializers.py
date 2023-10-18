@@ -1,13 +1,21 @@
 from collections import defaultdict
-from datetime import datetime
 
 from django.core.validators import MinValueValidator
+from django.utils import timezone
 from drf_spectacular.utils import extend_schema_field
 from rest_framework import serializers
 from rest_framework.reverse import reverse
 
-from backend.models import (OrderAddressModel, OrderItemModel, OrderModel, PasswordResetTokenModel, ProductModel,
-                            ProductShopModel, ShopModel, UserModel)
+from backend.models import (
+    OrderAddressModel,
+    OrderItemModel,
+    OrderModel,
+    PasswordResetTokenModel,
+    ProductModel,
+    ProductShopModel,
+    ShopModel,
+    UserModel,
+)
 from backend.serializers.product_serializers import ProductShopDetailListSerializer
 from backend.tasks.email_tasks import send_new_order_email
 from backend.utils.constants import ErrorMessages
@@ -199,7 +207,7 @@ class UserPasswordResetTokenSerializer(serializers.ModelSerializer):
         user = UserModel.objects.filter(email=value).first()
         if not user:
             raise serializers.ValidationError(ErrorMessages.USER_WITH_EMAIL_NOT_FOUND)
-        token = PasswordResetTokenModel.objects.filter(user__email=value, expire__gt=datetime.now()).first()
+        token = PasswordResetTokenModel.objects.filter(user__email=value, expire__gt=timezone.localtime()).first()
         if token:
             raise serializers.ValidationError(ErrorMessages.RESET_PASSWORD_EMAIL_ALREADY_SENT)
         return value

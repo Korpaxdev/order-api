@@ -34,7 +34,7 @@ urlpatterns = [
     path("users/register/", UserRegisterView.as_view(), name="register"),
     path("users/token/", TokenObtainPairView.as_view(), name="token"),
     path("users/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
-    path("users/password/reset", CreateUserPasswordResetView.as_view(), name="create_password_reset_token"),
+    path("users/password/reset/", CreateUserPasswordResetView.as_view(), name="create_password_reset_token"),
     path("users/password/update/<str:user>/<uuid:token>/", UserPasswordUpdateView.as_view(), name="password_update"),
     # shop
     path("shops/<slug:shop>/orders/", ShopOrderView.as_view(), name="shop_orders"),
