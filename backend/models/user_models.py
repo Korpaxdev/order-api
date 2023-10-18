@@ -125,7 +125,7 @@ class OrderItemModel(models.Model):
 
     def save(self, *args, **kwargs):
         """При сохранении на основе позиции создаем price и price_rrc.
-        Это нужно чтобы если поменяются эти поля у ProductShopModel в заказе они остались не изменными"""
+        Это нужно чтобы если поменяются эти поля у ProductShopModel в заказе они остались не измененными"""
         self.price = self.position.price
         self.price_rrc = self.position.price_rrc
         if not self.pk:

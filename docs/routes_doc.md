@@ -25,7 +25,7 @@
   "pk": "integer",
   "username": "string",
   "email": "string",
-  "orders": "http://{domain}/api/users/profile/orders/"
+  "orders": "{domain}/api/users/profile/orders/"
 }
 ```
 
@@ -154,7 +154,7 @@ HEAD Authorization: Bearer "Token"
   "pk": "integer",
   "username": "string",
   "email": "string",
-  "orders": "http://{domain}/api/users/profile/orders/"
+  "orders": "{domain}/api/users/profile/orders/"
 }
 ```
 
@@ -210,7 +210,7 @@ HEAD Authorization: Bearer "Token"
   "id": "integer",
   "created_at": "string",
   "status": "string",
-  "details": "http://{domain}/api/users/profile/orders/{order_id}/"
+  "details": "{domain}/api/users/profile/orders/{order_id}/"
 }
 ```
 
@@ -232,7 +232,7 @@ HEAD Authorization: Bearer "Token"
       "id": "integer",
       "created_at": "string",
       "status": "string",
-      "details": "http://{domain}/api/users/profile/orders/{order_id}/"
+      "details": "{domain}/api/users/profile/orders/{order_id}/"
     }
   ]
 }
@@ -262,7 +262,7 @@ HEAD Authorization: Bearer "Token"
     "city": "string"
   },
   "additional": "string",
-  "items": "http://{domain}/api/users/profile/orders/{order_id}/items/",
+  "items": "{domain}/api/users/profile/orders/{order_id}/items/",
   "total_price": "integer"
 }
 ```
@@ -343,7 +343,7 @@ HEAD Authorization: Bearer "Token"
       "id": "integer",
       "name": "string",
       "status": "string",
-      "detail": "http://{domain}/api/shops/{shop_slug}/"
+      "detail": "{domain}/api/shops/{shop_slug}/"
     }
   ]
 }
@@ -374,9 +374,9 @@ HEAD Authorization: Bearer "Token"
   "email": "string",
   "phone": "string",
   "status": "string",
-  "price_list": "http://{domain}/api/shops/{shop_slug}/products/",
-  "price_file": "http://{domain}/media/prices/DNS-25-08-2023_18-21-49-140927.yml",
-  "orders": "http://{domain}/api/shops/{shop_slug}/orders/"
+  "price_list": "{domain}/api/shops/{shop_slug}/products/",
+  "price_file": "{domain}/media/prices/DNS-25-08-2023_18-21-49-140927.yml",
+  "orders": "{domain}/api/shops/{shop_slug}/orders/"
 }
 ```
 
@@ -412,7 +412,7 @@ HEAD Authorization: Bearer "Token"
       "id": "integer",
       "created_at": "string",
       "status": "string",
-      "details": "http://{domain}/api/shops/{shop_slug}/orders/{order_id}/"
+      "details": "{domain}/api/shops/{shop_slug}/orders/{order_id}/"
     }
   ]
 }
@@ -454,7 +454,7 @@ HEAD Authorization: Bearer "Token"
     "region": "string",
     "city": "string"
   },
-  "items": "http://{domain}/api/shops/{shop_slug}/orders/{order_id}/items/"
+  "items": "{domain}/api/shops/{shop_slug}/orders/{order_id}/items/"
 }
 ```
 
@@ -650,7 +650,7 @@ HEAD Authorization: Bearer "Token"
       "categories": [
         "string"
       ],
-      "details": "http://{domain}/api/products/{product_slug}/"
+      "details": "{domain}/api/products/{product_slug}/"
     }
   ]
 }

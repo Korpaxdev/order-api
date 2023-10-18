@@ -9,7 +9,8 @@ from backend.utils.constants import EmailBaseSetup, EmailSendConfig, get_current
 
 
 def send_email(base_setup: EmailBaseSetup, to: list | tuple, context: dict):
-    """Отправляет html email пользователям из списка to. Отправка email будет осуществляется в случае SEND_EMAIL в True"""
+    """Отправляет html email пользователям из списка to.
+    Отправка email будет осуществляется в случае SEND_EMAIL в True"""
     if not settings.SEND_EMAIL:
         print("Message cant be send. Check your settings.SEND_EMAIL")
         return
@@ -38,8 +39,11 @@ def send_status_change_email(order_id: int):
 def send_password_reset_email(password_reset_id: int):
     """Создает контекст для password_reset.html и отправляет сообщение пользователю из PasswordResetTokenModel"""
     password_reset = PasswordResetTokenModel.objects.get(id=password_reset_id)
+    reverse_url = reverse(
+        "password_update", kwargs={"user": password_reset.user.username, "token": password_reset.token}
+    )
     context = {
-        "url": f"{get_current_domain()}{reverse('password_update', kwargs={'user': password_reset.user.username, 'token': password_reset.token})}",
+        "url": f"{get_current_domain()}{reverse_url}",
         "expire": password_reset.expire,
     }
     send_email(EmailSendConfig.PASSWORD_RESET, to=(password_reset.user.email,), context=context)

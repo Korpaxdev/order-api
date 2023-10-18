@@ -63,7 +63,8 @@ class TestShop:
 
     @pytest.mark.django_db
     def test_change_shop_status(self, admin_client: Client):
-        """Тестирование страницы по смене статуса магазина. Проверяется соответствие чтобы предыдущий статус не равен был новому"""
+        """Тестирование страницы по смене статуса магазина.
+        Проверяется соответствие чтобы предыдущий статус не равен был новому"""
         first_shop: ShopModel = ShopModel.objects.first()
         assert_db_exists(first_shop)
         prev_status = first_shop.status
