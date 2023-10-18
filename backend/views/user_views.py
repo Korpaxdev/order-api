@@ -92,7 +92,7 @@ class CreateUserPasswordResetView(generics.GenericAPIView):
         return Response(
             {
                 "detail": f"Email со ссылкой для сброса пароля было отправлено на указанный email адрес. "
-                          f"Ссылка будет активна до: {instance.expire}"
+                f"Ссылка будет активна до: {instance.expire}"
             },
             status=status.HTTP_200_OK,
         )
