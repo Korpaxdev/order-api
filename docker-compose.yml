@@ -6,8 +6,10 @@ services:
     ports:
       - "8000:8000"
     depends_on:
-      - postgres
-      - celery
+      celery:
+        condition: service_started
+      postgres:
+        condition: service_healthy
     volumes:
       - "./media:/app/media"
   celery:
@@ -29,6 +31,11 @@ services:
       POSTGRES_PASSWORD: ${DB_USER_PASSWORD}
     ports:
       - "5432:5432"
+    healthcheck:
+      test: "pg_isready -d ${DB} -U ${DB_USER}"
+      interval: 5s
+      timeout: 10s
+      retries: 120
   redis:
     restart: always
     image: redis:alpine

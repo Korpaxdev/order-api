@@ -44,6 +44,8 @@ class UserOrdersView(generics.ListCreateAPIView):
     filterset_class = OrderListFilterSet
 
     def get_queryset(self):
+        if self.request.user.is_anonymous:
+            return OrderModel.objects.none()
         return OrderModel.objects.filter(user=self.request.user)
 
 
@@ -66,6 +68,9 @@ class UserOrderPositionsView(generics.ListAPIView):
     lookup_url_kwarg = "order"
 
     def get_queryset(self):
+        if self.request.user.is_anonymous:
+            return OrderModel.objects.none()
+
         return (
             OrderItemModel.objects.filter(order=self.kwargs.get("order"), order__user=self.request.user)
             .select_related("position__product", "position__shop")
@@ -87,7 +92,7 @@ class CreateUserPasswordResetView(generics.GenericAPIView):
         return Response(
             {
                 "detail": f"Email со ссылкой для сброса пароля было отправлено на указанный email адрес. "
-                f"Ссылка будет активна до: {instance.expire}"
+                          f"Ссылка будет активна до: {instance.expire}"
             },
             status=status.HTTP_200_OK,
         )
